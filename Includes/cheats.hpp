@@ -8,7 +8,7 @@
 namespace CTRPluginFramework
 {
    void km(MenuEntry *entry)
-   void Fov(MenuEntry *entry)
+   void fov(MenuEntry *entry)
    void eff(MenuEntry *entry)
    void uspeed(MenuEntry *entry)
    void rpff(MenuEntry *entry)
