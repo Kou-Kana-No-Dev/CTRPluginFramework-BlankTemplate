@@ -71,7 +71,7 @@ exit:
     void    InitMenu(PluginMenu &menu)
     {
          menu += new MenuEntry("カヴィリーマイクロ" , km, "カヴィリーの主な機能を詰め込んだもの");
-          MenuFolder *Kavily = new MenuFolder("カヴィリー");
+          menu += MenuFolder *Kavily = new MenuFolder("カヴィリー");
 {
 	*Kavily += new MenuEntry("FOV強化(修正版)", fov, "");
 	*Kavily += new MenuEntry("エフェクト軽減", eff, "オフライン時発生するラグを軽減しメモリーアウトを防ぎます");
