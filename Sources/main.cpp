@@ -69,196 +69,136 @@ exit:
 
     void    InitMenu(PluginMenu &menu)
     {
-       menu->Append(new MenuEntry("最初にこちらをお読みください", PleaseReadThisFirst, "Kavily Client VIP v0.1 カヴィリークライアントこちらはVIP版となります。CTRPFやActionReplayの扱いに慣れている方におすすめ致します慣れていない方は無印版をご利用くださいなおVIP版は限定公開ですので2次配布はおやめください"));
-menu->Append(new MenuEntry("カヴィリーミニ", CavilyMini, "超安定していて、作者も最近このコードひとつでオン潜ってます！"));
-MenuFolder *AuthorsFavoriteCode = new MenuFolder("作者が愛用しているコード");
+menu->Append(new MenuEntry("カヴィリーマイクロ", CavilyMicro, "様々な機能を全てひとつにまとめました"));
+MenuFolder *Cavily = new MenuFolder("カヴィリー");
 {
-	*AuthorsFavoriteCode += new MenuEntry("ランクポイント変更(8635)", RankPointChange8635, "");
-	*AuthorsFavoriteCode += new MenuEntry("エフェクト軽減", EffectReduction, "");
-	*AuthorsFavoriteCode += new MenuEntry("BGMの速度をあげる", IncreaseTheSpeedOfBGM, "");
-	*AuthorsFavoriteCode += new MenuEntry("BGMを再生しない", DoNotPlayBGM, "");
-	*AuthorsFavoriteCode += new MenuEntry("ネームプレートを自分に近づける", MakeTheNameplateCloserToYou, "");
-	*AuthorsFavoriteCode += new MenuEntry("効果音の速度をあげる", IncreaseTheSpeedOfSoundEffects, "");
-	*AuthorsFavoriteCode += new MenuEntry("効果音を消す(UIのみ)", TurnOffSoundEffectsUIOnly, "");
-	*AuthorsFavoriteCode += new MenuEntry("UIのアニメーション速度をあげる(6倍)", IncreaseUIAnimationSpeed6x, "");
-	*AuthorsFavoriteCode += new MenuEntry("カメラの視野:最大", CameraFieldOfViewMaximum, "");
-	*AuthorsFavoriteCode += new MenuEntry("文字をほぼ非表示", AlmostHideCharacters, "");
-	*AuthorsFavoriteCode += new MenuEntry("UIサイズを 0.9375倍に", UISizeIncreasedBy09375Times, "");
-	*AuthorsFavoriteCode += new MenuEntry("UIサイズを戻す", ReturnUISize, "");
-	
-}
-menu->Append(AuthorsFavoriteCode);
-MenuFolder *MoldyClient = new MenuFolder("カビリークライアント");
-{
-	MenuFolder *Camera = new MenuFolder("カメラ");
+	*Cavily += new MenuEntry("FOV強化(修正版)", FOVEnhancementModifiedVersion, "");
+	*Cavily += new MenuEntry("エフェクト軽減", EffectReduction, "オフライン時発生するラグを軽減しメモリーアウトを防ぎます");
+	*Cavily += new MenuEntry("UIスピードアップ", UISpeedUp, "");
+	*Cavily += new MenuEntry("RP変更(-9999)", RPChange9999, "");
+	*Cavily += new MenuEntry("RP(ランダム)", RPRandom, "");
+	*Cavily += new MenuEntry("Amiiboスキン解放", AmiiboSkinRelease, "Amiiboスキンを購入可能にします、購入してからオンにすると購入前に戻ります");
+	MenuFolder *OldVersionUnstable = new MenuFolder("古いバージョン(不安定)");
 	{
-		*Camera += new MenuEntry("ズーム", Zoom, "");
-		*Camera += new MenuEntry("カメラの視野:大", CameraFieldOfViewLarge, "");
-		*Camera += new MenuEntry("カメラの視野:最大", CameraFieldOfViewMaximum, "");
-		
-	}
-	*MoldyClient += Camera;
-	MenuFolder *EffectsAndNameplates = new MenuFolder("エフェクトとネームプレート");
-	{
-		*EffectsAndNameplates += new MenuEntry("ネームプレートの場所を変える", ChangeTheLocationOfTheNameplate, "");
-		*EffectsAndNameplates += new MenuEntry("エフェクト削除", DeleteEffect, "");
-		*EffectsAndNameplates += new MenuEntry("エフェクト減少", EffectReduction, "");
-		
-	}
-	*MoldyClient += EffectsAndNameplates;
-	MenuFolder *RankPoint = new MenuFolder("ランクポイント");
-	{
-		MenuFolder *Random = new MenuFolder("ランダム");
+		MenuFolder *KavilyClient = new MenuFolder("Kavily Client");
 		{
-			*Random += new MenuEntry("(9639)", N9639, "");
-			*Random += new MenuEntry("(6873)", N6873, "");
-			*Random += new MenuEntry("(4892)", N4892, "");
-			*Random += new MenuEntry("(2342)", N2342, "");
-			*Random += new MenuEntry("(7202)", N7202, "");
-			*Random += new MenuEntry("(129)", N129, "");
-			*Random += new MenuEntry("(8635)", N8635, "");
-			*Random += new MenuEntry("(3739)", N3739, "");
-			*Random += new MenuEntry("(1530)", N1530, "");
-			*Random += new MenuEntry("(5566)", N5566, "");
+			MenuFolder *Camera = new MenuFolder("Camera");
+			{
+				*Camera += new MenuEntry("Zoom", Zoom, "");
+				*Camera += new MenuEntry("FOV Booster", FOVBooster, "");
+				*Camera += new MenuEntry("FOV Boostest", FOVBoostest, "");
+				
+			}
+			*KavilyClient += Camera;
+			MenuFolder *EffectAndNamePlate = new MenuFolder("effect and name plate");
+			{
+				*EffectAndNamePlate += new MenuEntry("Name plate Viewer", NamePlateViewer, "");
+				*EffectAndNamePlate += new MenuEntry("Name plate Viewer MINI", NamePlateViewerMINI, "");
+				*EffectAndNamePlate += new MenuEntry("spak mini", SpakMini, "");
+				*EffectAndNamePlate += new MenuEntry("spak", Spak, "");
+				*EffectAndNamePlate += new MenuEntry("effect Removing", EffectRemoving, "");
+				*EffectAndNamePlate += new MenuEntry("effect smaller", EffectSmaller, "");
+				
+			}
+			*KavilyClient += EffectAndNamePlate;
+			MenuFolder *Point = new MenuFolder("Point");
+			{
+				MenuFolder *RND = new MenuFolder("RND");
+				{
+					*RND += new MenuEntry("Point Editor(9639)", PointEditor9639, "");
+					*RND += new MenuEntry("Point Editor(6873)", PointEditor6873, "");
+					*RND += new MenuEntry("Point Editor(4892)", PointEditor4892, "");
+					*RND += new MenuEntry("Point Editor(2342)", PointEditor2342, "");
+					*RND += new MenuEntry("Point Editor(7202)", PointEditor7202, "");
+					*RND += new MenuEntry("Point Editor(129)", PointEditor129, "");
+					*RND += new MenuEntry("Point Editor(8635)", PointEditor8635, "");
+					*RND += new MenuEntry("Point Editor(3739)", PointEditor3739, "");
+					*RND += new MenuEntry("Point Editor(1530)", PointEditor1530, "");
+					*RND += new MenuEntry("Point Editor(5566)", PointEditor5566, "");
+					
+				}
+				*Point += RND;
+				*Point += new MenuEntry("Point Editor(Randomizer)", PointEditorRandomizer, "");
+				*Point += new MenuEntry("Point Editor(9999)", PointEditor9999, "");
+				*Point += new MenuEntry("Point Editor(1)", PointEditor1, "");
+				*Point += new MenuEntry("Point Editor(-9999)", PointEditor9999, "");
+				*Point += new MenuEntry("Point Editor(-1)", PointEditor1, "");
+				
+			}
+			*KavilyClient += Point;
+			MenuFolder *SoundAndBGM = new MenuFolder("Sound And BGM");
+			{
+				*SoundAndBGM += new MenuEntry("Sound Speed Normal", SoundSpeedNormal, "");
+				*SoundAndBGM += new MenuEntry("Sound Speed", SoundSpeed, "");
+				*SoundAndBGM += new MenuEntry("BGM Ster En", BGMSterEn, "");
+				*SoundAndBGM += new MenuEntry("BGM Ster Mini", BGMSterMini, "");
+				*SoundAndBGM += new MenuEntry("BGM Ster", BGMSter, "");
+				
+			}
+			*KavilyClient += SoundAndBGM;
+			MenuFolder *UIAndStringsSize = new MenuFolder("UI and Strings size");
+			{
+				*UIAndStringsSize += new MenuEntry("Skip UI animation", SkipUIAnimation, "");
+				*UIAndStringsSize += new MenuEntry("UI size", UISize, "");
+				*UIAndStringsSize += new MenuEntry("UI size Mini", UISizeMini, "");
+				*UIAndStringsSize += new MenuEntry("Strings", Strings, "");
+				
+			}
+			*KavilyClient += UIAndStringsSize;
+			MenuFolder *Other = new MenuFolder("Other");
+			{
+				*Other += new MenuEntry("Kirby Size", KirbySize, "");
+				*Other += new MenuEntry("Kirby Size Fix", KirbySizeFix, "");
+				
+			}
+			*KavilyClient += Other;
+			MenuFolder *UnlockerHack = new MenuFolder("Unlocker Hack");
+			{
+				*UnlockerHack += new MenuEntry("Safe amiibo skin", SafeAmiiboSkin, "");
+				*UnlockerHack += new MenuEntry("Amiibo Skin Hax(Danger)", AmiiboSkinHaxDanger, "");
+				*UnlockerHack += new MenuEntry("Cosmetics Hack(Danger)", CosmeticsHackDanger, "");
+				
+			}
+			*KavilyClient += UnlockerHack;
 			
 		}
-		*RankPoint += Random;
-		*RankPoint += new MenuEntry("(9999)", N9999, "");
-		*RankPoint += new MenuEntry("(1)", N1, "");
-		*RankPoint += new MenuEntry("(-1)", 1, "");
-		
-	}
-	*MoldyClient += RankPoint;
-	MenuFolder *Sound = new MenuFolder("サウンド");
-	{
-		*Sound += new MenuEntry("効果音の速度を通常にする", SetTheSpeedOfSoundEffectsToNormal, "");
-		*Sound += new MenuEntry("サウンドの速度2倍", DoubleTheSpeedOfSound, "");
-		*Sound += new MenuEntry("BGM速度最大", MaximumBGMSpeed, "");
-		*Sound += new MenuEntry("BGM速度アップ", BGMSpeedUp, "");
-		*Sound += new MenuEntry("BGM速度通常", BGMSpeedNormal, "");
-		
-	}
-	*MoldyClient += Sound;
-	MenuFolder *UIAndCharacters = new MenuFolder("UIと文字");
-	{
-		*UIAndCharacters += new MenuEntry("UIのアニメーション速度を6倍", UIAnimationSpeed6Times, "");
-		*UIAndCharacters += new MenuEntry("UIのサイズを通常にする", MakeUISizeNormal, "");
-		*UIAndCharacters += new MenuEntry("UIのサイズをx0.9250倍", UISizeX09250Times, "");
-		*UIAndCharacters += new MenuEntry("文字", Letter, "");
-		
-	}
-	*MoldyClient += UIAndCharacters;
-	MenuFolder *Other = new MenuFolder("そのほか");
-	{
-		*Other += new MenuEntry("カービィのサイズを小さく", KirbySizeSmaller, "");
-		*Other += new MenuEntry("カービィのサイズを治す", CureKirbysSize, "");
-		
-	}
-	*MoldyClient += Other;
-	MenuFolder *UnlockerSlightCheat = new MenuFolder("アンロッカー(微チート)");
-	{
-		*UnlockerSlightCheat += new MenuEntry("全てのコレクションをアンロック", UnlockAllCollections, "");
-		
-	}
-	*MoldyClient += UnlockerSlightCheat;
-	
-}
-menu->Append(new MenuEntry("最初にこちらをお読みください", PleaseReadThisFirst, "Kavily Client VIP v0.1 カヴィリークライアントこちらはVIP版となります。CTRPFやActionReplayの扱いに慣れている方におすすめ致します慣れていない方は無印版をご利用くださいなおVIP版は限定公開ですので2次配布はおやめください"));
-menu->Append(new MenuEntry("カヴィリーミニ", CavilyMini, "超安定していて、作者も最近このコードひとつでオン潜ってます！"));
-MenuFolder *AuthorsFavoriteCode = new MenuFolder("作者が愛用しているコード");
-{
-	*AuthorsFavoriteCode += new MenuEntry("ランクポイント変更(8635)", RankPointChange8635, "");
-	*AuthorsFavoriteCode += new MenuEntry("エフェクト軽減", EffectReduction, "");
-	*AuthorsFavoriteCode += new MenuEntry("BGMの速度をあげる", IncreaseTheSpeedOfBGM, "");
-	*AuthorsFavoriteCode += new MenuEntry("BGMを再生しない", DoNotPlayBGM, "");
-	*AuthorsFavoriteCode += new MenuEntry("ネームプレートを自分に近づける", MakeTheNameplateCloserToYou, "");
-	*AuthorsFavoriteCode += new MenuEntry("効果音の速度をあげる", IncreaseTheSpeedOfSoundEffects, "");
-	*AuthorsFavoriteCode += new MenuEntry("効果音を消す(UIのみ)", TurnOffSoundEffectsUIOnly, "");
-	*AuthorsFavoriteCode += new MenuEntry("UIのアニメーション速度をあげる(6倍)", IncreaseUIAnimationSpeed6x, "");
-	*AuthorsFavoriteCode += new MenuEntry("カメラの視野:最大", CameraFieldOfViewMaximum, "");
-	*AuthorsFavoriteCode += new MenuEntry("文字をほぼ非表示", AlmostHideCharacters, "");
-	*AuthorsFavoriteCode += new MenuEntry("UIサイズを 0.9375倍に", UISizeIncreasedBy09375Times, "");
-	*AuthorsFavoriteCode += new MenuEntry("UIサイズを戻す", ReturnUISize, "");
-	
-}
-menu->Append(AuthorsFavoriteCode);
-MenuFolder *MoldyClient = new MenuFolder("カビリークライアント");
-{
-	MenuFolder *Camera = new MenuFolder("カメラ");
-	{
-		*Camera += new MenuEntry("ズーム", Zoom, "");
-		*Camera += new MenuEntry("カメラの視野:大", CameraFieldOfViewLarge, "");
-		*Camera += new MenuEntry("カメラの視野:最大", CameraFieldOfViewMaximum, "");
-		
-	}
-	*MoldyClient += Camera;
-	MenuFolder *EffectsAndNameplates = new MenuFolder("エフェクトとネームプレート");
-	{
-		*EffectsAndNameplates += new MenuEntry("ネームプレートの場所を変える", ChangeTheLocationOfTheNameplate, "");
-		*EffectsAndNameplates += new MenuEntry("エフェクト削除", DeleteEffect, "");
-		*EffectsAndNameplates += new MenuEntry("エフェクト減少", EffectReduction, "");
-		
-	}
-	*MoldyClient += EffectsAndNameplates;
-	MenuFolder *RankPoint = new MenuFolder("ランクポイント");
-	{
-		MenuFolder *Random = new MenuFolder("ランダム");
+		*OldVersionUnstable += KavilyClient;
+		MenuFolder *DevFovarite = new MenuFolder("Dev Fovarite");
 		{
-			*Random += new MenuEntry("(9639)", N9639, "");
-			*Random += new MenuEntry("(6873)", N6873, "");
-			*Random += new MenuEntry("(4892)", N4892, "");
-			*Random += new MenuEntry("(2342)", N2342, "");
-			*Random += new MenuEntry("(7202)", N7202, "");
-			*Random += new MenuEntry("(129)", N129, "");
-			*Random += new MenuEntry("(8635)", N8635, "");
-			*Random += new MenuEntry("(3739)", N3739, "");
-			*Random += new MenuEntry("(1530)", N1530, "");
-			*Random += new MenuEntry("(5566)", N5566, "");
+			*DevFovarite += new MenuEntry("Sound Speed", SoundSpeed, "");
+			*DevFovarite += new MenuEntry("Point Editor(Randomizer)", PointEditorRandomizer, "");
+			*DevFovarite += new MenuEntry("effect smaller", EffectSmaller, "");
+			*DevFovarite += new MenuEntry("BGM Ster Mini", BGMSterMini, "");
+			*DevFovarite += new MenuEntry("Name plate Viewer MINI", NamePlateViewerMINI, "");
+			*DevFovarite += new MenuEntry("Skip UI animation", SkipUIAnimation, "");
+			*DevFovarite += new MenuEntry("FOV Boostest (Fixed)", FOVBoostestFixed, "");
+			*DevFovarite += new MenuEntry("Strings Hide", StringsHide, "");
+			*DevFovarite += new MenuEntry("s2", S2, "");
+			*DevFovarite += new MenuEntry("Point Editor(-9999)", PointEditor9999, "");
+			*DevFovarite += new MenuEntry("[++Dev Think", PlusplusDevThinkItUselessplusplus, "");
+			*DevFovarite += new MenuEntry(" It useless++]", FOVBoostest, "");
+			*DevFovarite += new MenuEntry("FOV Boostest", SoundSpeed, "");
+			*DevFovarite += new MenuEntry("Sound Speed", UISize, "");
+			*DevFovarite += new MenuEntry("UI size", UISize2, "");
+			*DevFovarite += new MenuEntry("UI size2", UISizeMicro, "");
+			*DevFovarite += new MenuEntry("UI size micro", NameChangeKavilyUser, "");
+			*DevFovarite += new MenuEntry("name change (Kavily user)", NameChangeKavilyClientUser, "");
+			*DevFovarite += new MenuEntry("name change (Kavily Client user)", SpakMini, "");
+			*DevFovarite += new MenuEntry("spak mini", EffectMoreMini, "");
+			*DevFovarite += new MenuEntry("effect more mini", SoundBalans, "");
+			*DevFovarite += new MenuEntry("sound Balans", , "");
 			
 		}
-		*RankPoint += Random;
-		*RankPoint += new MenuEntry("(9999)", N9999, "");
-		*RankPoint += new MenuEntry("(1)", N1, "");
-		*RankPoint += new MenuEntry("(-1)", 1, "");
+		*OldVersionUnstable += DevFovarite;
 		
 	}
-	*MoldyClient += RankPoint;
-	MenuFolder *Sound = new MenuFolder("サウンド");
-	{
-		*Sound += new MenuEntry("効果音の速度を通常にする", SetTheSpeedOfSoundEffectsToNormal, "");
-		*Sound += new MenuEntry("サウンドの速度2倍", DoubleTheSpeedOfSound, "");
-		*Sound += new MenuEntry("BGM速度最大", MaximumBGMSpeed, "");
-		*Sound += new MenuEntry("BGM速度アップ", BGMSpeedUp, "");
-		*Sound += new MenuEntry("BGM速度通常", BGMSpeedNormal, "");
-		
-	}
-	*MoldyClient += Sound;
-	MenuFolder *UIAndCharacters = new MenuFolder("UIと文字");
-	{
-		*UIAndCharacters += new MenuEntry("UIのアニメーション速度を6倍", UIAnimationSpeed6Times, "");
-		*UIAndCharacters += new MenuEntry("UIのサイズを通常にする", MakeUISizeNormal, "");
-		*UIAndCharacters += new MenuEntry("UIのサイズをx0.9250倍", UISizeX09250Times, "");
-		*UIAndCharacters += new MenuEntry("文字", Letter, "");
-		
-	}
-	*MoldyClient += UIAndCharacters;
-	MenuFolder *Other = new MenuFolder("そのほか");
-	{
-		*Other += new MenuEntry("カービィのサイズを小さく", KirbySizeSmaller, "");
-		*Other += new MenuEntry("カービィのサイズを治す", CureKirbysSize, "");
-		
-	}
-	*MoldyClient += Other;
-	MenuFolder *UnlockerSlightCheat = new MenuFolder("アンロッカー(微チート)");
-	{
-		*UnlockerSlightCheat += new MenuEntry("全てのコレクションをアンロック", UnlockAllCollections, "");
-		
-	}
-	*MoldyClient += UnlockerSlightCheat;
+	*Cavily += OldVersionUnstable;
 	
 }
+menu->Append(Cavily);
 
-menu->Append(MoldyClient);
+}
+* += ;
 
     }
 
