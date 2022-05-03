@@ -38,7 +38,7 @@ void km (MenuEntry *entry)
 	}
 }
 
-void Fov (MenuEntry *entry)
+void fov (MenuEntry *entry)
 {
 	offset = 0x31000000;
 	if(Process::Read32(offset + 0x006E8CAC , cmp32) && cmp32 == 0x00000080)
