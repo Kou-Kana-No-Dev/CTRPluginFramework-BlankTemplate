@@ -70,18 +70,17 @@ exit:
     void    InitMenu(PluginMenu &menu)
     {
 
-menu->Append(new MenuEntry("カヴィリーマイクロ", CavilyMicro, "様々な機能を全てひとつにまとめました"));
+MenuEntry("カヴィリーミニマル", 0a, "超安定、カヴィリーの機能をひとつにまとめました");
 MenuFolder *Cavily = new MenuFolder("カヴィリー");
 {
-	*Cavily += new MenuEntry("FOV強化(修正版)", FOVEnhancementModifiedVersion, "");
-	*Cavily += new MenuEntry("エフェクト軽減", EffectReduction, "オフライン時発生するラグを軽減しメモリーアウトを防ぎます");
-	*Cavily += new MenuEntry("UIスピードアップ", UISpeedUp, "");
-	*Cavily += new MenuEntry("RP変更(-9999)", RPChange9999, "");
-	*Cavily += new MenuEntry("RP(ランダム)", RPRandom, "");
-	*Cavily += new MenuEntry("Amiiboスキン解放", AmiiboSkinRelease, "Amiiboスキンを購入可能にします、購入してからオンにすると購入前に戻ります");
+	*Cavily += new MenuEntry("FOV強化(修正版)", 1a, "");
+	*Cavily += new MenuEntry("エフェクト軽減", 2a, "オフライン時発生するラグを軽減しメモリーアウトを防ぎます");
+	*Cavily += new MenuEntry("UIスピードアップ", 3a, "");
+	*Cavily += new MenuEntry("RP変更(-9999)", 4a, "");
+	*Cavily += new MenuEntry("RP(ランダム)", 5a, "");
+	*Cavily += new MenuEntry("Amiiboスキン解放", 6a, "Amiiboスキンを購入可能にします、購入してからオンにすると購入前に戻ります");
 	
 }
-menu->Append(Cavily);
 
 
     }
@@ -91,7 +90,7 @@ menu->Append(Cavily);
         PluginMenu *menu = new PluginMenu("Kavily", 6, 6, 6,
                                             "Kavily Client v0.1");
 
-       MessageBox("こちらはVIP版です。")
+       MessageBox("こちらはVIP版です。");
 
         // Synnchronize the menu with frame event
         menu->SynchronizeWithFrame(true);
