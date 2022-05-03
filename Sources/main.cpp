@@ -69,28 +69,24 @@ exit:
 
     void    InitMenu(PluginMenu &menu)
     {
-
-MenuEntry("カヴィリーミニマル", 0a, "超安定、カヴィリーの機能をひとつにまとめました");
-MenuFolder *Cavily = new MenuFolder("カヴィリー");
-{
-	*Cavily += new MenuEntry("FOV強化(修正版)", 1a, "");
-	*Cavily += new MenuEntry("エフェクト軽減", 2a, "オフライン時発生するラグを軽減しメモリーアウトを防ぎます");
-	*Cavily += new MenuEntry("UIスピードアップ", 3a, "");
-	*Cavily += new MenuEntry("RP変更(-9999)", 4a, "");
-	*Cavily += new MenuEntry("RP(ランダム)", 5a, "");
-	*Cavily += new MenuEntry("Amiiboスキン解放", 6a, "Amiiboスキンを購入可能にします、購入してからオンにすると購入前に戻ります");
-	
-}
-
-
+            new MenuEntry("カヴィリーマイクロ" + kStable, km, "カヴィリーの主な機能を詰め込んだもの");
+           MenuFolder* Kavily = new MenuFolder("カヴィリー ver 0.1");
+           {
+            Kavily += new MenuEntry("FOV強化(安定化済)" + kStable, Fov, "視野を広げられます");
+            Kavily += new MenuEntry("エフェクト軽減" + kStable, eff, "エフェクトを軽減しオフラインでのラグを軽減することができます");
+            Kavily += new MenuEntry("UIスピードアップ" + kStable, uspeed, "UIのスピードをあげて無駄な時間を少しはぶけます");
+            Kavily += new MenuEntry("RP(-9999)" + kStable, rpff, "");
+            Kavily += new MenuEntry("RP(ランダム)" + kStable, rprnd, "");
+            Kavily += new MenuEntry("Amiiboスキン購入フラグ解放" + kStable, amib, "Amiiboスキンを購入可能にします、購入してからオンにすると購入前に戻ります");
+            }
     }
 
     int     main(void)
     {
         PluginMenu *menu = new PluginMenu("Kavily", 6, 6, 6,
-                                            "Kavily Client v0.1");
+                                            "Kavily Client v0.1                              Made By Kou Kana");
 
-       MessageBox("こちらはVIP版です。");
+       MessageBox("VIP! Luanch Success");
 
         // Synnchronize the menu with frame event
         menu->SynchronizeWithFrame(true);

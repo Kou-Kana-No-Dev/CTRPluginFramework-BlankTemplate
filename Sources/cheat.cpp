@@ -11,7 +11,7 @@ namespace CTRPluginFramework
 {
 
 //カヴィリーマイクロ
-void 0a (MenuEntry *entry)
+void km (MenuEntry *entry)
 {
 	offset = 0x30000000;
 	data32 = Utils::Random(0x0000000 , 0x0000270F);
@@ -37,8 +37,8 @@ void 0a (MenuEntry *entry)
 		Process::Write32(offset + 0x06E8974 , data32);
 	}
 }
-//FOV強化(修正版)
-void 1a(MenuEntry *entry)
+
+void Fov (MenuEntry *entry)
 {
 	offset = 0x31000000;
 	if(Process::Read32(offset + 0x006E8CAC , cmp32) && cmp32 == 0x00000080)
@@ -55,25 +55,25 @@ void 1a(MenuEntry *entry)
 	}
 }
 //エフェクト軽減
-void 2a(MenuEntry *entry)
+void eff(MenuEntry *entry)
 {
 	Process::Write32(0x001D9954 , 0x3F600000);
 	Process::Write32(0x001D93F8 , 0x3F600000);
 	Process::Write32(0x001D92F0 , 0x3F600000);
 }
 //UIスピードアップ
-void 3a(MenuEntry *entry)
+void uspeed(MenuEntry *entry)
 {
 	Process::Write32(0x00215500 , 0x40C00000);
 }
 //RP変更(-9999)
-void 4a(MenuEntry *entry)
+void rpff(MenuEntry *entry)
 {
 	offset = 0x30000000;
 	Process::Write32(offset + 0x0063C5C0 , 0xFFFFD8F1);
 }
 //RP(ランダム)
-void 5a(MenuEntry *entry)
+void rprnd(MenuEntry *entry)
 {
 	offset = 0x30000000;
 	data32 = Utils::Random(0x0000000 , 0x0000270F);
@@ -81,7 +81,7 @@ void 5a(MenuEntry *entry)
 	offset += 0x4;
 }
 //Amiiboスキン解放
-void 6a(MenuEntry *entry)
+void amib(MenuEntry *entry)
 {
 	offset = 0x30000000;
 	Process::Write32(offset + 0x0063C92C , 0x02020203);
