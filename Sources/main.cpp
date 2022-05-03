@@ -74,7 +74,7 @@ exit:
     {
             menu += new MenuEntry("カヴィリーマイクロ" , km, "カヴィリーの主な機能を詰め込んだもの");
 	        MenuFolder* Kavily = new MenuFolder("カヴィリー ver 0.1"); {
-               *Kavily =+ new MenuFolder("カヴィリー ver 0.1"
+               *Kavily =+ new MenuFolder("カヴィリー ver 0.1","",
             new MenuEntry("FOV強化(安定化済)" , fov, "視野を広げられます");
             new MenuEntry("エフェクト軽減" , eff, "エフェクトを軽減しオフラインでのラグを軽減することができます");
             new MenuEntry("UIスピードアップ" , uspeed, "UIのスピードをあげて無駄な時間を少しはぶけます");
@@ -92,7 +92,7 @@ exit:
 
         // Synnchronize the menu with frame event
         menu->SynchronizeWithFrame(true);
-		OSD::Notify(Color::Cyan << "Enjoy the search life :)");
+		OSD::Notify(Color::Cyan << "Thank you For Using Kavily!");
 		
         // Init our menu entries & folders
         InitMenu(*menu);
