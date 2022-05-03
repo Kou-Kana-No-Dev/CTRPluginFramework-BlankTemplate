@@ -7,7 +7,7 @@
 namespace CTRPluginFramework
 {
 	//aboutの部分
-	static const std::string About ="ここに説明を書くよ！";
+	static const std::string About = "Kavily Client By Kou Kana";
 	
     // This patch the NFC disabling the touchscreen when scanning an amiibo, which prevents ctrpf to be used
     static void    ToggleTouchscreenForceOn(void)
@@ -87,7 +87,7 @@ exit:
 
     int     main(void)
     {
-        PluginMenu* menu = new PluginMenu("名前", 9,9,9,About);
+        PluginMenu* menu = new PluginMenu("Kavily Client", 6,6,6,About);
 
         // Synnchronize the menu with frame event
         menu->SynchronizeWithFrame(true);
