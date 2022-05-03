@@ -71,7 +71,7 @@ exit:
     void    InitMenu(PluginMenu &menu)
     {
          menu += new MenuEntry("カヴィリーマイクロ" , km, "カヴィリーの主な機能を詰め込んだもの");
-          menu += MenuFolder *Kavily = new MenuFolder("カヴィリー");
+          MenuFolder *Kavily = new MenuFolder("カヴィリー");
 {
 	*Kavily += new MenuEntry("FOV強化(修正版)", fov, "");
 	*Kavily += new MenuEntry("エフェクト軽減", eff, "オフライン時発生するラグを軽減しメモリーアウトを防ぎます");
@@ -81,7 +81,7 @@ exit:
 	*Kavily += new MenuEntry("Amiiboスキン解放", amib, "Amiiboスキンを購入可能にします、購入してからオンにすると購入前に戻ります");
 	
 }
-
+menu += Kavily;
     }
 
     int     main(void)
