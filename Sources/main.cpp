@@ -1,14 +1,12 @@
-#include "3ds.h"
+#include <3ds.h>
 #include "csvc.h"
-#include "CTRPluginFramework.hpp"
+#include <CTRPluginFramework.hpp>
 #include "cheats.hpp"
+
 #include <vector>
 
 namespace CTRPluginFramework
 {
-	//aboutの部分
-	static const std::string About = "Kavily Client By Kou Kana";
-	
     // This patch the NFC disabling the touchscreen when scanning an amiibo, which prevents ctrpf to be used
     static void    ToggleTouchscreenForceOn(void)
     {
@@ -72,28 +70,30 @@ exit:
 
     void    InitMenu(PluginMenu &menu)
     {
-            menu += new MenuEntry("カヴィリーマイクロ" , km, "カヴィリーの主な機能を詰め込んだもの");
-	        menu += MenuFolder* Kavily = new MenuFolder("カヴィリー ver 0.1"); {
-               
-            new MenuEntry("FOV強化(安定化済)" , fov, "視野を広げられます");
-            new MenuEntry("エフェクト軽減" , eff, "エフェクトを軽減しオフラインでのラグを軽減することができます");
-            new MenuEntry("UIスピードアップ" , uspeed, "UIのスピードをあげて無駄な時間を少しはぶけます");
-            new MenuEntry("RP(-9999)" , rpff, "");
-            new MenuEntry("RP(ランダム)" , rprnd, "");
-            new MenuEntry("Amiiboスキン購入フラグ解放" , amib, "Amiiboスキンを購入可能にします、購入してからオンにすると購入前に戻ります");
-					 
+           MenuFolder* Kavily = new MenuFolder("カヴィリー ver 0.1");
+           {
+            Kavily += new MenuEntry("カヴィリーマイクロ" , km, "カヴィリーの主な機能を詰め込んだもの");
+            Kavily += new MenuEntry("FOV強化(安定化済)" , fov, "視野を広げられます");
+            Kavily += new MenuEntry("エフェクト軽減" , eff, "エフェクトを軽減しオフラインでのラグを軽減することができます");
+            Kavily += new MenuEntry("UIスピードアップ" , uspeed, "UIのスピードをあげて無駄な時間を少しはぶけます");
+            Kavily += new MenuEntry("RP(-9999)" , rpff, "");
+            Kavily += new MenuEntry("RP(ランダム)" , rprnd, "");
+            Kavily += new MenuEntry("Amiiboスキン購入フラグ解放" , amib, "Amiiboスキンを購入可能にします、購入してからオンにすると購入前に戻ります");
             }
-			
     }
 
     int     main(void)
     {
-        PluginMenu* menu = new PluginMenu("Kavily Client", 6,6,6,About);
+        PluginMenu *menu = new PluginMenu("Kavily", 6, 6, 6,
+                                            "Kavily Client v0.1                              Made By Kou Kana");
+
+       MessageBox("VIP! Luanch Success");
 
         // Synnchronize the menu with frame event
         menu->SynchronizeWithFrame(true);
-		OSD::Notify(Color::Cyan << "Thank you For Using Kavily!");
-		
+        menu->ShowWelcomeMessage(false);
+       OSD::Notify(Color::Cyan << "Thank you for Using Kavily Client");
+
         // Init our menu entries & folders
         InitMenu(*menu);
 
@@ -103,6 +103,6 @@ exit:
         delete menu;
 
         // Exit plugin
-		return (0);
+        return (0);
     }
 }
