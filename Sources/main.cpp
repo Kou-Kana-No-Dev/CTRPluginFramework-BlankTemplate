@@ -71,14 +71,18 @@ exit:
     void    InitMenu(PluginMenu &menu)
     {
          menu += new MenuEntry("カヴィリーマイクロ" , km, "カヴィリーの主な機能を詰め込んだもの");
-           menu += new MenuFolder("カヴィリー ver 0.1",Kavily,"");
-                                  {
-                                     *Kavily += new MenuEntry("FOV強化(安定化済)" , fov, "視野を広げられます");
-                                      *Kavily += new MenuEntry("エフェクト軽減" , eff, "エフェクトを軽減しオフラインでのラグを軽減することができます");
-                                      *Kavily += new MenuEntry("UIスピードアップ" , uspeed, "UIのスピードをあげて無駄な時間を少しはぶけます");
-                                      *Kavily += new MenuEntry("RP(-9999)" , rpff, ""); new MenuEntry("RP(ランダム)" , rprnd, "");
-                                      *Kavily += new MenuEntry("Amiiboスキン購入フラグ解放" , amib, "Amiiboスキンを購入可能にします、購入してからオンにすると購入前に戻ります");
-                                      }
+          MenuFolder *Cavily = new MenuFolder("カヴィリー");
+{
+	*Cavily += new MenuEntry("FOV強化(修正版)", FOVEnhancementModifiedVersion, "");
+	*Cavily += new MenuEntry("エフェクト軽減", EffectReduction, "オフライン時発生するラグを軽減しメモリーアウトを防ぎます");
+	*Cavily += new MenuEntry("UIスピードアップ", UISpeedUp, "");
+	*Cavily += new MenuEntry("RP変更(-9999)", RPChange9999, "");
+	*Cavily += new MenuEntry("RP(ランダム)", RPRandom, "");
+	*Cavily += new MenuEntry("Amiiboスキン解放", AmiiboSkinRelease, "Amiiboスキンを購入可能にします、購入してからオンにすると購入前に戻ります");
+	
+}
+menu->Append(Cavily);
+
     }
 
     int     main(void)
