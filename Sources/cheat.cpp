@@ -37,7 +37,7 @@ void km (MenuEntry *entry)
 		Process::Write32(offset + 0x06E8974 , data32);
 	}
 }
-
+//RP変更(-9999)
 void fov (MenuEntry *entry)
 {
 	offset = 0x31000000;
