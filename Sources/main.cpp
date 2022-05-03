@@ -73,8 +73,8 @@ exit:
     void    InitMenu(PluginMenu &menu)
     {
             menu += new MenuEntry("カヴィリーマイクロ" , km, "カヴィリーの主な機能を詰め込んだもの");
-	        MenuFolder* Kavily = new MenuFolder("カヴィリー ver 0.1"); 
-               *Kavily =+ new MenuFolder("カヴィリー ver 0.1",""); {
+	        menu += MenuFolder* Kavily = new MenuFolder("カヴィリー ver 0.1"); {
+               
             new MenuEntry("FOV強化(安定化済)" , fov, "視野を広げられます");
             new MenuEntry("エフェクト軽減" , eff, "エフェクトを軽減しオフラインでのラグを軽減することができます");
             new MenuEntry("UIスピードアップ" , uspeed, "UIのスピードをあげて無駄な時間を少しはぶけます");
