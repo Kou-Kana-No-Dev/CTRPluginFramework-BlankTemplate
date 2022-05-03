@@ -74,13 +74,14 @@ exit:
     {
             menu += new MenuEntry("カヴィリーマイクロ" , km, "カヴィリーの主な機能を詰め込んだもの");
 	        MenuFolder* Kavily = new MenuFolder("カヴィリー ver 0.1"); {
- 
+               *Kavily =+ new MenuFolder("カヴィリー ver 0.1"
             new MenuEntry("FOV強化(安定化済)" , fov, "視野を広げられます");
             new MenuEntry("エフェクト軽減" , eff, "エフェクトを軽減しオフラインでのラグを軽減することができます");
             new MenuEntry("UIスピードアップ" , uspeed, "UIのスピードをあげて無駄な時間を少しはぶけます");
             new MenuEntry("RP(-9999)" , rpff, "");
             new MenuEntry("RP(ランダム)" , rprnd, "");
             new MenuEntry("Amiiboスキン購入フラグ解放" , amib, "Amiiboスキンを購入可能にします、購入してからオンにすると購入前に戻ります");
+					 });
             }
 			
     }
