@@ -69,6 +69,7 @@ exit:
 
     void    InitMenu(PluginMenu &menu)
     {
+
 menu->Append(new MenuEntry("カヴィリーマイクロ", CavilyMicro, "様々な機能を全てひとつにまとめました"));
 MenuFolder *Cavily = new MenuFolder("カヴィリー");
 {
@@ -78,127 +79,10 @@ MenuFolder *Cavily = new MenuFolder("カヴィリー");
 	*Cavily += new MenuEntry("RP変更(-9999)", RPChange9999, "");
 	*Cavily += new MenuEntry("RP(ランダム)", RPRandom, "");
 	*Cavily += new MenuEntry("Amiiboスキン解放", AmiiboSkinRelease, "Amiiboスキンを購入可能にします、購入してからオンにすると購入前に戻ります");
-	MenuFolder *OldVersionUnstable = new MenuFolder("古いバージョン(不安定)");
-	{
-		MenuFolder *KavilyClient = new MenuFolder("Kavily Client");
-		{
-			MenuFolder *Camera = new MenuFolder("Camera");
-			{
-				*Camera += new MenuEntry("Zoom", Zoom, "");
-				*Camera += new MenuEntry("FOV Booster", FOVBooster, "");
-				*Camera += new MenuEntry("FOV Boostest", FOVBoostest, "");
-				
-			}
-			*KavilyClient += Camera;
-			MenuFolder *EffectAndNamePlate = new MenuFolder("effect and name plate");
-			{
-				*EffectAndNamePlate += new MenuEntry("Name plate Viewer", NamePlateViewer, "");
-				*EffectAndNamePlate += new MenuEntry("Name plate Viewer MINI", NamePlateViewerMINI, "");
-				*EffectAndNamePlate += new MenuEntry("spak mini", SpakMini, "");
-				*EffectAndNamePlate += new MenuEntry("spak", Spak, "");
-				*EffectAndNamePlate += new MenuEntry("effect Removing", EffectRemoving, "");
-				*EffectAndNamePlate += new MenuEntry("effect smaller", EffectSmaller, "");
-				
-			}
-			*KavilyClient += EffectAndNamePlate;
-			MenuFolder *Point = new MenuFolder("Point");
-			{
-				MenuFolder *RND = new MenuFolder("RND");
-				{
-					*RND += new MenuEntry("Point Editor(9639)", PointEditor9639, "");
-					*RND += new MenuEntry("Point Editor(6873)", PointEditor6873, "");
-					*RND += new MenuEntry("Point Editor(4892)", PointEditor4892, "");
-					*RND += new MenuEntry("Point Editor(2342)", PointEditor2342, "");
-					*RND += new MenuEntry("Point Editor(7202)", PointEditor7202, "");
-					*RND += new MenuEntry("Point Editor(129)", PointEditor129, "");
-					*RND += new MenuEntry("Point Editor(8635)", PointEditor8635, "");
-					*RND += new MenuEntry("Point Editor(3739)", PointEditor3739, "");
-					*RND += new MenuEntry("Point Editor(1530)", PointEditor1530, "");
-					*RND += new MenuEntry("Point Editor(5566)", PointEditor5566, "");
-					
-				}
-				*Point += RND;
-				*Point += new MenuEntry("Point Editor(Randomizer)", PointEditorRandomizer, "");
-				*Point += new MenuEntry("Point Editor(9999)", PointEditor9999, "");
-				*Point += new MenuEntry("Point Editor(1)", PointEditor1, "");
-				*Point += new MenuEntry("Point Editor(-9999)", PointEditor9999, "");
-				*Point += new MenuEntry("Point Editor(-1)", PointEditor1, "");
-				
-			}
-			*KavilyClient += Point;
-			MenuFolder *SoundAndBGM = new MenuFolder("Sound And BGM");
-			{
-				*SoundAndBGM += new MenuEntry("Sound Speed Normal", SoundSpeedNormal, "");
-				*SoundAndBGM += new MenuEntry("Sound Speed", SoundSpeed, "");
-				*SoundAndBGM += new MenuEntry("BGM Ster En", BGMSterEn, "");
-				*SoundAndBGM += new MenuEntry("BGM Ster Mini", BGMSterMini, "");
-				*SoundAndBGM += new MenuEntry("BGM Ster", BGMSter, "");
-				
-			}
-			*KavilyClient += SoundAndBGM;
-			MenuFolder *UIAndStringsSize = new MenuFolder("UI and Strings size");
-			{
-				*UIAndStringsSize += new MenuEntry("Skip UI animation", SkipUIAnimation, "");
-				*UIAndStringsSize += new MenuEntry("UI size", UISize, "");
-				*UIAndStringsSize += new MenuEntry("UI size Mini", UISizeMini, "");
-				*UIAndStringsSize += new MenuEntry("Strings", Strings, "");
-				
-			}
-			*KavilyClient += UIAndStringsSize;
-			MenuFolder *Other = new MenuFolder("Other");
-			{
-				*Other += new MenuEntry("Kirby Size", KirbySize, "");
-				*Other += new MenuEntry("Kirby Size Fix", KirbySizeFix, "");
-				
-			}
-			*KavilyClient += Other;
-			MenuFolder *UnlockerHack = new MenuFolder("Unlocker Hack");
-			{
-				*UnlockerHack += new MenuEntry("Safe amiibo skin", SafeAmiiboSkin, "");
-				*UnlockerHack += new MenuEntry("Amiibo Skin Hax(Danger)", AmiiboSkinHaxDanger, "");
-				*UnlockerHack += new MenuEntry("Cosmetics Hack(Danger)", CosmeticsHackDanger, "");
-				
-			}
-			*KavilyClient += UnlockerHack;
-			
-		}
-		*OldVersionUnstable += KavilyClient;
-		MenuFolder *DevFovarite = new MenuFolder("Dev Fovarite");
-		{
-			*DevFovarite += new MenuEntry("Sound Speed", SoundSpeed, "");
-			*DevFovarite += new MenuEntry("Point Editor(Randomizer)", PointEditorRandomizer, "");
-			*DevFovarite += new MenuEntry("effect smaller", EffectSmaller, "");
-			*DevFovarite += new MenuEntry("BGM Ster Mini", BGMSterMini, "");
-			*DevFovarite += new MenuEntry("Name plate Viewer MINI", NamePlateViewerMINI, "");
-			*DevFovarite += new MenuEntry("Skip UI animation", SkipUIAnimation, "");
-			*DevFovarite += new MenuEntry("FOV Boostest (Fixed)", FOVBoostestFixed, "");
-			*DevFovarite += new MenuEntry("Strings Hide", StringsHide, "");
-			*DevFovarite += new MenuEntry("s2", S2, "");
-			*DevFovarite += new MenuEntry("Point Editor(-9999)", PointEditor9999, "");
-			*DevFovarite += new MenuEntry("[++Dev Think", PlusplusDevThinkItUselessplusplus, "");
-			*DevFovarite += new MenuEntry(" It useless++]", FOVBoostest, "");
-			*DevFovarite += new MenuEntry("FOV Boostest", SoundSpeed, "");
-			*DevFovarite += new MenuEntry("Sound Speed", UISize, "");
-			*DevFovarite += new MenuEntry("UI size", UISize2, "");
-			*DevFovarite += new MenuEntry("UI size2", UISizeMicro, "");
-			*DevFovarite += new MenuEntry("UI size micro", NameChangeKavilyUser, "");
-			*DevFovarite += new MenuEntry("name change (Kavily user)", NameChangeKavilyClientUser, "");
-			*DevFovarite += new MenuEntry("name change (Kavily Client user)", SpakMini, "");
-			*DevFovarite += new MenuEntry("spak mini", EffectMoreMini, "");
-			*DevFovarite += new MenuEntry("effect more mini", SoundBalans, "");
-			*DevFovarite += new MenuEntry("sound Balans", , "");
-			
-		}
-		*OldVersionUnstable += DevFovarite;
-		
-	}
-	*Cavily += OldVersionUnstable;
 	
 }
 menu->Append(Cavily);
 
-}
-* += ;
 
     }
 
