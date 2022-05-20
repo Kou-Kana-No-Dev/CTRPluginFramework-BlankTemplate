@@ -1011,14 +1011,14 @@ void StaminaSuperFastRecovery(MenuEntry *entry)
 {
 Process::Read32(0x08195350 , data32);
 	offset = data32;
-	Process::Write32(offset + 0x00000F5E , 0x00000096);
+	Process::Write8(offset + 0x00000F5E , 0x96);
 }
 //HP置き換え回復
 void HPSuperFastRecovery(MenuEntry *entry)
 {
 	Process::Read32(0x08195350 , data32);
 	offset = data32;
-	Process::Write32(offset + 0x00000F52 , 0x00000096);
+	Process::Write8(offset + 0x00000F52 , 0x96);
 }
 
 //切れ味MAX
