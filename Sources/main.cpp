@@ -77,7 +77,7 @@ const std::string nimotsu = "" << Color::Green << "";
 const std::string Hunateiastus = "" << Color::Red << "";
 const std::string mving = "" << Color::Blue << "";
 const std::string Inv = "" << Color::Yellow << "";
-const std::string HR = "" << Color::Orange << "";
+const std::string HRS = "" << Color::Orange << "";
 		menu += new MenuEntry(Shyyy + "設定バグらせる", SetBug, "");
 		menu += new MenuEntry(Shyyy + "プレイヤーのフリーズを治す" + Shyyy, CurePlayerFreeze, "R+Lで実行");
 		menu += new MenuEntry(Shyyy + "Xコマンド" + Shyyy, XCommand, "コマンドツール                       使えるコマンド                                                        nam:名前変更                    例:nam あ                    itm:アイテムをポーチの1番上に出現                     例:itm 0 0 0 A ←最後に空白この状態でY+→                     plhk:チャット乗っ取り                   例:plhkと入力し1度決定してからPlayer/:1");
@@ -103,11 +103,11 @@ MenuFolder *WhatToBring = new MenuFolder(Inv + "持ち物");
 menu += WhatToBring;
 MenuFolder *Mobile = new MenuFolder(mving + "移動系");
 {
-	MenuFolder *CrazyMove = new MenuFolder("クレイジームーブ");
+	MenuFolder *CrazyMove = new MenuFolder(HRS + "クレイジームーブ");
 	{
-		*CrazyMove += new MenuEntry("クレイジーウォーク(ボタン割り当てなし)", CrazyWalkNoButtonAssignment, "");
-		*CrazyMove += new MenuEntry("クレイジージャンプ", CrazyJump, "Bを押している間発動");
-		*CrazyMove += new MenuEntry("クレイジーウォーク(ボタンあり)", CrazyWalkWithButton, "R+Y");
+		*CrazyMove += new MenuEntry(HRS + "クレイジーウォーク(ボタン割り当てなし)", CrazyWalkNoButtonAssignment, "");
+		*CrazyMove += new MenuEntry(HRS + "クレイジージャンプ", CrazyJump, "Bを押している間発動");
+		*CrazyMove += new MenuEntry(HRS + "クレイジーウォーク(ボタンあり)", CrazyWalkWithButton, "R+Y");
 		
 	}
 	*Mobile += CrazyMove;
@@ -136,18 +136,18 @@ MenuFolder *Mobile = new MenuFolder(mving + "移動系");
 	
 }
 menu += Mobile;
-MenuFolder *HR = new MenuFolder(HR + "HR");
+MenuFolder *HR = new MenuFolder(HRS + "HR");
 {
-	*HR += new MenuEntry(HR + "HR 721", HR721, "");
-	*HR += new MenuEntry(HR + "HR 810", HR810, "");
-	*HR += new MenuEntry(HR + "HR 8585", HR8585, "");
-	*HR += new MenuEntry(HR + "HR 4545", HR4545, "");
-	*HR += new MenuEntry(HR + "HR 1919", HR1919, "");
-	*HR += new MenuEntry(HR + "HR 999", HR999, "");
-	*HR += new MenuEntry(HR + "HR 4", HR4, "");
-	*HR += new MenuEntry(HR + "HR 65535", HR65535, "");
-	*HR += new MenuEntry(HR + "HR 1", HR1, "");
-	*HR += new MenuEntry(HR + "HR 0", HR0, "");
+	*HR += new MenuEntry(HRS + "HR 721", HR721, "");
+	*HR += new MenuEntry(HRS + "HR 810", HR810, "");
+	*HR += new MenuEntry(HRS + "HR 8585", HR8585, "");
+	*HR += new MenuEntry(HRS + "HR 4545", HR4545, "");
+	*HR += new MenuEntry(HRS + "HR 1919", HR1919, "");
+	*HR += new MenuEntry(HRS + "HR 999", HR999, "");
+	*HR += new MenuEntry(HRS + "HR 4", HR4, "");
+	*HR += new MenuEntry(HRS + "HR 65535", HR65535, "");
+	*HR += new MenuEntry(HRS + "HR 1", HR1, "");
+	*HR += new MenuEntry(HRS + "HR 0", HR0, "");
 	
 }
 menu += HR;
