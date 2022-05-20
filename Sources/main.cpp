@@ -89,7 +89,7 @@ MenuFolder *WhatToBring = new MenuFolder("持ち物");
 	*WhatToBring += new MenuEntry("ポーチを空にする", EmptyPouch, "");
 	*WhatToBring += new MenuEntry("バグアイテムセット", BugItemSet, "");
 	*WhatToBring += new MenuEntry("ポーチのアイテム無限", InfiniteItemsOnThePouch, "");
-	*WhatToBring += new MenuEntry("開発者お気に入りアイテムセット", DeveloperFavoriteItemSet, "");WhatToBring
+	*WhatToBring += new MenuEntry("開発者お気に入りアイテムセット", DeveloperFavoriteItemSet, "");
 	*WhatToBring += new MenuEntry("マップいつでも表示", MapAlwaysDisplayed, "");
 	*WhatToBring += new MenuEntry("ピン開発者お気に入りセット", PinDeveloperFavoriteSet, "");
 	
