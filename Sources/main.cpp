@@ -30,7 +30,7 @@ namespace CTRPluginFramework
         Handle  processHandle;
         s64     textTotalSize = 0;
         s64     startAddress = 0;
-        u32 *   found;
+        u32 *menu   found;
 
         if (R_FAILED(svcOpenProcess(&processHandle, 16)))
             return;
@@ -80,8 +80,6 @@ MenuFolder *Player = new MenuFolder("プレイヤー");
 	*Player += new MenuEntry("チャット乗っ取り", ChatHijacking, "XCMD以外にここからでもできます矢印キー");
 	
 }
-menu->Append(Player);
-menu->Append(new MenuEntry("スピードハックオフ", SpeedHackOff, ""));
 MenuFolder *SpeedHackUnstableVersion = new MenuFolder("スピードハック(不安定版)");
 {
 	*SpeedHackUnstableVersion += new MenuEntry("スピードハックテスト", SpeedHackTest, "");
@@ -90,11 +88,8 @@ MenuFolder *SpeedHackUnstableVersion = new MenuFolder("スピードハック(不
 	*SpeedHackUnstableVersion += new MenuEntry("スローハック", SlowHack, "");
 	*SpeedHackUnstableVersion += new MenuEntry("スローハック2", SlowHack2, "");
 	
-}
-menu->Append(SpeedHackUnstableVersion);
 
 }
-* += ;
 MenuFolder *HR = new MenuFolder("HR");
 {
 *HR +=new MenuEntry("HR 721", HR721, "");
@@ -109,7 +104,7 @@ MenuFolder *HR = new MenuFolder("HR");
 *HR +=new MenuEntry("HR 0", HR0, "");
 
 }
-* += HR;
+*menu += HR;
 MenuFolder *Quest = new MenuFolder("クエスト");
 {
 *Quest +=new MenuEntry("ボスHP1(オフライン専用)", BossHP1OfflineOnly, "");
@@ -125,7 +120,7 @@ MenuFolder *Quest = new MenuFolder("クエスト");
 *Quest +=new MenuEntry("タイマーすぐ減る", TimerWillDecreaseSoon, "");
 
 }
-* += Quest;
+*menu += Quest;
 MenuFolder *Status = new MenuFolder("ステータス");
 {
 *Status +=new MenuEntry("スキルスロット埋める", FillSkillSlots, "→:1番上のスキル↑:真ん中のスキル←:1番下のスキル");
@@ -144,7 +139,7 @@ MenuFolder *Status = new MenuFolder("ステータス");
 *Status +=new MenuEntry("HP0", HP0, "");
 
 }
-* += Status;
+*menu += Status;
 MenuFolder *Camera = new MenuFolder("カメラ");
 {
 *Camera +=new MenuEntry("カメラ視野強化", CameraFieldOfViewEnhancement, "");
@@ -158,7 +153,7 @@ MenuFolder *Camera = new MenuFolder("カメラ");
 *Camera +=new MenuEntry("FPS視点(V1)", FPSViewpointV1, "");
 
 }
-* += Camera;
+*menu += Camera;
 MenuFolder *WhatToBring = new MenuFolder("持ち物");
 {
 	*WhatToBring += new MenuEntry("龍歴院ポイント無限", RyujiinPointInfinite, "");
@@ -171,7 +166,6 @@ MenuFolder *WhatToBring = new MenuFolder("持ち物");
 	*WhatToBring += new MenuEntry("ピン開発者お気に入りセット", PinDeveloperFavoriteSet, "");
 	
 }
-menu->Append(WhatToBring);
 MenuFolder *Mobile = new MenuFolder("移動系");
 {
 	MenuFolder *CrazyMove = new MenuFolder("クレイジームーブ");
@@ -181,7 +175,6 @@ MenuFolder *Mobile = new MenuFolder("移動系");
 		*CrazyMove += new MenuEntry("クレイジーウォーク(ボタンあり)", CrazyWalkWithButton, "R+Y");
 		
 	}
-	*Mobile += CrazyMove;
 	*Mobile += new MenuEntry("バルスライド(バルファルク)", BalslideBalfalk, "ダッシュ中、スライドと速度上昇");
 	*Mobile += new MenuEntry("バルフライ(バルファルク:テスト段階)", BalflyBalfalkTestStage, "左右十字キーで方向転換上下十字キーで高度変更Lでとぶ(低速)");
 	*Mobile += new MenuEntry("バルフライ v2(バルファルク)", BalflyV2Balfalk, "R+X:空中で停止A+R:高度上昇R+L:高度低下R+Y:バルスライドR+左右十字キー:向き変更R+B:バックバルスライド");
@@ -194,6 +187,7 @@ MenuFolder *Mobile = new MenuFolder("移動系");
 	*Mobile += new MenuEntry("座標移動(早め)", CoordinateMovementEarly, "R+スライドパッド");
 	*Mobile += new MenuEntry("スピードハックv2", SpeedHackV2, "");
 	*Mobile += new MenuEntry("スピードハックV2(遅め)", SpeedHackV2Slow, "");
+	*Mobile += new MenuEntry("スピードハック オフ", SpeedHackOff, "");
 
     }
 
