@@ -1018,7 +1018,7 @@ void HPSuperFastRecovery(MenuEntry *entry)
 {
 	Process::Read32(0x08195350 , data32);
 	offset = data32;
-	Process::Write32(offset + 0x00000F52 , 0x00000096)
+	Process::Write32(offset + 0x00000F52 , 0x00000096);
 }
 
 //切れ味MAX
