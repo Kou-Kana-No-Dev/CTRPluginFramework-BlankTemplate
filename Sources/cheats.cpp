@@ -7,7 +7,23 @@ float dataf = 0;
 
 namespace CTRPluginFramework
 {
-
+//太刀連射
+void TachiFiring(MenuEntry *entry)
+{
+	if(Controller::IsKeyDown(A))
+	{
+		Process::Write32(0x0819428C , 0x00000000);
+		Process::Read32(0x08195350 , data32);
+		offset = data32;
+		Process::Write32(offset + 0x000029B8 , 0x3FFFE3CE);
+		Process::Write32(offset + 0x00001FE4 , 0x00270004);
+		//floatmode:on
+		Process::ReadFloat(offset + 0x0000044 , dataf);
+		dataf += -52;
+		Process::WriteFloat(offset + 0x0000044 , dataf);
+		Process::Write32(offset + 0x000002F8 , 0x42950000);
+	}
+}
 //設定バグらせる
 void SetBug(MenuEntry *entry)
 {
@@ -990,66 +1006,21 @@ void CrossbowFiring(MenuEntry *entry)
 		Process::Write8(offset + 0x000025AA , 0x01);
 	}
 }
-//スタミナ超高速回復
+//スタミナ置き換え回復
 void StaminaSuperFastRecovery(MenuEntry *entry)
 {
-	if(Process::Read32(0x08195350 , cmp32) && cmp32 != 0x00000000)
-	{
-		Process::Read32(0x08195350 , data32);
-		offset = data32;
-		if(Process::Read16(offset + 0x00000F5E , cmp16) && (cmp16 & 0xFFFF) < 0x0096)
-		{
-			Process::Read32(offset + 0x0000F5E , data32);
-			data32 += 0x00000010;
-			Process::Write32(offset + 0x0000F5E , data32);
-		}
-	}
+Process::Read32(0x08195350 , data32);
+	offset = data32;
+	Process::Write32(offset + 0x00000F5E , 0x00000096);
 }
-//HP超高速回復
+//HP置き換え回復
 void HPSuperFastRecovery(MenuEntry *entry)
 {
-	if(Process::Read32(0x08195350 , cmp32) && cmp32 != 0x00000000)
-	{
-		Process::Read32(0x08195350 , data32);
-		offset = data32;
-		if(Process::Read16(offset + 0x00000F52 , cmp16) && (cmp16 & 0xFFFF) > 0x0096)
-		{
-			Process::Read32(offset + 0x0000F52 , data32);
-			data32 += 0x00000010;
-			Process::Write32(offset + 0x0000F52 , data32);
-		}
-	}
+	Process::Read32(0x08195350 , data32);
+	offset = data32;
+	Process::Write32(offset + 0x00000F52 , 0x00000096)
 }
-//HP高速回復
-void HPFastRecovery(MenuEntry *entry)
-{
-	if(Process::Read32(0x08195350 , cmp32) && cmp32 != 0x00000000)
-	{
-		Process::Read32(0x08195350 , data32);
-		offset = data32;
-		if(Process::Read16(offset + 0x00000F52 , cmp16) && (cmp16 & 0xFFFF) > 0x0096)
-		{
-			Process::Read32(offset + 0x0000F52 , data32);
-			data32 += 0x00000001;
-			Process::Write32(offset + 0x0000F52 , data32);
-		}
-	}
-}
-//スタミナ高速回復
-void StaminaFastRecovery(MenuEntry *entry)
-{
-	if(Process::Read32(0x08195350 , cmp32) && cmp32 != 0x00000000)
-	{
-		Process::Read32(0x08195350 , data32);
-		offset = data32;
-		if(Process::Read16(offset + 0x00000F5E , cmp16) && (cmp16 & 0xFFFF) < 0x0096)
-		{
-			Process::Read32(offset + 0x0000F5E , data32);
-			data32 += 0x00000002;
-			Process::Write32(offset + 0x0000F5E , data32);
-		}
-	}
-}
+
 //切れ味MAX
 void SharpnessMAX(MenuEntry *entry)
 {
