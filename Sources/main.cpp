@@ -81,6 +81,7 @@ MenuFolder *Player = new MenuFolder("プレイヤー");
 	*Player += new MenuEntry("チャット乗っ取り", ChatHijacking, "XCMD以外にここからでもできます矢印キー");
 	
 }
+menu += Player;
 MenuFolder *WhatToBring = new MenuFolder("持ち物");
 {
 	*WhatToBring += new MenuEntry("龍歴院ポイント無限", RyujiinPointInfinite, "");
@@ -88,11 +89,12 @@ MenuFolder *WhatToBring = new MenuFolder("持ち物");
 	*WhatToBring += new MenuEntry("ポーチを空にする", EmptyPouch, "");
 	*WhatToBring += new MenuEntry("バグアイテムセット", BugItemSet, "");
 	*WhatToBring += new MenuEntry("ポーチのアイテム無限", InfiniteItemsOnThePouch, "");
-	*WhatToBring += new MenuEntry("開発者お気に入りアイテムセット", DeveloperFavoriteItemSet, "");
+	*WhatToBring += new MenuEntry("開発者お気に入りアイテムセット", DeveloperFavoriteItemSet, "");WhatToBring
 	*WhatToBring += new MenuEntry("マップいつでも表示", MapAlwaysDisplayed, "");
 	*WhatToBring += new MenuEntry("ピン開発者お気に入りセット", PinDeveloperFavoriteSet, "");
 	
 }
+menu += WhatToBring;
 MenuFolder *Mobile = new MenuFolder("移動系");
 {
 	MenuFolder *CrazyMove = new MenuFolder("クレイジームーブ");
@@ -128,6 +130,7 @@ MenuFolder *Mobile = new MenuFolder("移動系");
 	*Mobile += SpeedHackUnstableVersion;
 	
 }
+menu += Mobile;
 MenuFolder *HR = new MenuFolder("HR");
 {
 	*HR += new MenuEntry("HR 721", HR721, "");
@@ -142,6 +145,7 @@ MenuFolder *HR = new MenuFolder("HR");
 	*HR += new MenuEntry("HR 0", HR0, "");
 	
 }
+menu += HR;
 MenuFolder *Quest = new MenuFolder("クエスト");
 {
 	*Quest += new MenuEntry("ボスHP1(オフライン専用)", BossHP1OfflineOnly, "");
@@ -157,7 +161,7 @@ MenuFolder *Quest = new MenuFolder("クエスト");
 	*Quest += new MenuEntry("タイマーすぐ減る", TimerWillDecreaseSoon, "");
 	
 }
-
+menu += Quest;
 MenuFolder *Status = new MenuFolder("ステータス");
 {
 	*Status += new MenuEntry("スキルスロット埋める", FillSkillSlots, "→:1番上のスキル↑:真ん中のスキル←:1番下のスキル");
@@ -176,6 +180,7 @@ MenuFolder *Status = new MenuFolder("ステータス");
 	*Status += new MenuEntry("HP0", HP0, "");
 	
 }
+menu += Status;
 MenuFolder *Camera = new MenuFolder("カメラ");
 {
 	*Camera += new MenuEntry("カメラ視野強化", CameraFieldOfViewEnhancement, "");
@@ -189,6 +194,7 @@ MenuFolder *Camera = new MenuFolder("カメラ");
 	*Camera += new MenuEntry("FPS視点(V1)", FPSViewpointV1, "");
 	
 }
+menu += Camera;
 
 
 			
