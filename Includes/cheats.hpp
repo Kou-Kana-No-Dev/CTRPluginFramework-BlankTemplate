@@ -7,6 +7,7 @@
 
 namespace CTRPluginFramework
 {
+   void TachiFiring(MenuEntry *entry);
    void SetBug(MenuEntry *entry);
    void CurePlayerFreeze(MenuEntry *entry);
    void XCommand(MenuEntry *entry);
