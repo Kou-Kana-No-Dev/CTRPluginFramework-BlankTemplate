@@ -103,7 +103,6 @@ MenuFolder *HR = new MenuFolder("HR");
 *HR +=new MenuEntry("HR 4545", HR4545, "");
 *HR +=new MenuEntry("HR 1919", HR1919, "");
 *HR +=new MenuEntry("HR 999", HR999, "");
-*HR +=new MenuEntry("HR 999", HR999, "");
 *HR +=new MenuEntry("HR 4", HR4, "");
 *HR +=new MenuEntry("HR 65535", HR65535, "");
 *HR +=new MenuEntry("HR 1", HR1, "");
