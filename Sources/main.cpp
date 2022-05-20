@@ -206,7 +206,7 @@ menu += Camera;
 
     int     main(void)
     {
-        PluginMenu* menu = new PluginMenu("Gen3z" + Shyyy, 6,6,6,About);
+        PluginMenu* menu = new PluginMenu(Color::Cyan << "Gen3z", 6,6,6,About);
 
         // Synnchronize the menu with frame event
         menu->SynchronizeWithFrame(true);
