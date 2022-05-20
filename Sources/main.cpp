@@ -72,30 +72,36 @@ exit:
 
     void    InitMenu(PluginMenu &menu)
     {
-		menu += new MenuEntry("~#b0c4de~設定バグらせる", SetBug, "");
-		menu += new MenuEntry("~#b0c4de~プレイヤーのフリーズを治す", CurePlayerFreeze, "R+Lで実行");
-		menu += new MenuEntry("~#b0c4de~Xコマンド", XCommand, "コマンドツール                       使えるコマンド                                                        nam:名前変更                    例:nam あ                    itm:アイテムをポーチの1番上に出現                     例:itm 0 0 0 A ←最後に空白この状態でY+→                     plhk:チャット乗っ取り                   例:plhkと入力し1度決定してからPlayer/:1");
-MenuFolder *Player = new MenuFolder("~#ff0000~プレイヤー");
+const std::string Shyyy = "" << Color::Cyan << "";
+const std::string nimotsu = "" << Color::Green << "";
+const std::string Hunateiastus = "" << Color::Red << "";
+const std::string mving = "" << Color::Blue << "";
+const std::string Inv = "" << Color::Yellow << "";
+const std::string HR = "" << Color::Orange << "";
+		menu += new MenuEntry(Shyyy + "設定バグらせる", SetBug, "");
+		menu += new MenuEntry(Shyyy + "プレイヤーのフリーズを治す" + Shyyy, CurePlayerFreeze, "R+Lで実行");
+		menu += new MenuEntry(Shyyy + "Xコマンド" + Shyyy, XCommand, "コマンドツール                       使えるコマンド                                                        nam:名前変更                    例:nam あ                    itm:アイテムをポーチの1番上に出現                     例:itm 0 0 0 A ←最後に空白この状態でY+→                     plhk:チャット乗っ取り                   例:plhkと入力し1度決定してからPlayer/:1");
+MenuFolder *Player = new MenuFolder( Hunateiastus + "プレイヤー");
 {
-	*Player += new MenuEntry("~#ff0000~ハンターとにゃんたーを切り替え", SwitchBetweenHunterAndNyanta, "ハンター:→、にゃんたー:↑");
-	*Player += new MenuEntry("~#ff0000~チャット乗っ取り", ChatHijacking, "XCMD以外にここからでもできます矢印キー");
+	*Player += new MenuEntry(Hunateiastus + "ハンターとにゃんたーを切り替え", SwitchBetweenHunterAndNyanta, "ハンター:→、にゃんたー:↑");
+	*Player += new MenuEntry(Hunateiastus + "チャット乗っ取り", ChatHijacking, "XCMD以外にここからでもできます矢印キー");
 	
 }
 menu += Player;
-MenuFolder *WhatToBring = new MenuFolder("~#ffd700~持ち物");
+MenuFolder *WhatToBring = new MenuFolder(Inv + "持ち物");
 {
-	*WhatToBring += new MenuEntry("~#ffd700~龍歴院ポイント無限", RyujiinPointInfinite, "");
-	*WhatToBring += new MenuEntry("~#ffd700~お金無限", MoneyInfinity, "");
-	*WhatToBring += new MenuEntry("~#ffd700~ポーチを空にする", EmptyPouch, "");
-	*WhatToBring += new MenuEntry("~#ffd700~バグアイテムセット", BugItemSet, "");
-	*WhatToBring += new MenuEntry("~#ffd700~ポーチのアイテム無限", InfiniteItemsOnThePouch, "");
-	*WhatToBring += new MenuEntry("~#ffd700~開発者お気に入りアイテムセット", DeveloperFavoriteItemSet, "");
-	*WhatToBring += new MenuEntry("~#ffd700~マップいつでも表示", MapAlwaysDisplayed, "");
-	*WhatToBring += new MenuEntry("~#ffd700~ピン開発者お気に入りセット", PinDeveloperFavoriteSet, "");
+	*WhatToBring += new MenuEntry(Inv + "龍歴院ポイント無限", RyujiinPointInfinite, "");
+	*WhatToBring += new MenuEntry(Inv + "お金無限"+ Inv, MoneyInfinity, "");
+	*WhatToBring += new MenuEntry(Inv + "ポーチを空にする"+ Inv, EmptyPouch, "");
+	*WhatToBring += new MenuEntry(Inv + "バグアイテムセット"+ Inv, BugItemSet, "");
+	*WhatToBring += new MenuEntry(Inv + "ポーチのアイテム無限"+ Inv, InfiniteItemsOnThePouch, "");
+	*WhatToBring += new MenuEntry(Inv + "開発者お気に入りアイテムセット"+ Inv, DeveloperFavoriteItemSet, "");
+	*WhatToBring += new MenuEntry(Inv + "マップいつでも表示"+ Inv, MapAlwaysDisplayed, "");
+	*WhatToBring += new MenuEntry(Inv + "ピン開発者お気に入りセット" + Inv, PinDeveloperFavoriteSet, "");
 	
 }
 menu += WhatToBring;
-MenuFolder *Mobile = new MenuFolder("~#4169e1~移動系");
+MenuFolder *Mobile = new MenuFolder(mving + "移動系");
 {
 	MenuFolder *CrazyMove = new MenuFolder("クレイジームーブ");
 	{
@@ -105,92 +111,92 @@ MenuFolder *Mobile = new MenuFolder("~#4169e1~移動系");
 		
 	}
 	*Mobile += CrazyMove;
-	*Mobile += new MenuEntry("~#4169e1~バルスライド(バルファルク)", BalslideBalfalk, "ダッシュ中、スライドと速度上昇");
-	*Mobile += new MenuEntry("~#4169e1~バルフライ(バルファルク:テスト段階)", BalflyBalfalkTestStage, "左右十字キーで方向転換                                   上下十字キーで高度変更                   Lでとぶ(低速)");
-	*Mobile += new MenuEntry("~#4169e1~バルフライ v2(バルファルク)", BalflyV2Balfalk, "R+X:空中で停止                    A+R:高度上昇                                      R+L:高度低下                    R+Y:バルスライド              R+左右十字キー:向き変更                    R+B:バックバルスライド");
-	*Mobile += new MenuEntry("~#4169e1~自動走行", AutomaticDriving, "走りながらR:走行キープ                      左右十字キー:向き変更                 L:停止");
-	*Mobile += new MenuEntry("~#4169e1~ベースキャンプテレポート", BaseCampTeleport, "実行されない場合、1度しゃがむ");
-	*Mobile += new MenuEntry("~#4169e1~ジャンプ", Jump, "Lで実行");
-	*Mobile += new MenuEntry("~#4169e1~ムーンジャンプ", MoonJump, "Lで実行");
-	*Mobile += new MenuEntry("~#4169e1~座標移動(遅め)", CoordinateMovementSlow, "R+スライドパッド");
-	*Mobile += new MenuEntry("~#4169e1~座標移動(早め)", CoordinateMovementEarly, "R+スライドパッド");
-	*Mobile += new MenuEntry("~#4169e1~スピードハックv2", SpeedHackV2, "");
-	*Mobile += new MenuEntry("~#4169e1~スピードハックV2(遅め)", SpeedHackV2Slow, "");
-	*Mobile += new MenuEntry("~#4169e1~スピードハックオフ", SpeedHackOff, "");
-	MenuFolder *SpeedHackUnstableVersion = new MenuFolder("~#9932cc~スピードハック(不安定版)");
+	*Mobile += new MenuEntry(mving + "バルスライド(バルファルク)", BalslideBalfalk, "ダッシュ中、スライドと速度上昇");
+	*Mobile += new MenuEntry(mving + "バルフライ(バルファルク:テスト段階)", BalflyBalfalkTestStage, "左右十字キーで方向転換                                   上下十字キーで高度変更                   Lでとぶ(低速)");
+	*Mobile += new MenuEntry(mving + "バルフライ v2(バルファルク)", BalflyV2Balfalk, "R+X:空中で停止                    A+R:高度上昇                                      R+L:高度低下                    R+Y:バルスライド              R+左右十字キー:向き変更                    R+B:バックバルスライド");
+	*Mobile += new MenuEntry(mving + "自動走行", AutomaticDriving, "走りながらR:走行キープ                      左右十字キー:向き変更                 L:停止");
+	*Mobile += new MenuEntry(mving + "ベースキャンプテレポート", BaseCampTeleport, "実行されない場合、1度しゃがむ");
+	*Mobile += new MenuEntry(mving + "ジャンプ", Jump, "Lで実行");
+	*Mobile += new MenuEntry(mving + "ムーンジャンプ", MoonJump, "Lで実行");
+	*Mobile += new MenuEntry(mving + "座標移動(遅め)", CoordinateMovementSlow, "R+スライドパッド");
+	*Mobile += new MenuEntry(mving + "座標移動(早め)", CoordinateMovementEarly, "R+スライドパッド");
+	*Mobile += new MenuEntry(mving + "スピードハックV2", SpeedHackV2, "");
+	*Mobile += new MenuEntry(mving + "スピードハックV2(遅め)", SpeedHackV2Slow, "");
+	*Mobile += new MenuEntry(mving + "スピードハックオフ", SpeedHackOff, "");
+	MenuFolder *SpeedHackUnstableVersion = new MenuFolder(Hunateiastus + "スピードハック(不安定版)");
 	{
-		*SpeedHackUnstableVersion += new MenuEntry("~#9932cc~スピードハックテスト", SpeedHackTest, "");
-		*SpeedHackUnstableVersion += new MenuEntry("~#9932cc~スピードハック", SpeedHack, "");
-		*SpeedHackUnstableVersion += new MenuEntry("~#9932cc~スピードハック2", SpeedHack2, "");
-		*SpeedHackUnstableVersion += new MenuEntry("~#9932cc~スローハック", SlowHack, "");
-		*SpeedHackUnstableVersion += new MenuEntry("~#9932cc~スローハック2", SlowHack2, "");
+		*SpeedHackUnstableVersion += new MenuEntry(Hunateiastus + "スピードハックテスト", SpeedHackTest, "");
+		*SpeedHackUnstableVersion += new MenuEntry(Hunateiastus + "スピードハック", SpeedHack, "");
+		*SpeedHackUnstableVersion += new MenuEntry(Hunateiastus + "スピードハック2", SpeedHack2, "");
+		*SpeedHackUnstableVersion += new MenuEntry(Hunateiastus + "スローハック", SlowHack, "");
+		*SpeedHackUnstableVersion += new MenuEntry(Hunateiastus + "スローハック2", SlowHack2, "");
 		
 	}
 	*Mobile += SpeedHackUnstableVersion;
 	
 }
 menu += Mobile;
-MenuFolder *HR = new MenuFolder("~#008080~HR");
+MenuFolder *HR = new MenuFolder(HR + "HR");
 {
-	*HR += new MenuEntry("~#008080~HR 721", HR721, "");
-	*HR += new MenuEntry("~#008080~HR 810", HR810, "");
-	*HR += new MenuEntry("~#008080~HR 8585", HR8585, "");
-	*HR += new MenuEntry("~#008080~HR 4545", HR4545, "");
-	*HR += new MenuEntry("~#008080~HR 1919", HR1919, "");
-	*HR += new MenuEntry("~#008080~HR 999", HR999, "");
-	*HR += new MenuEntry("~#008080~HR 4", HR4, "");
-	*HR += new MenuEntry("~#008080~HR 65535", HR65535, "");
-	*HR += new MenuEntry("~#008080~HR 1", HR1, "");
-	*HR += new MenuEntry("~#008080~HR 0", HR0, "");
+	*HR += new MenuEntry(HR + "HR 721", HR721, "");
+	*HR += new MenuEntry(HR + "HR 810", HR810, "");
+	*HR += new MenuEntry(HR + "HR 8585", HR8585, "");
+	*HR += new MenuEntry(HR + "HR 4545", HR4545, "");
+	*HR += new MenuEntry(HR + "HR 1919", HR1919, "");
+	*HR += new MenuEntry(HR + "HR 999", HR999, "");
+	*HR += new MenuEntry(HR + "HR 4", HR4, "");
+	*HR += new MenuEntry(HR + "HR 65535", HR65535, "");
+	*HR += new MenuEntry(HR + "HR 1", HR1, "");
+	*HR += new MenuEntry(HR + "HR 0", HR0, "");
 	
 }
 menu += HR;
-MenuFolder *Quest = new MenuFolder("~#ff69b4~クエスト");
+MenuFolder *Quest = new MenuFolder(nimotsu + "クエスト");
 {
-	*Quest += new MenuEntry("~#ff69b4~ボスHP1(オフライン専用)", BossHP1OfflineOnly, "");
-	*Quest += new MenuEntry("~#ff69b4~クエスト貼ってなくても行ける(オフ)", YouCanGoWithoutPostingTheQuestOff, "");
-	*Quest += new MenuEntry("~#ff69b4~クエスト貼ってなくても行ける", YouCanGoWithoutPostingTheQuest, "");
-	*Quest += new MenuEntry("~#ff69b4~クエスト連続リクエスト", QuestContinuousRequest, "");
-	*Quest += new MenuEntry("~#ff69b4~クエストリタイア", QuestRetirement, "");
-	*Quest += new MenuEntry("~#ff69b4~ヘルジェイル", HellJail, "クエストから帰って来れなくなる");
-	*Quest += new MenuEntry("~#ff69b4~タイマー0", Timer0, "");
-	*Quest += new MenuEntry("~#ff69b4~タイマー増える", TimerIncreases, "");
-	*Quest += new MenuEntry("~#ff69b4~タイマーコントローラー(早い)", TimerControllerFast, "");
-	*Quest += new MenuEntry("~#ff69b4~タイマーコントローラー(普通)", TimerControllerNormal, "");
-	*Quest += new MenuEntry("~#ff69b4~タイマーすぐ減る", TimerWillDecreaseSoon, "");
+	*Quest += new MenuEntry(nimotsu + "ボスHP1(オフライン専用)", BossHP1OfflineOnly, "");
+	*Quest += new MenuEntry(nimotsu + "クエスト貼ってなくても行ける(オフ)", YouCanGoWithoutPostingTheQuestOff, "");
+	*Quest += new MenuEntry(nimotsu + "クエスト貼ってなくても行ける", YouCanGoWithoutPostingTheQuest, "");
+	*Quest += new MenuEntry(nimotsu + "クエスト連続リクエスト", QuestContinuousRequest, "");
+	*Quest += new MenuEntry(nimotsu + "全員クエストリタイア", QuestRetirement, "");
+	*Quest += new MenuEntry(nimotsu + "ヘルジェイル", HellJail, "クエストから帰って来れなくなる");
+	*Quest += new MenuEntry(nimotsu + "タイマー0", Timer0, "");
+	*Quest += new MenuEntry(nimotsu + "タイマー増える", TimerIncreases, "");
+	*Quest += new MenuEntry(nimotsu + "タイマーコントローラー(早い)", TimerControllerFast, "");
+	*Quest += new MenuEntry(nimotsu + "タイマーコントローラー(普通)", TimerControllerNormal, "");
+	*Quest += new MenuEntry(nimotsu + "タイマーすぐ減る", TimerWillDecreaseSoon, "");
 	
 }
 menu += Quest;
-MenuFolder *Status = new MenuFolder("~#dc143c~ステータス");
+MenuFolder *Status = new MenuFolder(Hunateiastus + "ステータス");
 {
-	*Status += new MenuEntry("~#dc143c~スキルスロット埋める", FillSkillSlots, "→:1番上のスキル↑:真ん中のスキル←:1番下のスキル");
-	*Status += new MenuEntry("~#dc143c~透明", Transparent, "");
-	*Status += new MenuEntry("~#dc143c~攻撃力1", AttackPower1, "");
-	*Status += new MenuEntry("~#dc143c~防御力1", Defense1, "");
-	*Status += new MenuEntry("~#dc143c~防御力最高", HighestDefense, "");
-	*Status += new MenuEntry("~#dc143c~攻撃力999", AttackPower999, "");
-	*Status += new MenuEntry("~#dc143c~ボウガン連射", CrossbowFiring, "Aボタンで実行");
-	*Status += new MenuEntry("~#dc143c~スタミナ置き換え回復", StaminaSuperFastRecovery, "");
-	*Status += new MenuEntry("~#dc143c~HP置き換え回復", HPSuperFastRecovery, "");
-	*Status += new MenuEntry("~#dc143c~太刀連射", TachiFiring, "Aで実行");
-	*Status += new MenuEntry("~#dc143c~切れ味MAX", SharpnessMAX, "R+L");
-	*Status += new MenuEntry("~#dc143c~乗りゲージ常にMAX", RidingGaugeAlwaysMAX, "");
-	*Status += new MenuEntry("~#dc143c~HP0", HP0, "");
+	*Status += new MenuEntry(Hunateiastus + "スキルスロット埋める", FillSkillSlots, "→:1番上のスキル↑:真ん中のスキル←:1番下のスキル");
+	*Status += new MenuEntry(Hunateiastus + "透明", Transparent, "テスト段階、使用不可");
+	*Status += new MenuEntry(Hunateiastus + "攻撃力1", AttackPower1, "");
+	*Status += new MenuEntry(Hunateiastus + "防御力1", Defense1, "");
+	*Status += new MenuEntry(Hunateiastus + "防御力最高", HighestDefense, "");
+	*Status += new MenuEntry(Hunateiastus + "攻撃力999", AttackPower999, "");
+	*Status += new MenuEntry(Hunateiastus + "ボウガン連射", CrossbowFiring, "Aボタンで実行");
+	*Status += new MenuEntry(Hunateiastus + "スタミナ置き換え回復", StaminaSuperFastRecovery, "");
+	*Status += new MenuEntry(Hunateiastus + "HP置き換え回復", HPSuperFastRecovery, "");
+	*Status += new MenuEntry(Hunateiastus + "太刀連射", TachiFiring, "Aで実行");
+	*Status += new MenuEntry(Hunateiastus + "切れ味MAX", SharpnessMAX, "R+L");
+	*Status += new MenuEntry(Hunateiastus + "乗りゲージ常にMAX", RidingGaugeAlwaysMAX, "");
+	*Status += new MenuEntry(Hunateiastus + "HP0", HP0, "");
 	
 }
 menu += Status;
-MenuFolder *Camera = new MenuFolder("~#00ff7f~カメラ");
+MenuFolder *Camera = new MenuFolder(nimotsu + "カメラ");
 {
-	*Camera += new MenuEntry("~#00ff7f~カメラ視野強化", CameraFieldOfViewEnhancement, "");
-	*Camera += new MenuEntry("~#00ff7f~カメラ視野微強化", CameraFieldOfViewSlightlyEnhanced, "");
-	*Camera += new MenuEntry("~#00ff7f~カメラハック1", CameraHack1, "R+L");
-	*Camera += new MenuEntry("~#00ff7f~カメラハック", CameraHack, "");
-	*Camera += new MenuEntry("~#00ff7f~エブリシングビュアー", EverythingViewer, "");
-	*Camera += new MenuEntry("~#00ff7f~スーパーアイ", SuperEye, "");
-	*Camera += new MenuEntry("~#00ff7f~FPS視点(V3)", FPSViewpointV3, "");
-	*Camera += new MenuEntry("~#00ff7f~FPS視点(V2)", FPSViewpointV2, "");
-	*Camera += new MenuEntry("~#00ff7f~FPS視点(V1)", FPSViewpointV1, "");
-    *Camera += new MenuEntry("~#00ff7f~NPCの会話中カメラズームされない", CameraDoesNotZoomDuringNPCConversation, "ほぼ使い物にならなくて草");
+	*Camera += new MenuEntry(nimotsu + "カメラ視野強化", CameraFieldOfViewEnhancement, "");
+	*Camera += new MenuEntry(nimotsu + "カメラ視野微強化", CameraFieldOfViewSlightlyEnhanced, "");
+	*Camera += new MenuEntry(nimotsu + "カメラハック1", CameraHack1, "R+L");
+	*Camera += new MenuEntry(nimotsu + "カメラハック", CameraHack, "");
+	*Camera += new MenuEntry(nimotsu + "エブリシングビュアー", EverythingViewer, "");
+	*Camera += new MenuEntry(nimotsu + "スーパーアイ", SuperEye, "");
+	*Camera += new MenuEntry(nimotsu + "FPS視点(V3)", FPSViewpointV3, "");
+	*Camera += new MenuEntry(nimotsu + "FPS視点(V2)", FPSViewpointV2, "");
+	*Camera += new MenuEntry(nimotsu + "FPS視点(V1)", FPSViewpointV1, "");
+    *Camera += new MenuEntry(nimotsu + "NPCの会話中カメラズームされない", CameraDoesNotZoomDuringNPCConversation, "ほぼ使い物にならなくて草");
 }
 menu += Camera;
 
@@ -200,7 +206,7 @@ menu += Camera;
 
     int     main(void)
     {
-        PluginMenu* menu = new PluginMenu("~#6495ed~Gen3z", 6,6,6,About);
+        PluginMenu* menu = new PluginMenu("Gen3z" + Shyyy, 6,6,6,About);
 
         // Synnchronize the menu with frame event
         menu->SynchronizeWithFrame(true);
