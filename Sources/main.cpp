@@ -1,12 +1,14 @@
-#include <3ds.h>
+#include "3ds.h"
 #include "csvc.h"
-#include <CTRPluginFramework.hpp>
-#include "cheats.hpp"
-
+#include "CTRPluginFramework.hpp"
+#include "Cheats.hpp"
 #include <vector>
 
 namespace CTRPluginFramework
 {
+	//aboutの部分
+	static const std::string About ="Made By Kou Kana                                      Discord:Kou Kana#7262";
+	
     // This patch the NFC disabling the touchscreen when scanning an amiibo, which prevents ctrpf to be used
     static void    ToggleTouchscreenForceOn(void)
     {
@@ -30,7 +32,7 @@ namespace CTRPluginFramework
         Handle  processHandle;
         s64     textTotalSize = 0;
         s64     startAddress = 0;
-        u32 *menu   found;
+        u32 *   found;
 
         if (R_FAILED(svcOpenProcess(&processHandle, 16)))
             return;
@@ -70,17 +72,15 @@ exit:
 
     void    InitMenu(PluginMenu &menu)
     {
- menu += new MenuEntry("設定バグらせる", SetBug, "");
- menu += new MenuEntry("プレイヤーのフリーズを治す", CurePlayerFreeze, "R+Lで実行");
- menu += new MenuEntry("Xコマンド", XCommand, "");
-
+		menu += new MenuEntry("設定バグらせる", SetBug, "");
+		menu += new MenuEntry("プレイヤーのフリーズを治す", CurePlayerFreeze, "R+Lで実行");
+		menu += new MenuEntry("Xコマンド", XCommand, "コマンドツール                       使えるコマンド                                                        nam:名前変更                    例:nam あ                    itm:アイテムをポーチの1番上に出現                     例:itm 0 0 0 A ←最後に空白この状態でY+→                     plhk:チャット乗っ取り                   例:plhkと入力し1度決定してからPlayer/:1");
 MenuFolder *Player = new MenuFolder("プレイヤー");
 {
 	*Player += new MenuEntry("ハンターとにゃんたーを切り替え", SwitchBetweenHunterAndNyanta, "ハンター:→、にゃんたー:↑");
 	*Player += new MenuEntry("チャット乗っ取り", ChatHijacking, "XCMD以外にここからでもできます矢印キー");
 	
 }
-menu->Append(Player);
 MenuFolder *WhatToBring = new MenuFolder("持ち物");
 {
 	*WhatToBring += new MenuEntry("龍歴院ポイント無限", RyujiinPointInfinite, "");
@@ -93,7 +93,6 @@ MenuFolder *WhatToBring = new MenuFolder("持ち物");
 	*WhatToBring += new MenuEntry("ピン開発者お気に入りセット", PinDeveloperFavoriteSet, "");
 	
 }
-menu->Append(WhatToBring);
 MenuFolder *Mobile = new MenuFolder("移動系");
 {
 	MenuFolder *CrazyMove = new MenuFolder("クレイジームーブ");
@@ -129,7 +128,6 @@ MenuFolder *Mobile = new MenuFolder("移動系");
 	*Mobile += SpeedHackUnstableVersion;
 	
 }
-menu->Append(Mobile);
 MenuFolder *HR = new MenuFolder("HR");
 {
 	*HR += new MenuEntry("HR 721", HR721, "");
@@ -144,7 +142,6 @@ MenuFolder *HR = new MenuFolder("HR");
 	*HR += new MenuEntry("HR 0", HR0, "");
 	
 }
-menu->Append(HR);
 MenuFolder *Quest = new MenuFolder("クエスト");
 {
 	*Quest += new MenuEntry("ボスHP1(オフライン専用)", BossHP1OfflineOnly, "");
@@ -160,7 +157,7 @@ MenuFolder *Quest = new MenuFolder("クエスト");
 	*Quest += new MenuEntry("タイマーすぐ減る", TimerWillDecreaseSoon, "");
 	
 }
-menu->Append(Quest);
+
 MenuFolder *Status = new MenuFolder("ステータス");
 {
 	*Status += new MenuEntry("スキルスロット埋める", FillSkillSlots, "→:1番上のスキル↑:真ん中のスキル←:1番下のスキル");
@@ -179,7 +176,6 @@ MenuFolder *Status = new MenuFolder("ステータス");
 	*Status += new MenuEntry("HP0", HP0, "");
 	
 }
-menu->Append(Status);
 MenuFolder *Camera = new MenuFolder("カメラ");
 {
 	*Camera += new MenuEntry("カメラ視野強化", CameraFieldOfViewEnhancement, "");
@@ -193,22 +189,19 @@ MenuFolder *Camera = new MenuFolder("カメラ");
 	*Camera += new MenuEntry("FPS視点(V1)", FPSViewpointV1, "");
 	
 }
-menu->Append(Camera);
 
+
+			
     }
 
     int     main(void)
     {
-        PluginMenu *menu = new PluginMenu("Kavily", 6, 6, 6,
-                                            "Kavily Client v0.1                              Made By Kou Kana");
-
-       MessageBox("VIP! Luanch Success");
+        PluginMenu* menu = new PluginMenu("Genzz", 6,6,6,About);
 
         // Synnchronize the menu with frame event
         menu->SynchronizeWithFrame(true);
-        menu->ShowWelcomeMessage(false);
-       OSD::Notify(Color::Cyan << "Thank you for Using Kavily Client");
-
+		OSD::Notify(Color::Cyan << "Luanch Success");
+		
         // Init our menu entries & folders
         InitMenu(*menu);
 
@@ -218,6 +211,6 @@ menu->Append(Camera);
         delete menu;
 
         // Exit plugin
-        return (0);
+		return (0);
     }
 }
