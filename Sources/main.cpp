@@ -70,14 +70,10 @@ exit:
 
     void    InitMenu(PluginMenu &menu)
     {
- menu->Append(new MenuEntry("設定バグらせる", SetBug, ""));
-menu->Append(new MenuEntry("プレイヤーのフリーズを治す", CurePlayerFreeze, "R+Lで実行"));
-menu->Append(new MenuEntry("Xコマンド", XCommand, ""));
-menu->Append(new MenuEntry("{コマンドツール使えるコマンドnam:名前変更例:nam あ", CommandToolsThatCanBeUsedNamRenameExampleNamA, ""));
-menu->Append(new MenuEntry("itm:アイテムをポーチの1番上に出現例:itm 0 0 0 A ←最後に空白", ItmItemAppearsAtTheTopOfThePouchExampleItm000ALeftFinallyBlank, ""));
-menu->Append(new MenuEntry("この状態でY+→plhk:チャット乗っ取り例:plhk", InThisStateYPlusRightPlhkChatHijackingExamplePlhk, ""));
-menu->Append(new MenuEntry("Player/:1", Player1, ""));
-menu->Append(new MenuEntry("}", , ""));
+ menu += (new MenuEntry("設定バグらせる", SetBug, ""));
+menu += (new MenuEntry("プレイヤーのフリーズを治す", CurePlayerFreeze, "R+Lで実行"));
+menu += (new MenuEntry("Xコマンド", XCommand, ""));
+
 MenuFolder *Player = new MenuFolder("プレイヤー");
 {
 	*Player += new MenuEntry("ハンターとにゃんたーを切り替え", SwitchBetweenHunterAndNyanta, "ハンター:→、にゃんたー:↑");
@@ -101,66 +97,66 @@ menu->Append(SpeedHackUnstableVersion);
 * += ;
 MenuFolder *HR = new MenuFolder("HR");
 {
-menu->Append(new MenuEntry("HR 721", HR721, ""));
-menu->Append(new MenuEntry("HR 810", HR810, ""));
-menu->Append(new MenuEntry("HR 8585", HR8585, ""));
-menu->Append(new MenuEntry("HR 4545", HR4545, ""));
-menu->Append(new MenuEntry("HR 1919", HR1919, ""));
-menu->Append(new MenuEntry("HR 999", HR999, ""));
-menu->Append(new MenuEntry("HR 999", HR999, ""));
-menu->Append(new MenuEntry("HR 4", HR4, ""));
-menu->Append(new MenuEntry("HR 65535", HR65535, ""));
-menu->Append(new MenuEntry("HR 1", HR1, ""));
-menu->Append(new MenuEntry("HR 0", HR0, ""));
+*HR +=(new MenuEntry("HR 721", HR721, ""));
+*HR +=(new MenuEntry("HR 810", HR810, ""));
+*HR +=(new MenuEntry("HR 8585", HR8585, ""));
+*HR +=(new MenuEntry("HR 4545", HR4545, ""));
+*HR +=(new MenuEntry("HR 1919", HR1919, ""));
+*HR +=(new MenuEntry("HR 999", HR999, ""));
+*HR +=(new MenuEntry("HR 999", HR999, ""));
+*HR +=(new MenuEntry("HR 4", HR4, ""));
+*HR +=(new MenuEntry("HR 65535", HR65535, ""));
+*HR +=(new MenuEntry("HR 1", HR1, ""));
+*HR +=(new MenuEntry("HR 0", HR0, ""));
 
 }
 * += HR;
 MenuFolder *Quest = new MenuFolder("クエスト");
 {
-menu->Append(new MenuEntry("ボスHP1(オフライン専用)", BossHP1OfflineOnly, ""));
-menu->Append(new MenuEntry("クエスト貼ってなくても行ける(オフ)", YouCanGoWithoutPostingTheQuestOff, ""));
-menu->Append(new MenuEntry("クエスト貼ってなくても行ける", YouCanGoWithoutPostingTheQuest, ""));
-menu->Append(new MenuEntry("クエスト連続リクエスト", QuestContinuousRequest, ""));
-menu->Append(new MenuEntry("クエストリタイア", QuestRetirement, ""));
-menu->Append(new MenuEntry("ヘルジェイル", HellJail, "クエストから帰って来れなくなる"));
-menu->Append(new MenuEntry("タイマー0", Timer0, ""));
-menu->Append(new MenuEntry("タイマー増える", TimerIncreases, ""));
-menu->Append(new MenuEntry("タイマーコントローラー(早い)", TimerControllerFast, ""));
-menu->Append(new MenuEntry("タイマーコントローラー(普通)", TimerControllerNormal, ""));
-menu->Append(new MenuEntry("タイマーすぐ減る", TimerWillDecreaseSoon, ""));
+*Quest +=(new MenuEntry("ボスHP1(オフライン専用)", BossHP1OfflineOnly, ""));
+*Quest +=(new MenuEntry("クエスト貼ってなくても行ける(オフ)", YouCanGoWithoutPostingTheQuestOff, ""));
+*Quest +=(new MenuEntry("クエスト貼ってなくても行ける", YouCanGoWithoutPostingTheQuest, ""));
+*Quest +=(new MenuEntry("クエスト連続リクエスト", QuestContinuousRequest, ""));
+*Quest +=(new MenuEntry("クエストリタイア", QuestRetirement, ""));
+*Quest +=(new MenuEntry("ヘルジェイル", HellJail, "クエストから帰って来れなくなる"));
+*Quest +=(new MenuEntry("タイマー0", Timer0, ""));
+*Quest +=(new MenuEntry("タイマー増える", TimerIncreases, ""));
+*Quest +=(new MenuEntry("タイマーコントローラー(早い)", TimerControllerFast, ""));
+*Quest +=(new MenuEntry("タイマーコントローラー(普通)", TimerControllerNormal, ""));
+*Quest +=(new MenuEntry("タイマーすぐ減る", TimerWillDecreaseSoon, ""));
 
 }
 * += Quest;
 MenuFolder *Status = new MenuFolder("ステータス");
 {
-menu->Append(new MenuEntry("スキルスロット埋める", FillSkillSlots, "→:1番上のスキル↑:真ん中のスキル←:1番下のスキル"));
-menu->Append(new MenuEntry("透明", Transparent, ""));
-menu->Append(new MenuEntry("攻撃力1", AttackPower1, ""));
-menu->Append(new MenuEntry("防御力1", Defense1, ""));
-menu->Append(new MenuEntry("防御力最高", HighestDefense, ""));
-menu->Append(new MenuEntry("攻撃力999", AttackPower999, ""));
-menu->Append(new MenuEntry("ボウガン連射", CrossbowFiring, "Aボタンで"));
-menu->Append(new MenuEntry("スタミナ超高速回復", StaminaSuperFastRecovery, ""));
-menu->Append(new MenuEntry("HP超高速回復", HPSuperFastRecovery, ""));
-menu->Append(new MenuEntry("HP高速回復", HPFastRecovery, ""));
-menu->Append(new MenuEntry("スタミナ高速回復", StaminaFastRecovery, ""));
-menu->Append(new MenuEntry("切れ味MAX", SharpnessMAX, "R+L"));
-menu->Append(new MenuEntry("乗りゲージ常にMAX", RidingGaugeAlwaysMAX, ""));
-menu->Append(new MenuEntry("HP0", HP0, ""));
+*Status +=(new MenuEntry("スキルスロット埋める", FillSkillSlots, "→:1番上のスキル↑:真ん中のスキル←:1番下のスキル"));
+*Status +=(new MenuEntry("透明", Transparent, ""));
+*Status +=(new MenuEntry("攻撃力1", AttackPower1, ""));
+*Status +=(new MenuEntry("防御力1", Defense1, ""));
+*Status +=(new MenuEntry("防御力最高", HighestDefense, ""));
+*Status +=(new MenuEntry("攻撃力999", AttackPower999, ""));
+*Status +=(new MenuEntry("ボウガン連射", CrossbowFiring, "Aボタンで"));
+*Status +=(new MenuEntry("スタミナ超高速回復", StaminaSuperFastRecovery, ""));
+*Status +=(new MenuEntry("HP超高速回復", HPSuperFastRecovery, ""));
+*Status +=(new MenuEntry("HP高速回復", HPFastRecovery, ""));
+*Status +=(new MenuEntry("スタミナ高速回復", StaminaFastRecovery, ""));
+*Status +=(new MenuEntry("切れ味MAX", SharpnessMAX, "R+L"));
+*Status +=(new MenuEntry("乗りゲージ常にMAX", RidingGaugeAlwaysMAX, ""));
+*Status +=(new MenuEntry("HP0", HP0, ""));
 
 }
 * += Status;
 MenuFolder *Camera = new MenuFolder("カメラ");
 {
-menu->Append(new MenuEntry("カメラ視野強化", CameraFieldOfViewEnhancement, ""));
-menu->Append(new MenuEntry("カメラ視野微強化", CameraFieldOfViewSlightlyEnhanced, ""));
-menu->Append(new MenuEntry("カメラハック1", CameraHack1, "R+L"));
-menu->Append(new MenuEntry("カメラハック", CameraHack, ""));
-menu->Append(new MenuEntry("エブリシングビュアー", EverythingViewer, ""));
-menu->Append(new MenuEntry("スーパーアイ", SuperEye, ""));
-menu->Append(new MenuEntry("FPS視点(V3)", FPSViewpointV3, ""));
-menu->Append(new MenuEntry("FPS視点(V2)", FPSViewpointV2, ""));
-menu->Append(new MenuEntry("FPS視点(V1)", FPSViewpointV1, ""));
+*Camera +=(new MenuEntry("カメラ視野強化", CameraFieldOfViewEnhancement, ""));
+*Camera +=(new MenuEntry("カメラ視野微強化", CameraFieldOfViewSlightlyEnhanced, ""));
+*Camera +=(new MenuEntry("カメラハック1", CameraHack1, "R+L"));
+*Camera +=(new MenuEntry("カメラハック", CameraHack, ""));
+*Camera +=(new MenuEntry("エブリシングビュアー", EverythingViewer, ""));
+*Camera +=(new MenuEntry("スーパーアイ", SuperEye, ""));
+*Camera +=(new MenuEntry("FPS視点(V3)", FPSViewpointV3, ""));
+*Camera +=(new MenuEntry("FPS視点(V2)", FPSViewpointV2, ""));
+*Camera +=(new MenuEntry("FPS視点(V1)", FPSViewpointV1, ""));
 
 }
 * += Camera;
