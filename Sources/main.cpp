@@ -1,7 +1,7 @@
 #include "3ds.h"
 #include "csvc.h"
 #include "CTRPluginFramework.hpp"
-#include "Cheats.hpp"
+#include "cheats.hpp"
 #include <vector>
 
 namespace CTRPluginFramework
@@ -196,10 +196,11 @@ MenuFolder *Camera = new MenuFolder("カメラ");
 
     int     main(void)
     {
-        PluginMenu* menu = new PluginMenu("Genzz", 6,6,6,About);
+        PluginMenu* menu = new PluginMenu("Gen3z", 6,6,6,About);
 
         // Synnchronize the menu with frame event
         menu->SynchronizeWithFrame(true);
+        menu->ShowWelcomeMessage(false);
 		OSD::Notify(Color::Cyan << "Luanch Success");
 		
         // Init our menu entries & folders
