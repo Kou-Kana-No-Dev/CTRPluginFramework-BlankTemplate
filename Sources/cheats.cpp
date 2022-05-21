@@ -651,19 +651,19 @@ void SwitchBetweenHunterAndNyanta(MenuEntry *entry)
 void ChatHijacking(MenuEntry *entry)
 {
 	offset = 0x08000000;
-	if(Controller::IsKeysDown(DPadUp + ZR))
+	if(Controller::IsKeysDown(DPadUp + R))
 	{
 		Process::Write32(offset + 0x0031B1C8 , 0x00000000);
 	}
-	if(Controller::IsKeysDown(DPadRight + ZR))
+	if(Controller::IsKeysDown(DPadRight + R))
 	{
 		Process::Write32(offset + 0x0031B1C8 , 0x00000001);
 	}
-	if(Controller::IsKeysDown(DPadDown + ZR))
+	if(Controller::IsKeysDown(DPadDown + R))
 	{
 		Process::Write32(offset + 0x0031B1C8 , 0x00000002);
 	}
-	if(Controller::IsKeysDown(DPadLeft + ZR))
+	if(Controller::IsKeysDown(DPadLeft + R))
 	{
 		Process::Write32(offset + 0x0031B1C8 , 0x00000003);
 	}

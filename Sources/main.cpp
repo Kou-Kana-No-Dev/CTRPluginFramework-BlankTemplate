@@ -110,18 +110,18 @@ MenuFolder *Mobile = new MenuFolder(mving + "移動系");
 		
 	}
 	*Mobile += CrazyMove;
-	*Mobile += new MenuEntry(mving + "バルスライド(バルファルク)", BalslideBalfalk, "ダッシュ中、スライドと速度上昇");
-	*Mobile += new MenuEntry(mving + "バルフライ(バルファルク:テスト段階)", BalflyBalfalkTestStage, "左右十字キーで方向転換                                   上下十字キーで高度変更                   Lでとぶ(低速)");
-	*Mobile += new MenuEntry(mving + "バルフライ v2(バルファルク)", BalflyV2Balfalk, "R+X:空中で停止                    A+R:高度上昇                                      R+L:高度低下                    R+Y:バルスライド              R+左右十字キー:向き変更                    R+B:バックバルスライド");
-	*Mobile += new MenuEntry(mving + "自動走行", AutomaticDriving, "走りながらR:走行キープ                      左右十字キー:向き変更                 L:停止");
-	*Mobile += new MenuEntry(mving + "ベースキャンプテレポート", BaseCampTeleport, "実行されない場合、1度しゃがむ");
-	*Mobile += new MenuEntry(mving + "ジャンプ", Jump, "Lで実行");
-	*Mobile += new MenuEntry(mving + "ムーンジャンプ", MoonJump, "Lで実行");
-	*Mobile += new MenuEntry(mving + "座標移動(遅め)", CoordinateMovementSlow, "R+スライドパッド");
-	*Mobile += new MenuEntry(mving + "座標移動(早め)", CoordinateMovementEarly, "R+スライドパッド");
-	*Mobile += new MenuEntry(mving + "スピードハックV2", SpeedHackV2, "");
-	*Mobile += new MenuEntry(mving + "スピードハックV2(遅め)", SpeedHackV2Slow, "");
-	*Mobile += new MenuEntry(mving + "スピードハックオフ", SpeedHackOff, "");
+	*Mobile += new MenuEntry(Shyyy +  "バルスライド(バルファルク)", BalslideBalfalk, "ダッシュ中、スライドと速度上昇");
+	*Mobile += new MenuEntry(Shyyy +  "バルフライ(バルファルク:テスト段階)", BalflyBalfalkTestStage, "左右十字キーで方向転換                                   上下十字キーで高度変更                   Lでとぶ(低速)");
+	*Mobile += new MenuEntry(Shyyy +  "バルフライ v2(バルファルク)", BalflyV2Balfalk, "R+X:空中で停止                    A+R:高度上昇                                      R+L:高度低下                    R+Y:バルスライド              R+左右十字キー:向き変更                    R+B:バックバルスライド");
+	*Mobile += new MenuEntry(Shyyy +  "自動走行", AutomaticDriving, "走りながらR:走行キープ                      左右十字キー:向き変更                 L:停止");
+	*Mobile += new MenuEntry(Shyyy +  "ベースキャンプテレポート", BaseCampTeleport, "実行されない場合、1度しゃがむ");
+	*Mobile += new MenuEntry(Shyyy + "ジャンプ", Jump, "Lで実行");
+	*Mobile += new MenuEntry(Shyyy +  "ムーンジャンプ", MoonJump, "Lで実行");
+	*Mobile += new MenuEntry(Shyyy +  "座標移動(遅め)", CoordinateMovementSlow, "R+スライドパッド");
+	*Mobile += new MenuEntry(Shyyy +  "座標移動(早め)", CoordinateMovementEarly, "R+スライドパッド");
+	*Mobile += new MenuEntry(Shyyy +  "スピードハックV2", SpeedHackV2, "");
+	*Mobile += new MenuEntry(Shyyy +  "スピードハックV2(遅め)", SpeedHackV2Slow, "");
+	*Mobile += new MenuEntry(Shyyy +  "スピードハックオフ", SpeedHackOff, "");
 	MenuFolder *SpeedHackUnstableVersion = new MenuFolder(Hunateiastus + "スピードハック(不安定版)");
 	{
 		*SpeedHackUnstableVersion += new MenuEntry(Hunateiastus + "スピードハックテスト", SpeedHackTest, "");
