@@ -25,11 +25,12 @@ void CrashTheGame(MenuEntry *entry)
 {
 	Process::Read32(offset + 0x08195350 , data32);
 	offset = data32;
-	for(u32 i = 0; i < 0x00005000; i++)
+	for(u32 vayain = 0; vayain < 0x00005000; vayain++)
 	{
-	}
-	Process::Write32(offset + 0x4*i + 0x00000000 , 0x00000000);
+		Process::Write32(offset + 0x4*vayain + 0x00000000 , 0x00000000);
 	offset += 0x00000004;
+	}
+
 }
 //太刀連射
 void TachiFiring(MenuEntry *entry)
