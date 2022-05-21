@@ -84,6 +84,7 @@ MenuFolder *Player = new MenuFolder(mving + "プレイヤー");
 {
 	*Player += new MenuEntry(Shyyy + "ハンターとにゃんたーを切り替え", SwitchBetweenHunterAndNyanta, "ハンター:→、にゃんたー:↑");
 	*Player += new MenuEntry(Shyyy + "チャット乗っ取り", ChatHijacking, "XCMD以外にここからでもできます矢印キー");
+	*Player += new MenuEntry(Shyyy + "メッセージ連投", MessageContinuousThrow, "Aで実行");
 	
 }
 menu += Player;
@@ -196,8 +197,11 @@ MenuFolder *Camera = new MenuFolder(mving + "カメラ");
     *Camera += new MenuEntry(Shyyy + "NPCの会話中カメラズームされない", CameraDoesNotZoomDuringNPCConversation, "ほぼ使い物にならなくて草");
 }
 menu += Camera;
-
-
+MenuFolder *Danger = new MenuFolder(Hunateiastus + "危険なコード");
+{
+         *Danger += new MenuEntry(Hunateiastus + "ゲームをクラッシュさせる", CrashTheGame, "");
+}
+menu += Danger;
 			
     }
 

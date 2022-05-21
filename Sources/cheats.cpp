@@ -7,6 +7,30 @@ float dataf = 0;
 
 namespace CTRPluginFramework
 {
+//メッセージ連投
+void MessageContinuousThrow(MenuEntry *entry)
+{
+	if(Controller::IsKeyDown(A))
+	{
+		Process::Write32(0x081942E4 , 0x00000000);
+		Process::Write8(0x00DD4CA0 , 0x01);
+		Process::Read32(0x083ACA20 , data32);
+		offset = data32;
+		Process::Write32(offset + 0x0000008C , 0x00000006);
+		Process::Write32(offset + 0x00000098 , 0x00000000);
+	}
+}
+//ゲームをクラッシュさせる
+void CrashTheGame(MenuEntry *entry)
+{
+	Process::Read32(offset + 0x08195350 , data32);
+	offset = data32;
+	for(u32 i = 0; i < 0x00005000; i++)
+	{
+	}
+	Process::Write32(offset + 0x4*i + 0x00000000 , 0x00000000);
+	offset += 0x00000004;
+}
 //太刀連射
 void TachiFiring(MenuEntry *entry)
 {
