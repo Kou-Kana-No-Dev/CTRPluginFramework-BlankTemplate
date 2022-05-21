@@ -90,13 +90,13 @@ menu += Player;
 MenuFolder *WhatToBring = new MenuFolder(mving + "持ち物");
 {
 	*WhatToBring += new MenuEntry(Shyyy + "龍歴院ポイント無限", RyujiinPointInfinite, "");
-	*WhatToBring += new MenuEntry(Shyyy + "お金無限"+ Inv, MoneyInfinity, "");
-	*WhatToBring += new MenuEntry(Shyyy + "ポーチを空にする"+ Inv, EmptyPouch, "");
-	*WhatToBring += new MenuEntry(Shyyy + "バグアイテムセット"+ Inv, BugItemSet, "");
-	*WhatToBring += new MenuEntry(Shyyy + "ポーチのアイテム無限"+ Inv, InfiniteItemsOnThePouch, "");
-	*WhatToBring += new MenuEntry(Shyyy + "開発者お気に入りアイテムセット"+ Inv, DeveloperFavoriteItemSet, "");
-	*WhatToBring += new MenuEntry(Shyyy + "マップいつでも表示"+ Inv, MapAlwaysDisplayed, "");
-	*WhatToBring += new MenuEntry(Shyyy + "ピン開発者お気に入りセット" + Inv, PinDeveloperFavoriteSet, "");
+	*WhatToBring += new MenuEntry(Shyyy + "お金無限", MoneyInfinity, "");
+	*WhatToBring += new MenuEntry(Shyyy + "ポーチを空にする", EmptyPouch, "");
+	*WhatToBring += new MenuEntry(Shyyy + "バグアイテムセット", BugItemSet, "");
+	*WhatToBring += new MenuEntry(Shyyy + "ポーチのアイテム無限", InfiniteItemsOnThePouch, "");
+	*WhatToBring += new MenuEntry(Shyyy + "開発者お気に入りアイテムセット", DeveloperFavoriteItemSet, "");
+	*WhatToBring += new MenuEntry(Shyyy + "マップいつでも表示", MapAlwaysDisplayed, "");
+	*WhatToBring += new MenuEntry(Shyyy + "ピン開発者お気に入りセット", PinDeveloperFavoriteSet, "");
 	
 }
 menu += WhatToBring;
