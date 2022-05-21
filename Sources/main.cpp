@@ -73,41 +73,40 @@ exit:
     void    InitMenu(PluginMenu &menu)
     {
 const std::string Shyyy = "" << Color::Cyan << "";
-const std::string nimotsu = "" << Color::Green << "";
+
 const std::string Hunateiastus = "" << Color::Red << "";
 const std::string mving = "" << Color::Blue << "";
-const std::string Inv = "" << Color::Yellow << "";
-const std::string HRS = "" << Color::Orange << "";
+
 		menu += new MenuEntry(Shyyy + "設定バグらせる", SetBug, "");
 		menu += new MenuEntry(Shyyy + "プレイヤーのフリーズを治す" + Shyyy, CurePlayerFreeze, "R+Lで実行");
 		menu += new MenuEntry(Shyyy + "Xコマンド" + Shyyy, XCommand, "コマンドツール                       使えるコマンド                                                        nam:名前変更                    例:nam あ                    itm:アイテムをポーチの1番上に出現                     例:itm 0 0 0 A ←最後に空白この状態でY+→                     plhk:チャット乗っ取り                   例:plhkと入力し1度決定してからPlayer/:1");
-MenuFolder *Player = new MenuFolder( Hunateiastus + "プレイヤー");
+MenuFolder *Player = new MenuFolder(mving + "プレイヤー");
 {
-	*Player += new MenuEntry(Hunateiastus + "ハンターとにゃんたーを切り替え", SwitchBetweenHunterAndNyanta, "ハンター:→、にゃんたー:↑");
-	*Player += new MenuEntry(Hunateiastus + "チャット乗っ取り", ChatHijacking, "XCMD以外にここからでもできます矢印キー");
+	*Player += new MenuEntry(Shyyy + "ハンターとにゃんたーを切り替え", SwitchBetweenHunterAndNyanta, "ハンター:→、にゃんたー:↑");
+	*Player += new MenuEntry(Shyyy + "チャット乗っ取り", ChatHijacking, "XCMD以外にここからでもできます矢印キー");
 	
 }
 menu += Player;
-MenuFolder *WhatToBring = new MenuFolder(Inv + "持ち物");
+MenuFolder *WhatToBring = new MenuFolder(mving + "持ち物");
 {
-	*WhatToBring += new MenuEntry(Inv + "龍歴院ポイント無限", RyujiinPointInfinite, "");
-	*WhatToBring += new MenuEntry(Inv + "お金無限"+ Inv, MoneyInfinity, "");
-	*WhatToBring += new MenuEntry(Inv + "ポーチを空にする"+ Inv, EmptyPouch, "");
-	*WhatToBring += new MenuEntry(Inv + "バグアイテムセット"+ Inv, BugItemSet, "");
-	*WhatToBring += new MenuEntry(Inv + "ポーチのアイテム無限"+ Inv, InfiniteItemsOnThePouch, "");
-	*WhatToBring += new MenuEntry(Inv + "開発者お気に入りアイテムセット"+ Inv, DeveloperFavoriteItemSet, "");
-	*WhatToBring += new MenuEntry(Inv + "マップいつでも表示"+ Inv, MapAlwaysDisplayed, "");
-	*WhatToBring += new MenuEntry(Inv + "ピン開発者お気に入りセット" + Inv, PinDeveloperFavoriteSet, "");
+	*WhatToBring += new MenuEntry(Shyyy + "龍歴院ポイント無限", RyujiinPointInfinite, "");
+	*WhatToBring += new MenuEntry(Shyyy + "お金無限"+ Inv, MoneyInfinity, "");
+	*WhatToBring += new MenuEntry(Shyyy + "ポーチを空にする"+ Inv, EmptyPouch, "");
+	*WhatToBring += new MenuEntry(Shyyy + "バグアイテムセット"+ Inv, BugItemSet, "");
+	*WhatToBring += new MenuEntry(Shyyy + "ポーチのアイテム無限"+ Inv, InfiniteItemsOnThePouch, "");
+	*WhatToBring += new MenuEntry(Shyyy + "開発者お気に入りアイテムセット"+ Inv, DeveloperFavoriteItemSet, "");
+	*WhatToBring += new MenuEntry(Shyyy + "マップいつでも表示"+ Inv, MapAlwaysDisplayed, "");
+	*WhatToBring += new MenuEntry(Shyyy + "ピン開発者お気に入りセット" + Inv, PinDeveloperFavoriteSet, "");
 	
 }
 menu += WhatToBring;
 MenuFolder *Mobile = new MenuFolder(mving + "移動系");
 {
-	MenuFolder *CrazyMove = new MenuFolder(HRS + "クレイジームーブ");
+	MenuFolder *CrazyMove = new MenuFolder(mving + "クレイジームーブ");
 	{
-		*CrazyMove += new MenuEntry(HRS + "クレイジーウォーク(ボタン割り当てなし)", CrazyWalkNoButtonAssignment, "");
-		*CrazyMove += new MenuEntry(HRS + "クレイジージャンプ", CrazyJump, "Bを押している間発動");
-		*CrazyMove += new MenuEntry(HRS + "クレイジーウォーク(ボタンあり)", CrazyWalkWithButton, "R+Y");
+		*CrazyMove += new MenuEntry(Shyyy + "クレイジーウォーク(ボタン割り当てなし)", CrazyWalkNoButtonAssignment, "");
+		*CrazyMove += new MenuEntry(Shyyy + "クレイジージャンプ", CrazyJump, "Bを押している間発動");
+		*CrazyMove += new MenuEntry(Shyyy + "クレイジーウォーク(ボタンあり)", CrazyWalkWithButton, "R+Y");
 		
 	}
 	*Mobile += CrazyMove;
@@ -136,67 +135,65 @@ MenuFolder *Mobile = new MenuFolder(mving + "移動系");
 	
 }
 menu += Mobile;
-MenuFolder *HR = new MenuFolder(HRS + "HR");
+MenuFolder *HR = new MenuFolder(mving + "HR");
 {
-	*HR += new MenuEntry(HRS + "HR 721", HR721, "");
-	*HR += new MenuEntry(HRS + "HR 810", HR810, "");
-	*HR += new MenuEntry(HRS + "HR 8585", HR8585, "");
-	*HR += new MenuEntry(HRS + "HR 4545", HR4545, "");
-	*HR += new MenuEntry(HRS + "HR 1919", HR1919, "");
-	*HR += new MenuEntry(HRS + "HR 999", HR999, "");
-	*HR += new MenuEntry(HRS + "HR 4", HR4, "");
-	*HR += new MenuEntry(HRS + "HR 65535", HR65535, "");
-	*HR += new MenuEntry(HRS + "HR 1", HR1, "");
-	*HR += new MenuEntry(HRS + "HR 0", HR0, "");
+	*HR += new MenuEntry(Shyyy + "HR 721", HR721, "");
+	*HR += new MenuEntry(Shyyy + "HR 810", HR810, "");
+	*HR += new MenuEntry(Shyyy + "HR 8585", HR8585, "");
+	*HR += new MenuEntry(Shyyy + "HR 4545", HR4545, "");
+	*HR += new MenuEntry(Shyyy + "HR 1919", HR1919, "");
+	*HR += new MenuEntry(Shyyy + "HR 999", HR999, "");
+	*HR += new MenuEntry(Shyyy + "HR 4", HR4, "");
+	*HR += new MenuEntry(Shyyy + "HR 65535", HR65535, "");
+	*HR += new MenuEntry(Shyyy + "HR 1", HR1, "");
+	*HR += new MenuEntry(Shyyy + "HR 0", HR0, "");
 	
 }
 menu += HR;
-MenuFolder *Quest = new MenuFolder(nimotsu + "クエスト");
+MenuFolder *Quest = new MenuFolder(mving + "クエスト");
 {
-	*Quest += new MenuEntry(nimotsu + "ボスHP1(オフライン専用)", BossHP1OfflineOnly, "");
-	*Quest += new MenuEntry(nimotsu + "クエスト貼ってなくても行ける(オフ)", YouCanGoWithoutPostingTheQuestOff, "");
-	*Quest += new MenuEntry(nimotsu + "クエスト貼ってなくても行ける", YouCanGoWithoutPostingTheQuest, "");
-	*Quest += new MenuEntry(nimotsu + "クエスト連続リクエスト", QuestContinuousRequest, "");
-	*Quest += new MenuEntry(nimotsu + "全員クエストリタイア", QuestRetirement, "");
-	*Quest += new MenuEntry(nimotsu + "ヘルジェイル", HellJail, "クエストから帰って来れなくなる");
-	*Quest += new MenuEntry(nimotsu + "タイマー0", Timer0, "");
-	*Quest += new MenuEntry(nimotsu + "タイマー増える", TimerIncreases, "");
-	*Quest += new MenuEntry(nimotsu + "タイマーコントローラー(早い)", TimerControllerFast, "");
-	*Quest += new MenuEntry(nimotsu + "タイマーコントローラー(普通)", TimerControllerNormal, "");
-	*Quest += new MenuEntry(nimotsu + "タイマーすぐ減る", TimerWillDecreaseSoon, "");
+	*Quest += new MenuEntry(Shyyy + "ボスHP1(オフライン専用)", BossHP1OfflineOnly, "");
+	*Quest += new MenuEntry(Shyyy + "クエスト貼ってなくてmving + リクエスト", QuestContinuousRequest, "");
+	*Quest += new MenuEntry(Shyyy + "全員クエストリタイア", QuestRetirement, "");
+	*Quest += new MenuEntry(Shyyy + "ヘルジェイル", HellJail, "クエストから帰って来れなくなる");
+	*Quest += new MenuEntry(Shyyy + "タイマー0", Timer0, "");
+	*Quest += new MenuEntry(Shyyy + "タイマー増える", TimerIncreases, "");
+	*Quest += new MenuEntry(Shyyy + "タイマーコントローラー(早い)", TimerControllerFast, "");
+	*Quest += new MenuEntry(Shyyy + "タイマーコントローラー(普通)", TimerControllerNormal, "");
+	*Quest += new MenuEntry(Shyyy + "タイマーすぐ減る", TimerWillDecreaseSoon, "");
 	
 }
 menu += Quest;
-MenuFolder *Status = new MenuFolder(Hunateiastus + "ステータス");
+MenuFolder *Status = new MenuFolder(mving + "ステータス");
 {
-	*Status += new MenuEntry(Hunateiastus + "スキルスロット埋める", FillSkillSlots, "→:1番上のスキル↑:真ん中のスキル←:1番下のスキル");
-	*Status += new MenuEntry(Hunateiastus + "透明", Transparent, "テスト段階、使用不可");
-	*Status += new MenuEntry(Hunateiastus + "攻撃力1", AttackPower1, "");
-	*Status += new MenuEntry(Hunateiastus + "防御力1", Defense1, "");
-	*Status += new MenuEntry(Hunateiastus + "防御力最高", HighestDefense, "");
-	*Status += new MenuEntry(Hunateiastus + "攻撃力999", AttackPower999, "");
-	*Status += new MenuEntry(Hunateiastus + "ボウガン連射", CrossbowFiring, "Aボタンで実行");
-	*Status += new MenuEntry(Hunateiastus + "スタミナ置き換え回復", StaminaSuperFastRecovery, "");
-	*Status += new MenuEntry(Hunateiastus + "HP置き換え回復", HPSuperFastRecovery, "");
-	*Status += new MenuEntry(Hunateiastus + "太刀連射", TachiFiring, "Aで実行");
-	*Status += new MenuEntry(Hunateiastus + "切れ味MAX", SharpnessMAX, "R+L");
-	*Status += new MenuEntry(Hunateiastus + "乗りゲージ常にMAX", RidingGaugeAlwaysMAX, "");
-	*Status += new MenuEntry(Hunateiastus + "HP0", HP0, "");
+	*Status += new MenuEntry(Shyyy + "スキルスロット埋める", FillSkillSlots, "→:1番上のスキル↑:真ん中のスキル←:1番下のスキル");
+	*Status += new MenuEntry(Shyyy + "透明", Transparent, "テスト段階、使用不可");
+	*Status += new MenuEntry(Shyyy + "攻撃力1", AttackPower1, "");
+	*Status += new MenuEntry(Shyyy + "防御力1", Defense1, "");
+	*Status += new MenuEntry(Shyyy + "防御力最高", HighestDefense, "");
+	*Status += new MenuEntry(Shyyy + "攻撃力999", AttackPower999, "");
+	*Status += new MenuEntry(Shyyy + "ボウガン連射", CrossbowFiring, "Aボタンで実行");
+	*Status += new MenuEntry(Shyyy + "スタミナ置き換え回復", StaminaSuperFastRecovery, "");
+	*Status += new MenuEntry(Shyyy + "HP置き換え回復", HPSuperFastRecovery, "");
+	*Status += new MenuEntry(Shyyy + "太刀連射", TachiFiring, "Aで実行");
+	*Status += new MenuEntry(Shyyy + "切れ味MAX", SharpnessMAX, "R+L");
+	*Status += new MenuEntry(Shyyy + "乗りゲージ常にMAX", RidingGaugeAlwaysMAX, "");
+	*Status += new MenuEntry(Shyyy + "HP0", HP0, "");
 	
 }
 menu += Status;
-MenuFolder *Camera = new MenuFolder(nimotsu + "カメラ");
+MenuFolder *Camera = new MenuFolder(mving + "カメラ");
 {
-	*Camera += new MenuEntry(nimotsu + "カメラ視野強化", CameraFieldOfViewEnhancement, "");
-	*Camera += new MenuEntry(nimotsu + "カメラ視野微強化", CameraFieldOfViewSlightlyEnhanced, "");
-	*Camera += new MenuEntry(nimotsu + "カメラハック1", CameraHack1, "R+L");
-	*Camera += new MenuEntry(nimotsu + "カメラハック", CameraHack, "");
-	*Camera += new MenuEntry(nimotsu + "エブリシングビュアー", EverythingViewer, "");
-	*Camera += new MenuEntry(nimotsu + "スーパーアイ", SuperEye, "");
-	*Camera += new MenuEntry(nimotsu + "FPS視点(V3)", FPSViewpointV3, "");
-	*Camera += new MenuEntry(nimotsu + "FPS視点(V2)", FPSViewpointV2, "");
-	*Camera += new MenuEntry(nimotsu + "FPS視点(V1)", FPSViewpointV1, "");
-    *Camera += new MenuEntry(nimotsu + "NPCの会話中カメラズームされない", CameraDoesNotZoomDuringNPCConversation, "ほぼ使い物にならなくて草");
+	*Camera += new MenuEntry(Shyyy + "カメラ視野強化", CameraFieldOfViewEnhancement, "");
+	*Camera += new MenuEntry(Shyyy + "カメラ視野微強化", CameraFieldOfViewSlightlyEnhanced, "");
+	*Camera += new MenuEntry(Shyyy + "カメラハック1", CameraHack1, "R+L");
+	*Camera += new MenuEntry(Shyyy + "カメラハック", CameraHack, "");
+	*Camera += new MenuEntry(Shyyy + "エブリシングビュアー", EverythingViewer, "");
+	*Camera += new MenuEntry(Shyyy + "スーパーアイ", SuperEye, "");
+	*Camera += new MenuEntry(Shyyy + "FPS視点(V3)", FPSViewpointV3, "");
+	*Camera += new MenuEntry(Shyyy + "FPS視点(V2)", FPSViewpointV2, "");
+	*Camera += new MenuEntry(Shyyy + "FPS視点(V1)", FPSViewpointV1, "");
+    *Camera += new MenuEntry(Shyyy + "NPCの会話中カメラズームされない", CameraDoesNotZoomDuringNPCConversation, "ほぼ使い物にならなくて草");
 }
 menu += Camera;
 
