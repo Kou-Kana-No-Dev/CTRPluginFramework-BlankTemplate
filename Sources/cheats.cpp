@@ -975,19 +975,7 @@ void YouCanGoWithoutPostingTheQuest(MenuEntry *entry)
 	if(Controller::IsKeysDown(A + B))
 	{
 		Process::Write32(offset + 0x003665CC , 0x00000100);
-	}
 }
-//クエスト連続リクエスト
-void QuestContinuousRequest(MenuEntry *entry)
-{
-	offset = 0x08000000;
-	Process::Read32(offset + 0x03665D0 , data32);
-	data32 += 0x00000001;
-	Process::Write32(offset + 0x03665D0 , data32);
-	if(Process::Read32(offset + 0x003665D0 , cmp32) && cmp32 == 0x00010000)
-	{
-		Process::Write32(offset + 0x003665D0 , 0x00002775);
-	}
 }
 //クエストリタイア
 void QuestRetirement(MenuEntry *entry)
