@@ -7,6 +7,19 @@
 
 namespace CTRPluginFramework
 {
+   void ThePlayersNameTurnsRainbowInChat(MenuEntry *entry);
+   void TheStrongestAttributeValue(MenuEntry *entry);
+   void FireAttribute(MenuEntry *entry);
+   void WaterAttribute(MenuEntry *entry);
+   void LightningAttribute(MenuEntry *entry);
+   void DragonAttribute(MenuEntry *entry);
+   void IceAttribute(MenuEntry *entry);
+   void PoisonAttribute(MenuEntry *entry);
+   void ParalysisAttribute(MenuEntry *entry);
+   void SleepAttribute(MenuEntry *entry);
+   void BombingAttribute(MenuEntry *entry);
+   void BugAttribute(MenuEntry *entry);
+   void BugAttribute2(MenuEntry *entry);
    void MessageContinuousThrow(MenuEntry *entry);
    void CrashTheGame(MenuEntry *entry);
    void TachiFiring(MenuEntry *entry);
