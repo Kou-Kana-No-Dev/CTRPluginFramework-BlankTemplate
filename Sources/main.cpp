@@ -157,7 +157,6 @@ MenuFolder *Quest = new MenuFolder(mving + "クエスト");
 	*Quest += new MenuEntry(Shyyy + "ボスHP1(オフライン専用)", BossHP1OfflineOnly, "");
 	*Quest += new MenuEntry(Shyyy + "クエ受注してなくても行ける(強制的)", YouCanGoWithoutPostingTheQuest, "");
 	*Quest += new MenuEntry(Shyyy + "クエ受注してなくても行けるオフ",YouCanGoWithoutPostingTheQuestOff, "");
-	*Quest += new MenuEntry(Shyyy + "クエスト受注してなくてもクエ行ける",YouCanGoWithoutPostingTheQuestOff, "");
 	*Quest += new MenuEntry(Shyyy + "全員クエストリタイア", QuestRetirement, "");
 	*Quest += new MenuEntry(Shyyy + "ヘルジェイル", HellJail, "L+→   クエストから帰って来れなくなる");
 	*Quest += new MenuEntry(Shyyy + "タイマー0", Timer0, "");
