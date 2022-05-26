@@ -7,6 +7,14 @@
 
 namespace CTRPluginFramework
 {
+   void Zoom(MenuEntry *entry);
+   void MonsterHPDoesNotDecrease(MenuEntry *entry);
+   void TachiFireVer2(MenuEntry *entry);
+   void AllAttributes(MenuEntry *entry);
+   void FastEat(MenuEntry *entry);
+   void WallThroughForErial(MenuEntry *entry);
+   void WallThrough(MenuEntry *entry);
+   void HyperDash(MenuEntry *entry);
    void ThePlayersNameTurnsRainbowInChat(MenuEntry *entry);
    void TheStrongestAttributeValue(MenuEntry *entry);
    void FireAttribute(MenuEntry *entry);
