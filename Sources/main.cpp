@@ -124,7 +124,7 @@ MenuFolder *Mobile = new MenuFolder(mving + "移動系");
 	*Mobile += new MenuEntry(Shyyy +  "スピードハックV2", SpeedHackV2, "");
 	*Mobile += new MenuEntry(Shyyy +  "スピードハックV2(遅め)", SpeedHackV2Slow, "");
 	*Mobile += new MenuEntry(Shyyy +  "スピードハックオフ", SpeedHackOff, "");
-	*Mobile += new MenuEntry(Shyyy + "ハイパーダッシュ", HyperDash, "Rでダッシュ中、移動速度アップ                  バルスライドとの違いは、滑らず、純粋なスピードハックのような動きをすること");
+	*Mobile += new MenuEntry(Shyyy + "ハイパーダッシュ", HyperDash, "Rでダッシュ中、移動速度アップ                                                               バルスライドとの違いは、滑らず、純粋なスピードハックのような動きをすること");
 	MenuFolder *SpeedHackUnstableVersion = new MenuFolder(Hunateiastus + "スピードハック(不安定版)");
 	{
 		*SpeedHackUnstableVersion += new MenuEntry(Hunateiastus + "スピードハックテスト", SpeedHackTest, "");
