@@ -56,16 +56,18 @@ void TachiFireVer2(MenuEntry *entry)
 		Process::ReadFloat(offset + 0x0000044 , dataf);
 		dataf += -52;
 		Process::WriteFloat(offset + 0x0000044 , dataf);
-		
+				//floatmode:off
 	}
-	if(Controller::IsKeysDown(A + R))
+	if(Controller::IsKeysDown(R + A))
 	{
-		Process::ReadFloat(offset + 0x0000C9C , dataf);
-		dataf += 2.8698592549372E-41;
-		Process::WriteFloat(offset + 0x0000C9C , dataf);
-		Process::ReadFloat(offset + 0x0001020 , dataf);
-		dataf += 2.8698592549372E-41;
-		Process::WriteFloat(offset + 0x0001020 , dataf);
+		Process::Read32(0x08195350 , data32);
+		offset = data32;
+		Process::Read32(offset + 0x0000C9C , data32);
+		data32 += 0x00005000;
+		Process::Write32(offset + 0x0000C9C , data32);
+		Process::Read32(offset + 0x0001020 , data32);
+		data32 += 0x00005000;
+		Process::Write32(offset + 0x0001020 , data32);
 	}
 }
 //全属性
@@ -1647,7 +1649,7 @@ void CrazyJump(MenuEntry *entry)
 //クレイジーウォーク(ボタンあり)
 void CrazyWalkWithButton(MenuEntry *entry)
 {
-	if(Controller::IsKeysDown(R + Y))
+	if(Controller::IsKeysDown(R + A))
 	{
 		Process::Read32(0x08195350 , data32);
 		offset = data32;
