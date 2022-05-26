@@ -124,6 +124,7 @@ MenuFolder *Mobile = new MenuFolder(mving + "移動系");
 	*Mobile += new MenuEntry(Shyyy +  "スピードハックV2", SpeedHackV2, "");
 	*Mobile += new MenuEntry(Shyyy +  "スピードハックV2(遅め)", SpeedHackV2Slow, "");
 	*Mobile += new MenuEntry(Shyyy +  "スピードハックオフ", SpeedHackOff, "");
+	*Mobile += new MenuEntry(Shyyy + "ハイパーダッシュ", HyperDash, "Rでダッシュ中、移動速度アップ                  バルスライドとの違いは、滑らず、純粋なスピードハックのような動きをすること");
 	MenuFolder *SpeedHackUnstableVersion = new MenuFolder(Hunateiastus + "スピードハック(不安定版)");
 	{
 		*SpeedHackUnstableVersion += new MenuEntry(Hunateiastus + "スピードハックテスト", SpeedHackTest, "");
@@ -154,6 +155,7 @@ MenuFolder *HR = new MenuFolder(mving + "HR");
 menu += HR;
 MenuFolder *Quest = new MenuFolder(mving + "クエスト");
 {
+	*Quest += new MenuEntry(Shyyy + "モンスターHP減らない", MonsterHPDoesNotDecrease, "");
 	*Quest += new MenuEntry(Shyyy + "ボスHP1(オフライン専用)", BossHP1OfflineOnly, "");
 	*Quest += new MenuEntry(Shyyy + "クエ受注してなくても行ける(強制的)", YouCanGoWithoutPostingTheQuest, "");
 	*Quest += new MenuEntry(Shyyy + "クエ受注してなくても行けるオフ",YouCanGoWithoutPostingTheQuestOff, "");
@@ -182,8 +184,10 @@ MenuFolder *Status = new MenuFolder(mving + "ステータス");
         *zksi += new MenuEntry(Shyyy + "爆破属性", BombingAttribute, "");
         *zksi += new MenuEntry(Shyyy + "バグ属性", BugAttribute, "");
         *zksi += new MenuEntry(Shyyy + "バグ属性2", BugAttribute2, "");
+        *zksi += new MenuEntry(Shyyy + "全属性", AllAttributes, "");
 }
     *Status += zksi;
+    *Status += new MenuEntry("ファストイート", FastEat, "肉、笛、調合薬などを速く使用できます");
 	*Status += new MenuEntry(Shyyy + "スキルスロット埋める", FillSkillSlots, "→:1番上のスキル↑:真ん中のスキル←:1番下のスキル");
 	*Status += new MenuEntry(Shyyy + "透明", Transparent, "テスト段階、使用不可");
 	*Status += new MenuEntry(Shyyy + "攻撃力1", AttackPower1, "");
@@ -194,15 +198,19 @@ MenuFolder *Status = new MenuFolder(mving + "ステータス");
 	*Status += new MenuEntry(Shyyy + "ボウガン連射", CrossbowFiring, "Aボタンで実行");
 	*Status += new MenuEntry(Shyyy + "スタミナ置き換え回復", StaminaSuperFastRecovery, "");
 	*Status += new MenuEntry(Shyyy + "HP置き換え回復", HPSuperFastRecovery, "");
+	*Status += new MenuEntry(Shyyy + "太刀連射 Ver2", TachiFireVer2, "Aで連射/A+Rでローリング");
 	*Status += new MenuEntry(Shyyy + "太刀連射", TachiFiring, "Aで実行");
 	*Status += new MenuEntry(Shyyy + "切れ味MAX", SharpnessMAX, "R+L");
 	*Status += new MenuEntry(Shyyy + "乗りゲージ常にMAX", RidingGaugeAlwaysMAX, "");
 	*Status += new MenuEntry(Shyyy + "HP0", HP0, "");
-	
+
+	*Status +=new MenuEntry("エリアル用壁抜け", WallThroughForErial, "");
+	*Status +=new MenuEntry("壁抜け", WallThrough, "");
 }
 menu += Status;
 MenuFolder *Camera = new MenuFolder(mving + "カメラ");
 {
+	*Camera += new MenuEntry(Shyyy + "ズーム", Zoom, "Rで実行");
 	*Camera += new MenuEntry(Shyyy + "カメラ視野強化", CameraFieldOfViewEnhancement, "");
 	*Camera += new MenuEntry(Shyyy + "カメラ視野微強化", CameraFieldOfViewSlightlyEnhanced, "");
 	*Camera += new MenuEntry(Shyyy + "カメラハック1", CameraHack1, "R+L");

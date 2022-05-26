@@ -7,6 +7,147 @@ float dataf = 0;
 
 namespace CTRPluginFramework
 {
+//ズーム
+void Zoom(MenuEntry *entry)
+{
+	if(Controller::IsKeyDown(R))
+	{
+		offset = 0x08000000;
+		Process::Read32(offset + 0x01944C4 , data32);
+		data32 += 0x41000000;
+		Process::Write32(offset + 0x01944C4 , data32);
+		Process::Read32(offset + 0x01944B0 , data32);
+		data32 += 0x40800000;
+		Process::Write32(offset + 0x01944B0 , data32);
+	}
+}
+//モンスターHP減らない
+void MonsterHPDoesNotDecrease(MenuEntry *entry)
+{
+	Process::Read32(0x08195384 , data32);
+	offset = data32;
+	Process::Write32(offset + 0x00001318 , 0x00009999);
+	offset = 0;
+	data32 = 0;
+	Process::Read32(0x08195398 , data32);
+	offset = data32;
+	Process::Write32(offset + 0x00001318 , 0x00009999);
+	offset = 0;
+	data32 = 0;
+	Process::Read32(0x08195380 , data32);
+	offset = data32;
+	Process::Write32(offset + 0x00001318 , 0x00009999);
+	Process::Write32(offset + 0x0000D5C8 , 0x00009999);
+	Process::Write32(offset + 0x0000C648 , 0x00009999);
+}
+//太刀連射 Ver2
+void TachiFireVer2(MenuEntry *entry)
+{
+	if(Controller::IsKeyDown(A))
+	{
+		Process::Write32(0x0819428C , 0x00000000);
+		Process::Read32(0x08195350 , data32);
+		offset = data32;
+		Process::Write32(offset + 0x00000294 , 0x433EBC40);
+		Process::Write32(offset + 0x000029B8 , 0x3FFFE3CE);
+		Process::Write32(offset + 0x00001FE4 , 0x00270004);
+		//floatmode:on
+		Process::ReadFloat(offset + 0x0000044 , dataf);
+		dataf += -52;
+		Process::WriteFloat(offset + 0x0000044 , dataf);
+		
+	}
+	if(Controller::IsKeysDown(A + R))
+	{
+		Process::ReadFloat(offset + 0x0000C9C , dataf);
+		dataf += 2.8698592549372E-41;
+		Process::WriteFloat(offset + 0x0000C9C , dataf);
+		Process::ReadFloat(offset + 0x0001020 , dataf);
+		dataf += 2.8698592549372E-41;
+		Process::WriteFloat(offset + 0x0001020 , dataf);
+	}
+}
+//全属性
+void AllAttributes(MenuEntry *entry)
+{
+	offset = 0x08000000;
+	Process::Read32(offset + 0x031B456 , data32);
+	data32 += 0x00000001;
+	Process::Write32(offset + 0x031B456 , data32);
+	if(Process::Read16(offset + 0x0031B456 , cmp16) && (cmp16 & 0xFFFF) == 0x000A)
+	{
+		Process::Write32(offset + 0x0031B456 , 0x00000001);
+	}
+}
+//ファストイート
+void FastEat(MenuEntry *entry)
+{
+	Process::Read32(0x08195350 , data32);
+	offset = data32;
+	if(Process::Read16(offset + 0x00001FE6 , cmp16) && (cmp16 & 0xFFFF) == 0x0055)
+	{
+		Process::Write8(offset + 0x000025AA , 0x01);
+		Process::Write32(offset + 0x0000024C , 0x00050501);
+	}
+	if(Process::Read16(offset + 0x00001FE6 , cmp16) && (cmp16 & 0xFFFF) == 0x0056)
+	{
+		Process::Write8(offset + 0x000025AA , 0x01);
+		Process::Write32(offset + 0x0000024C , 0x00050501);
+	}
+	if(Process::Read16(offset + 0x00001FE6 , cmp16) && (cmp16 & 0xFFFF) == 0x009C)
+	{
+		Process::Write8(offset + 0x000025AA , 0x01);
+		Process::Write32(offset + 0x0000024C , 0x00050501);
+	}
+	offset = 0;
+	data32 = 0;
+	Process::Read32(0x08195350 , data32);
+	offset = data32;
+	if(Process::Read16(offset + 0x00001FE6 , cmp16) && (cmp16 & 0xFFFF) == 0x0057)
+	{
+		Process::Write8(offset + 0x000025AA , 0x01);
+		Process::Write32(offset + 0x0000024C , 0x00050501);
+	}
+}
+//エリアル用壁抜け
+void WallThroughForErial(MenuEntry *entry)
+{
+	Process::Read32(0x08195350 , data32);
+	offset = data32;
+	if(Process::Read32(offset + 0x00001FE4 , cmp32) && cmp32 != 0x00A60002)
+	{
+		if(Process::Read32(offset + 0x00000004 , cmp32) && cmp32 == 0x00000201)
+		{
+			//floatmode:on
+			Process::ReadFloat(offset + 0x0000044 , dataf);
+			dataf += -512;
+			Process::WriteFloat(offset + 0x0000044 , dataf);
+		}
+	}
+}
+//壁抜け
+void WallThrough(MenuEntry *entry)
+{
+	Process::Read32(0x08195350 , data32);
+	offset = data32;
+	if(Process::Read32(offset + 0x00000004 , cmp32) && cmp32 == 0x00000201)
+	{
+		//floatmode:on
+		Process::ReadFloat(offset + 0x0000044 , dataf);
+		dataf += -2048;
+		Process::WriteFloat(offset + 0x0000044 , dataf);
+	}
+}
+//ハイパーダッシュ
+void HyperDash(MenuEntry *entry)
+{
+	if(Controller::IsKeyDown(R))
+	{
+		Process::Read32(0x08195350 , data32);
+		offset = data32;
+		Process::Write32(offset + 0x00000294 , 0x433EBC40);
+	}
+}
 //チャットでプレイヤーの名前が虹色になる
 void ThePlayersNameTurnsRainbowInChat(MenuEntry *entry)
 {
