@@ -13,12 +13,13 @@ void Zoom(MenuEntry *entry)
 	if(Controller::IsKeyDown(R))
 	{
 		offset = 0x08000000;
-		Process::Read32(offset + 0x01944C4 , data32);
-		data32 += 0x41000000;
-		Process::Write32(offset + 0x01944C4 , data32);
-		Process::Read32(offset + 0x01944B0 , data32);
-		data32 += 0x40800000;
-		Process::Write32(offset + 0x01944B0 , data32);
+		//floatmode:on
+		Process::ReadFloat(offset + 0x01944C4 , dataf);
+		dataf += 8;
+		Process::WriteFloat(offset + 0x01944C4 , dataf);
+		Process::ReadFloat(offset + 0x01944B0 , dataf);
+		dataf += 4;
+		Process::WriteFloat(offset + 0x01944B0 , dataf);
 	}
 }
 //モンスターHP減らない
