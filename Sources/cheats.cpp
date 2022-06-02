@@ -7,6 +7,685 @@ float dataf = 0;
 
 namespace CTRPluginFramework
 {
+//スピードハック x2
+void SpeedHackX2(MenuEntry *entry)
+{
+	if(Controller::IsKeyDown(R))
+	{
+		if(Process::Read16(0x083ACA64 , cmp16) && (cmp16 & 0xFFFF) != 0xFF00)
+		{
+			if(Process::Read32(0x08195350 , cmp32) && cmp32 != 0x00000000)
+			{
+				Process::Read32(0x08195350 , data32);
+				offset = data32;
+				Process::Write32(offset + 0x00001040 , 0x42000000);
+			}
+		}
+	}
+	offset = 0;
+	data32 = 0;
+	if(Controller::IsKeyDown(R))
+	{
+		if(Process::Read16(0x083ACA64 , cmp16) && (cmp16 & 0xFFFF) != 0xFF00)
+		{
+			if(Process::Read32(0x08195350 , cmp32) && cmp32 != 0x00000000)
+			{
+				Process::Read32(0x08195350 , data32);
+				offset = data32;
+				Process::Write32(offset + 0x0000C560 , 0x42000000);
+			}
+		}
+	}
+}
+//スピードハック
+void SpeedHacksss(MenuEntry *entry)
+{
+	if(Controller::IsKeyDown(R))
+	{
+		if(Process::Read16(0x083ACA64 , cmp16) && (cmp16 & 0xFFFF) != 0xFF00)
+		{
+			if(Process::Read32(0x08195350 , cmp32) && cmp32 != 0x00000000)
+			{
+				Process::Read32(0x08195350 , data32);
+				offset = data32;
+				Process::Write32(offset + 0x00001040 , 0x41000000);
+			}
+		}
+	}
+	offset = 0;
+	data32 = 0;
+	if(Controller::IsKeyDown(R))
+	{
+		if(Process::Read16(0x083ACA64 , cmp16) && (cmp16 & 0xFFFF) != 0xFF00)
+		{
+			if(Process::Read32(0x08195350 , cmp32) && cmp32 != 0x00000000)
+			{
+				Process::Read32(0x08195350 , data32);
+				offset = data32;
+				Process::Write32(offset + 0x0000C560 , 0x41000000);
+			}
+		}
+	}
+}
+//スローハック
+void SlowHacksss(MenuEntry *entry)
+{
+	if(Controller::IsKeyDown(R))
+	{
+		if(Process::Read16(0x083ACA64 , cmp16) && (cmp16 & 0xFFFF) != 0xFF00)
+		{
+			if(Process::Read32(0x08195350 , cmp32) && cmp32 != 0x00000000)
+			{
+				Process::Read32(0x08195350 , data32);
+				offset = data32;
+				Process::Write32(offset + 0x00001040 , 0x3F000000);
+			}
+		}
+	}
+	offset = 0;
+	data32 = 0;
+	if(Controller::IsKeyDown(R))
+	{
+		if(Process::Read16(0x083ACA64 , cmp16) && (cmp16 & 0xFFFF) != 0xFF00)
+		{
+			if(Process::Read32(0x08195350 , cmp32) && cmp32 != 0x00000000)
+			{
+				Process::Read32(0x08195350 , data32);
+				offset = data32;
+				Process::Write32(offset + 0x0000C560 , 0x3F000000);
+			}
+		}
+	}
+}
+//スローハック x2
+void SlowHackX2(MenuEntry *entry)
+{
+	if(Controller::IsKeyDown(R))
+	{
+		if(Process::Read16(0x083ACA64 , cmp16) && (cmp16 & 0xFFFF) != 0xFF00)
+		{
+			if(Process::Read32(0x08195350 , cmp32) && cmp32 != 0x00000000)
+			{
+				Process::Read32(0x08195350 , data32);
+				offset = data32;
+				Process::Write32(offset + 0x00001040 , 0x3E000000);
+			}
+		}
+	}
+	offset = 0;
+	data32 = 0;
+	if(Controller::IsKeyDown(R))
+	{
+		if(Process::Read16(0x083ACA64 , cmp16) && (cmp16 & 0xFFFF) != 0xFF00)
+		{
+			if(Process::Read32(0x08195350 , cmp32) && cmp32 != 0x00000000)
+			{
+				Process::Read32(0x08195350 , data32);
+				offset = data32;
+				Process::Write32(offset + 0x0000C560 , 0x3E000000);
+			}
+		}
+	}
+}
+//ボマー V2
+void BomberVv2(MenuEntry *entry)
+{
+	if(Process::Read16(0x083ACA64 , cmp16) && (cmp16 & 0xFFFF) != 0xFF00)
+	{
+		if(Controller::IsKeysDown(A + R))
+		{
+			Process::Read32(0x08195350 , data32);
+			offset = data32;
+			Process::Write32(offset + 0x00001FD4 , 0x00000000);
+			Process::Write32(offset + 0x00001000 , 0x2BB70059);
+			Process::Write32(offset + 0x00002000 , 0xE98C0059);
+			Process::Write32(offset + 0x00002210 , 0x00000000);
+			Process::Write32(offset + 0x000021EC , 0xABC00100);
+			offset = 0x00000000;
+			if(Process::Read16(offset + 0x083AC5D8 , cmp16) && (cmp16 & 0xFFFF) != 0x0203)
+			{
+				Process::Read32(offset + 0x08195350 , data32);
+				offset = data32;
+				Process::Write32(offset + 0x00001FE4 , 0x00580001);
+				Process::Write32(offset + 0x00000294 , 0x42900011);
+				//floatmode:on
+				Process::ReadFloat(offset + 0x0000044 , dataf);
+				dataf += -52;
+				Process::WriteFloat(offset + 0x0000044 , dataf);
+				
+			}
+			if(Process::Read16(offset + 0x083ACA64 , cmp16) && (cmp16 & 0xFFFF) != 0xFF00)
+			{
+				if(Controller::IsKeysDown(A + R))
+				{
+					offset = 0x00000000;
+					if(Process::Read16(offset + 0x093AC5D8 , cmp16) && (cmp16 & 0xFFFF) == 0x0203)
+					{
+						Process::Read32(offset + 0x08195350 , data32);
+						offset = data32;
+						Process::Write32(offset + 0x00001FE4 , 0x00270004);
+						//floatmode:on
+						Process::ReadFloat(offset + 0x0000044 , dataf);
+						dataf += -52;
+						Process::WriteFloat(offset + 0x0000044 , dataf);
+						
+					}
+				}
+			}
+		}
+	}
+	offset = 0;
+	data32 = 0;
+	dataf = 0;
+	if(Process::Read16(0x083ACA64 , cmp16) && (cmp16 & 0xFFFF) != 0xFF00)
+	{
+		Process::Read32(0x08195350 , data32);
+		offset = data32;
+		if(Process::Read32(offset + 0x00000294 , cmp32) && cmp32 == 0x42100000)
+		{
+			Process::Write32(offset + 0x00001FE4 , 0x005A0001);
+		}
+	}
+}
+//太刀連射 V2
+void TachiFireV2(MenuEntry *entry)
+{
+	if(Process::Read16(0x083ACA64 , cmp16) && (cmp16 & 0xFFFF) != 0xFF00)
+	{
+		if(Controller::IsKeyDown(A))
+		{
+			Process::Write32(0x0819428C , 0x00000000);
+			Process::Read32(0x08195350 , data32);
+			offset = data32;
+			Process::Write32(offset + 0x00000294 , 0x433EBC40);
+			Process::Write32(offset + 0x000029B8 , 0x3FFFE3CE);
+			Process::Write32(offset + 0x00001FE4 , 0x00270004);
+			//floatmode:on
+			Process::ReadFloat(offset + 0x0000044 , dataf);
+			dataf += -52;
+			Process::WriteFloat(offset + 0x0000044 , dataf);
+			
+		}
+		if(Process::Read16(offset + 0x083ACA64 , cmp16) && (cmp16 & 0xFFFF) != 0xFF00)
+		{
+			if(Controller::IsKeysDown(A + R))
+			{
+				Process::ReadFloat(offset + 0x0000C9C , dataf);
+				dataf += 2.8698592549372E-41;
+				Process::WriteFloat(offset + 0x0000C9C , dataf);
+				Process::ReadFloat(offset + 0x0001020 , dataf);
+				dataf += 2.8698592549372E-41;
+				Process::WriteFloat(offset + 0x0001020 , dataf);
+			}
+		}
+	}
+}
+//ビーホップ
+void BeeHoop(MenuEntry *entry)
+{
+	if(Process::Read16(0x083ACA64 , cmp16) && (cmp16 & 0xFFFF) != 0xFF00)
+	{
+		if(Controller::IsKeysDown(DPadLeft + L))
+		{
+			Process::Write32(0x0011CB34 , 0x00000001);
+		}
+	}
+	if(Process::Read16(0x083ACA64 , cmp16) && (cmp16 & 0xFFFF) != 0xFF00)
+	{
+		if(Controller::IsKeysDown(DPadRight + L))
+		{
+			Process::Write32(0x0011CB34 , 0x00000000);
+		}
+	}
+	if(Process::Read16(0x083ACA64 , cmp16) && (cmp16 & 0xFFFF) != 0xFF00)
+	{
+		if(Process::Read32(0x0011CB34 , cmp32) && cmp32 == 0x00000001)
+		{
+			Process::Read32(0x08195350 , data32);
+			offset = data32;
+			Process::Write32(offset + 0x000002F4 , 0xC2100000);
+			Process::Write32(offset + 0x00001FE4 , 0x00050005);
+		}
+	}
+	offset = 0;
+	data32 = 0;
+	if(Process::Read16(0x083ACA64 , cmp16) && (cmp16 & 0xFFFF) != 0xFF00)
+	{
+		if(Process::Read32(0x0011CB34 , cmp32) && cmp32 == 0x00000001)
+		{
+			Process::Read32(0x08195350 , data32);
+			offset = data32;
+			if(Controller::IsKeyDown(CPadRight))
+			{
+				Process::Write32(offset + 0x000002F0 , 0x42900000);
+			}
+		}
+	}
+	offset = 0;
+	data32 = 0;
+	if(Process::Read16(0x083ACA64 , cmp16) && (cmp16 & 0xFFFF) != 0xFF00)
+	{
+		if(Process::Read32(0x0011CB34 , cmp32) && cmp32 == 0x00000001)
+		{
+			Process::Read32(0x08195350 , data32);
+			offset = data32;
+			if(Controller::IsKeyDown(CPadLeft))
+			{
+				Process::Write32(offset + 0x000002F0 , 0xC2900000);
+			}
+		}
+	}
+	offset = 0;
+	data32 = 0;
+	if(Process::Read16(0x083ACA64 , cmp16) && (cmp16 & 0xFFFF) != 0xFF00)
+	{
+		if(Process::Read32(0x0011CB34 , cmp32) && cmp32 == 0x00000001)
+		{
+			if(Controller::IsKeyDown(CPadDown))
+			{
+				Process::Read32(0x08195350 , data32);
+				offset = data32;
+				Process::Write32(offset + 0x000002F8 , 0x42900000);
+			}
+		}
+	}
+	offset = 0;
+	data32 = 0;
+	if(Process::Read16(0x083ACA64 , cmp16) && (cmp16 & 0xFFFF) != 0xFF00)
+	{
+		if(Process::Read32(0x0011CB34 , cmp32) && cmp32 == 0x00000001)
+		{
+			if(Controller::IsKeyDown(CPadUp))
+			{
+				Process::Read32(0x08195350 , data32);
+				offset = data32;
+				Process::Write32(offset + 0x000002F8 , 0xC2900000);
+			}
+		}
+	}
+}
+//ボマー
+void Bommeru(MenuEntry *entry)
+{
+	if(Controller::IsKeysDown(A + R))
+	{
+		if(Process::Read16(0x083ACA64 , cmp16) && (cmp16 & 0xFFFF) != 0xFF00)
+		{
+			Process::Read32(0x08195350 , data32);
+			offset = data32;
+			Process::Write32(offset + 0x000021EC , 0xABC00100);
+			offset = 0x00000000;
+			if(Process::Read16(offset + 0x083ACA64 , cmp16) && (cmp16 & 0xFFFF) != 0xFF00)
+			{
+				if(Process::Read16(offset + 0x083AC5D8 , cmp16) && (cmp16 & 0xFFFF) != 0x0203)
+				{
+					Process::Read32(offset + 0x08195350 , data32);
+					offset = data32;
+					Process::Write32(offset + 0x00001FE4 , 0x00580001);
+					Process::Write32(offset + 0x00000294 , 0x428C0011);
+					//floatmode:on
+					Process::ReadFloat(offset + 0x0000044 , dataf);
+					dataf += -52;
+					Process::WriteFloat(offset + 0x0000044 , dataf);
+					
+				}
+				if(Process::Read16(offset + 0x083ACA64 , cmp16) && (cmp16 & 0xFFFF) != 0xFF00)
+				{
+					if(Controller::IsKeysDown(A + R))
+					{
+						offset = 0x00000000;
+						if(Process::Read16(offset + 0x093AC5D8 , cmp16) && (cmp16 & 0xFFFF) == 0x0203)
+						{
+							Process::Read32(offset + 0x08195350 , data32);
+							offset = data32;
+							Process::Write32(offset + 0x00001FE4 , 0x00270004);
+							//floatmode:on
+							Process::ReadFloat(offset + 0x0000044 , dataf);
+							dataf += -52;
+							Process::WriteFloat(offset + 0x0000044 , dataf);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+//支給品ボックスアイテム盗む
+void StealingSuppliesBoxIteems(MenuEntry *entry)
+{
+	if(Process::Read16(offset + 0x083ACA64 , cmp16) && (cmp16 & 0xFFFF) != 0xFF00)
+	{
+		Process::Write32(offset + 0x083658C8 , 0x00FF0100);
+	}
+	offset = 0;
+	if(Process::Read16(offset + 0x083ACA64 , cmp16) && (cmp16 & 0xFFFF) != 0xFF00)
+	{
+		for(u32 i = 0; i < 0x00000024; i++)
+		{
+			Process::Write32(offset + 0x4*i + 0x08372390 , 0x00000000);
+			
+		}
+	}
+	if(Process::Read16(offset + 0x083ACA64 , cmp16) && (cmp16 & 0xFFFF) != 0xFF00)
+	{
+		if(Controller::IsKeysDown(A + L))
+		{
+			Process::Write32(offset + 0x081942E4 , 0x00000000);
+			offset = 0x08000000;
+			Process::Read32(offset + 0x036588C , data32);
+			data32 += 0x00000100;
+			Process::Write32(offset + 0x036588C , data32);
+			if(Process::Read16(offset + 0x0036588C , cmp16) && (cmp16 & 0xFFFF) < 0x0700)
+			{
+				Process::Write16(offset + 0x0036588C , 0x0000);
+				Process::Read32(offset + 0x036588C , data32);
+				data32 += 0x00010000;
+				Process::Write32(offset + 0x036588C , data32);
+			}
+			if(Process::Read16(offset + 0x083ACA64 , cmp16) && (cmp16 & 0xFFFF) != 0xFF00)
+			{
+				if(Process::Read16(offset + 0x0036588E , cmp16) && (cmp16 & 0xFFFF) == 0x0005)
+				{
+					Process::Write16(offset + 0x0036588E , 0x0000);
+				}
+			}
+		}
+	}
+}
+//支給品ボックスアイテム盗む
+void StealingSuppliesBoxItems(MenuEntry *entry)
+{
+	Process::Write32(offset + 0x083658C8 , 0x00FF0100);
+	offset = 0;
+	for(u32 i = 0; i < 0x00000024; i++)
+	{
+		Process::Write32(offset + 0x4*i + 0x08372390 , 0x00000000);
+		
+	}
+	if(Controller::IsKeysDown(A + L))
+	{
+		Process::Write32(offset + 0x081942E4 , 0x00000000);
+		offset = 0x08000000;
+		Process::Read32(offset + 0x036588C , data32);
+		data32 += 0x00000100;
+		Process::Write32(offset + 0x036588C , data32);
+		if(Process::Read16(offset + 0x0036588C , cmp16) && (cmp16 & 0xFFFF) < 0x0700)
+		{
+			Process::Write16(offset + 0x0036588C , 0x0000);
+			Process::Read32(offset + 0x036588C , data32);
+			data32 += 0x00010000;
+			Process::Write32(offset + 0x036588C , data32);
+		}
+		if(Process::Read16(offset + 0x0036588E , cmp16) && (cmp16 & 0xFFFF) == 0x0005)
+		{
+			Process::Write16(offset + 0x0036588E , 0x0000);
+		}
+	}
+}
+//空中でのプレイヤーのフリーズを対策
+void CountermeasuresAgainstPlayerFreezesInTheAir(MenuEntry *entry)
+{
+	Process::Read32(0x08195350 , data32);
+	offset = data32;
+	if(Process::Read32(offset + 0x00001FE4 , cmp32) && cmp32 == 0x005A0001)
+	{
+		if(Process::Read32(offset + 0x00000004 , cmp32) && cmp32 == 0x00000201)
+		{
+			Process::Write32(offset + 0x00001FE4 , 0x00270001);
+		}
+	}
+}
+//基本的な攻撃で吹き飛ばない
+void DoesntBlowOffWithABasicAttack(MenuEntry *entry)
+{
+	Process::Read32(0x08195350 , data32);
+	offset = data32;
+	if(Process::Read32(offset + 0x00001FE4 , cmp32) && cmp32 == 0x00240001)
+	{
+		Process::Write32(offset + 0x00001FE4 , 0x005A0001);
+	}
+	offset = 0;
+	data32 = 0;
+	Process::Read32(0x08195350 , data32);
+	offset = data32;
+	if(Process::Read32(offset + 0x00001FE4 , cmp32) && cmp32 == 0x00050010)
+	{
+		Process::Write32(offset + 0x00001FE4 , 0x005A0001);
+	}
+	offset = 0;
+	data32 = 0;
+	Process::Read32(0x08195350 , data32);
+	offset = data32;
+	if(Process::Read32(offset + 0x00001FE4 , cmp32) && cmp32 == 0x00040010)
+	{
+		Process::Write32(offset + 0x00001FE4 , 0x005A0001);
+	}
+	offset = 0;
+	data32 = 0;
+	Process::Read32(0x08195350 , data32);
+	offset = data32;
+	if(Process::Read32(offset + 0x00001FE4 , cmp32) && cmp32 == 0x00040004)
+	{
+		Process::Write32(offset + 0x00001FE4 , 0x005A0001);
+	}
+}
+//ネオンオーラ(バージョン2)
+void NeonAuraVersion2(MenuEntry *entry)
+{
+	if(Controller::IsKeyDown(DPadRight))
+	{
+		Process::Read32(0x08195350 , data32);
+		offset = data32;
+		Process::Write32(offset + 0x000002F0 , 0x43000000);
+		Process::Read32(offset + 0x0000C9C , data32);
+		data32 += 0x00000800;
+		Process::Write32(offset + 0x0000C9C , data32);
+		Process::Read32(offset + 0x0001020 , data32);
+		data32 += 0x00000800;
+		Process::Write32(offset + 0x0001020 , data32);
+	}
+}
+//ネオンオーラ
+void NeonAura(MenuEntry *entry)
+{
+	if(Controller::IsKeyDown(DPadRight))
+	{
+		Process::Read32(0x08195350 , data32);
+		offset = data32;
+		Process::Write32(offset + 0x000002F0 , 0x42000000);
+		Process::Read32(offset + 0x0000C9C , data32);
+		data32 += 0x00000800;
+		Process::Write32(offset + 0x0000C9C , data32);
+		Process::Read32(offset + 0x0001020 , data32);
+		data32 += 0x00000800;
+		Process::Write32(offset + 0x0001020 , data32);
+	}
+}
+//ビーホップ
+void BeeHop(MenuEntry *entry)
+{
+	if(Controller::IsKeysDown(DPadLeft + L))
+	{
+		Process::Write32(0x0011CB34 , 0x00000001);
+	}
+	if(Controller::IsKeysDown(DPadRight + L))
+	{
+		Process::Write32(0x0011CB34 , 0x00000000);
+	}
+	if(Process::Read32(0x0011CB34 , cmp32) && cmp32 == 0x00000001)
+	{
+		Process::Read32(0x08195350 , data32);
+		offset = data32;
+		Process::Write32(offset + 0x000002F4 , 0xC2100000);
+		Process::Write32(offset + 0x00001FE4 , 0x00050005);
+	}
+	offset = 0;
+	data32 = 0;
+	if(Process::Read32(0x0011CB34 , cmp32) && cmp32 == 0x00000001)
+	{
+		Process::Read32(0x08195350 , data32);
+		offset = data32;
+		if(Controller::IsKeyDown(CPadRight))
+		{
+			Process::Write32(offset + 0x000002F0 , 0x42900000);
+		}
+	}
+	offset = 0;
+	data32 = 0;
+	if(Process::Read32(0x0011CB34 , cmp32) && cmp32 == 0x00000001)
+	{
+		Process::Read32(0x08195350 , data32);
+		offset = data32;
+		if(Controller::IsKeyDown(CPadLeft))
+		{
+			Process::Write32(offset + 0x000002F0 , 0xC2900000);
+		}
+	}
+	offset = 0;
+	data32 = 0;
+	if(Process::Read32(0x0011CB34 , cmp32) && cmp32 == 0x00000001)
+	{
+		if(Controller::IsKeyDown(CPadDown))
+		{
+			Process::Read32(0x08195350 , data32);
+			offset = data32;
+			Process::Write32(offset + 0x000002F8 , 0x42900000);
+		}
+	}
+	offset = 0;
+	data32 = 0;
+	if(Process::Read32(0x0011CB34 , cmp32) && cmp32 == 0x00000001)
+	{
+		if(Controller::IsKeyDown(CPadUp))
+		{
+			Process::Read32(0x08195350 , data32);
+			offset = data32;
+			Process::Write32(offset + 0x000002F8 , 0xC2900000);
+		}
+	}
+}
+//プレイヤームーブ式座標移動
+void PlayerMoveTypeCoordinateMovement(MenuEntry *entry)
+{
+	Process::Read32(0x08195350 , data32);
+	offset = data32;
+	if(Controller::IsKeyDown(CPadRight))
+	{
+		Process::Write32(offset + 0x000002F0 , 0x42000000);
+	}
+	offset = 0;
+	data32 = 0;
+	Process::Read32(0x08195350 , data32);
+	offset = data32;
+	if(Controller::IsKeyDown(CPadLeft))
+	{
+		Process::Write32(offset + 0x000002F0 , 0xC2000000);
+	}
+	offset = 0;
+	data32 = 0;
+	if(Controller::IsKeyDown(CPadDown))
+	{
+		Process::Read32(0x08195350 , data32);
+		offset = data32;
+		Process::Write32(offset + 0x000002F8 , 0x42000000);
+	}
+	offset = 0;
+	data32 = 0;
+	if(Controller::IsKeyDown(CPadUp))
+	{
+		Process::Read32(0x08195350 , data32);
+		offset = data32;
+		Process::Write32(offset + 0x000002F8 , 0xC2000000);
+	}
+}
+//ボマー V2
+void BomberV2(MenuEntry *entry)
+{
+	if(Controller::IsKeysDown(A + R))
+	{
+		Process::Read32(0x08195350 , data32);
+		offset = data32;
+		Process::Write32(offset + 0x00001FD4 , 0x00000000);
+		Process::Write32(offset + 0x00001000 , 0x2BB70059);
+		Process::Write32(offset + 0x00002000 , 0xE98C0059);
+		Process::Write32(offset + 0x00002210 , 0x00000000);
+		Process::Write32(offset + 0x000021EC , 0xABC00100);
+		offset = 0x00000000;
+		if(Process::Read16(offset + 0x083AC5D8 , cmp16) && (cmp16 & 0xFFFF) != 0x0203)
+		{
+			Process::Read32(offset + 0x08195350 , data32);
+			offset = data32;
+			Process::Write32(offset + 0x00001FE4 , 0x00580001);
+			Process::Write32(offset + 0x00000294 , 0x42900011);
+			//floatmode:on
+			Process::ReadFloat(offset + 0x0000044 , dataf);
+			dataf += -52;
+			Process::WriteFloat(offset + 0x0000044 , dataf);
+			
+		}
+		if(Controller::IsKeysDown(A + R))
+		{
+			offset = 0x00000000;
+			if(Process::Read16(offset + 0x093AC5D8 , cmp16) && (cmp16 & 0xFFFF) == 0x0203)
+			{
+				Process::Read32(offset + 0x08195350 , data32);
+				offset = data32;
+				Process::Write32(offset + 0x00001FE4 , 0x00270004);
+				//floatmode:on
+				Process::ReadFloat(offset + 0x0000044 , dataf);
+				dataf += -52;
+				Process::WriteFloat(offset + 0x0000044 , dataf);
+				
+			}
+		}
+	}
+	offset = 0;
+	data32 = 0;
+	dataf = 0;
+	Process::Read32(0x08195350 , data32);
+	offset = data32;
+	if(Process::Read32(offset + 0x00000294 , cmp32) && cmp32 == 0x42100000)
+	{
+		Process::Write32(offset + 0x00001FE4 , 0x005A0001);
+	}
+}
+//ボマー
+void Bommer(MenuEntry *entry)
+{
+	if(Controller::IsKeysDown(A + R))
+	{
+		Process::Read32(0x08195350 , data32);
+		offset = data32;
+		Process::Write32(offset + 0x000021EC , 0xABC00100);
+		offset = 0x00000000;
+		if(Process::Read16(offset + 0x083AC5D8 , cmp16) && (cmp16 & 0xFFFF) != 0x0203)
+		{
+			Process::Read32(offset + 0x08195350 , data32);
+			offset = data32;
+			Process::Write32(offset + 0x00001FE4 , 0x00580001);
+			Process::Write32(offset + 0x00000294 , 0x428C0011);
+			//floatmode:on
+			Process::ReadFloat(offset + 0x0000044 , dataf);
+			dataf += -52;
+			Process::WriteFloat(offset + 0x0000044 , dataf);
+			
+		}
+		if(Controller::IsKeysDown(A + R))
+		{
+			offset = 0x00000000;
+			if(Process::Read16(offset + 0x093AC5D8 , cmp16) && (cmp16 & 0xFFFF) == 0x0203)
+			{
+				Process::Read32(offset + 0x08195350 , data32);
+				offset = data32;
+				Process::Write32(offset + 0x00001FE4 , 0x00270004);
+				//floatmode:on
+				Process::ReadFloat(offset + 0x0000044 , dataf);
+				dataf += -52;
+				Process::WriteFloat(offset + 0x0000044 , dataf);
+			}
+		}
+	}
+}
 //ズーム
 void Zoom(MenuEntry *entry)
 {

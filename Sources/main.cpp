@@ -76,6 +76,9 @@ const std::string Shyyy = "" << Color::Cyan << "";
 
 const std::string Hunateiastus = "" << Color::Red << "";
 const std::string mving = "" << Color::Blue << "";
+const std::string dpa = "" << Color::DeepSkyBlue << "";
+const std::string ski = "" << Color::SkyBlue << "";
+
 
 		menu += new MenuEntry(Shyyy + "設定バグらせる", SetBug, "");
 		menu += new MenuEntry(Shyyy + "プレイヤーのフリーズを治す" + Shyyy, CurePlayerFreeze, "R+Lで実行");
@@ -124,7 +127,7 @@ MenuFolder *Mobile = new MenuFolder(mving + "移動系");
 	*Mobile += new MenuEntry(Shyyy +  "スピードハックV2", SpeedHackV2, "");
 	*Mobile += new MenuEntry(Shyyy +  "スピードハックV2(遅め)", SpeedHackV2Slow, "");
 	*Mobile += new MenuEntry(Shyyy +  "スピードハックオフ", SpeedHackOff, "");
-	*Mobile += new MenuEntry(Shyyy + "ハイパーダッシュ", HyperDash, "Rでダッシュ中、移動速度アップ                                                               バルスライドとの違いは、                                                  滑らず、純粋なスピードハックのような            動きをすること");
+	*Mobile += new MenuEntry(Shyyy + "ハイパーダッシュ", HyperDash, "Rでダッシュ中、移動速度アップ                  バルスライドとの違いは、滑らず、純粋なスピードハックのような動きをすること");
 	MenuFolder *SpeedHackUnstableVersion = new MenuFolder(Hunateiastus + "スピードハック(不安定版)");
 	{
 		*SpeedHackUnstableVersion += new MenuEntry(Hunateiastus + "スピードハックテスト", SpeedHackTest, "");
@@ -187,7 +190,7 @@ MenuFolder *Status = new MenuFolder(mving + "ステータス");
         *zksi += new MenuEntry(Shyyy + "全属性", AllAttributes, "");
 }
     *Status += zksi;
-    *Status += new MenuEntry(Shyyy + "ファストイート", FastEat, "肉、笛、調合薬などを速く使用できます");
+    *Status += new MenuEntry("ファストイート", FastEat, "肉、笛、調合薬などを速く使用できます");
 	*Status += new MenuEntry(Shyyy + "スキルスロット埋める", FillSkillSlots, "→:1番上のスキル↑:真ん中のスキル←:1番下のスキル");
 	*Status += new MenuEntry(Shyyy + "透明", Transparent, "テスト段階、使用不可");
 	*Status += new MenuEntry(Shyyy + "攻撃力1", AttackPower1, "");
@@ -204,8 +207,8 @@ MenuFolder *Status = new MenuFolder(mving + "ステータス");
 	*Status += new MenuEntry(Shyyy + "乗りゲージ常にMAX", RidingGaugeAlwaysMAX, "");
 	*Status += new MenuEntry(Shyyy + "HP0", HP0, "");
 
-	*Status +=new MenuEntry(Shyyy +"エリアル用壁抜け", WallThroughForErial, "");
-	*Status +=new MenuEntry(Shyyy +"壁抜け", WallThrough, "");
+	*Status +=new MenuEntry("エリアル用壁抜け", WallThroughForErial, "");
+	*Status +=new MenuEntry("壁抜け", WallThrough, "");
 }
 menu += Status;
 MenuFolder *Camera = new MenuFolder(mving + "カメラ");
@@ -228,7 +231,41 @@ MenuFolder *Danger = new MenuFolder(Hunateiastus + "危険なコード");
          *Danger += new MenuEntry(Hunateiastus + "ゲームをクラッシュさせる", CrashTheGame, "");
 }
 menu += Danger;
+
+MenuFolder *VIPMode = new MenuFolder( dpa + "VIPモード");
+{
+	MenuFolder *CrashDisabledCode = new MenuFolder( dpa + "クラッシュ無効化したコード");
+	{
+		MenuFolder *SpeedHacksInstabilityImprovedVersion = new MenuFolder( dpa + "スピードハックス(不安定改良版)");
+		{
+			*SpeedHacksInstabilityImprovedVersion += new MenuEntry(ski + "スピードハック x2", SpeedHackX2, "Rで速度変更");
+			*SpeedHacksInstabilityImprovedVersion += new MenuEntry(ski + "スピードハック", SpeedHacksss, "Rで速度変更");
+			*SpeedHacksInstabilityImprovedVersion += new MenuEntry(ski + "スローハック", SlowHacksss, "Rで速度変更");
+			*SpeedHacksInstabilityImprovedVersion += new MenuEntry(ski + "スローハック x2", SlowHackX2, "Rで速度変更");
 			
+		}
+		*CrashDisabledCode += SpeedHacksInstabilityImprovedVersion;
+		*CrashDisabledCode += new MenuEntry(ski + "ボマー V2", BomberVv2, "AとRで実行\n使用のための条件を克服");
+		*CrashDisabledCode += new MenuEntry(ski + "太刀連射 V2", TachiFireV2, "");
+		*CrashDisabledCode += new MenuEntry(ski + "ビーホップ", BeeHoop, "L+左右矢印でオンオフ\nスライドパッドで移動");
+		*CrashDisabledCode += new MenuEntry(ski + "ボマー", Bommeru, "使用する際にタル爆弾を置く必要がある\nA+R");
+		*CrashDisabledCode += new MenuEntry(ski + "支給品ボックスアイテム盗む", StealingSuppliesBoxIteems, "支給品ボックスを開いてL+A\nポーチの中身が消えるので注意");
+		
+	}
+	*VIPMode += CrashDisabledCode;
+	*VIPMode += new MenuEntry(ski + "支給品ボックスアイテム盗む", StealingSuppliesBoxItems, "支給品ボックスを開いてL+A\nポーチの中身が消えるので注意");
+	*VIPMode += new MenuEntry(ski + "空中でのプレイヤーのフリーズを対策", CountermeasuresAgainstPlayerFreezesInTheAir, "");
+	*VIPMode += new MenuEntry(ski + "基本的な攻撃で吹き飛ばない", DoesntBlowOffWithABasicAttack, "");
+	*VIPMode += new MenuEntry(ski + "ネオンオーラ(バージョン2)", NeonAuraVersion2, "→で実行");
+	*VIPMode += new MenuEntry(ski + "ネオンオーラ", NeonAura, "→で実行");
+	*VIPMode += new MenuEntry(ski + "ビーホップ", BeeHop, "L+左右矢印でオンオフ\nスライドパッドで移動");
+	*VIPMode += new MenuEntry(ski + "プレイヤームーブ式座標移動", PlayerMoveTypeCoordinateMovement, "スライドパッドで移動");
+	*VIPMode += new MenuEntry(ski + "ボマー V2", BomberV2, "AとRで実行\n使用のための条件を克服");
+	*VIPMode += new MenuEntry(ski + "ボマー", Bommer, "使用する際にタル爆弾を置く必要がある\nA+R");
+	
+}
+menu += VIPMode;
+
     }
 
     int     main(void)
