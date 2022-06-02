@@ -250,7 +250,7 @@ MenuFolder *VIPMode = new MenuFolder( dpa + "VIPモード");
 		*CrashDisabledCode += new MenuEntry(ski + "ビーホップ", BeeHoop, "L+左右矢印でオンオフ\nスライドパッドで移動");
 		*CrashDisabledCode += new MenuEntry(ski + "ボマー", Bommeru, "使用する際にタル爆弾を置く必要がある\nA+R");
 		*CrashDisabledCode += new MenuEntry(ski + "支給品ボックスアイテム盗む", StealingSuppliesBoxIteems, "支給品ボックスを開いてL+A\nポーチの中身が消えるので注意");
-		*CrashDisabledCode += new MenuEntry(ski + "支給品ボックスを高速で取れる", Sus, "支給品ボックスのアイテム移動モーションの制限解除");
+		*CrashDisabledCode += new MenuEntry(ski + "支給品ボックスを高速で取れる", Sussybaka, "支給品ボックスのアイテム移動モーションの制限解除");
 		
 	}
 	*VIPMode += CrashDisabledCode;
