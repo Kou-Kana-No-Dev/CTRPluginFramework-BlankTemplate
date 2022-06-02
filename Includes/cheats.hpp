@@ -7,6 +7,24 @@
 
 namespace CTRPluginFramework
 {
+   void Bommer(MenuEntry *entry);
+   void BomberV2(MenuEntry *entry);
+   void PlayerMoveTypeCoordinateMovement(MenuEntry *entry);
+   void BeeHop(MenuEntry *entry);
+   void NeonAura(MenuEntry *entry);
+   void NeonAuraVersion2(MenuEntry *entry);
+   void DoesntBlowOffWithABasicAttack(MenuEntry *entry);
+   void CountermeasuresAgainstPlayerFreezesInTheAir(MenuEntry *entry);
+   void StealingSuppliesBoxItems(MenuEntry *entry);
+   void StealingSuppliesBoxIteems(MenuEntry *entry);
+   void Bommeru(MenuEntry *entry);
+   void BeeHoop(MenuEntry *entry)
+   void TachiFireV2(MenuEntry *entry);
+   void BomberVv2(MenuEntry *entry);
+   void SlowHackX2(MenuEntry *entry);
+   void SlowHacksss(MenuEntry *entry);
+   void SpeedHackX2(MenuEntry *entry);
+   void SpeedHacksss(MenuEntry *entry);
    void Zoom(MenuEntry *entry);
    void MonsterHPDoesNotDecrease(MenuEntry *entry);
    void TachiFireVer2(MenuEntry *entry);
