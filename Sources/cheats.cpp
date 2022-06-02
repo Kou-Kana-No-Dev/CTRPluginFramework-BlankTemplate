@@ -10,11 +10,11 @@ namespace CTRPluginFramework
 void TASChan(MenuEntry *entry)
 {
   u16 Tas;
-  if (!GetInput(Dfc, "属性値にしたい数を入力\n0～32766")) {
+  if (!GetInput(Tas, "属性値にしたい数を入力\n0～32766")) {
     return;
   }
   Process::Write16(0x0831B45A , Tas);
-{
+}
 //防御力最高
 void DFCChan(MenuEntry *entry)
 {
