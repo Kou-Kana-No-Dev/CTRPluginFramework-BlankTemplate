@@ -10,6 +10,7 @@ namespace CTRPluginFramework
    void ATKChan(MenuEntry *entry);
    void DFCChan(MenuEntry *entry);
    void TASChan(MenuEntry *entry);
+   void Sussybaka(MenuEntry *entry);
    void Bommer(MenuEntry *entry);
    void BomberV2(MenuEntry *entry);
    void PlayerMoveTypeCoordinateMovement(MenuEntry *entry);
