@@ -21,7 +21,7 @@ namespace CTRPluginFramework
    void StealingSuppliesBoxItems(MenuEntry *entry);
    void StealingSuppliesBoxIteems(MenuEntry *entry);
    void Bommeru(MenuEntry *entry);
-   void BeeHoop(MenuEntry *entry)
+   void BeeHoop(MenuEntry *entry);
    void TachiFireV2(MenuEntry *entry);
    void BomberVv2(MenuEntry *entry);
    void SlowHackX2(MenuEntry *entry);
