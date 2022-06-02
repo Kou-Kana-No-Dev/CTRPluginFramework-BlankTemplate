@@ -9,7 +9,7 @@ namespace CTRPluginFramework
 {
 void TASChan(MenuEntry *entry)
 {
-  u16 Dfc;
+  u16 Tas;
   if (!GetInput(Dfc, "属性値にしたい数を入力\n0～32766")) {
     return;
   }
