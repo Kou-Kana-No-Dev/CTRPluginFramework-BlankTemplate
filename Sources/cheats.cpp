@@ -45,7 +45,7 @@ u16 Howt;
 	Process::Write16(offset + 0x0031B76A , Howt);
 }
 //支給品ボックスアイテム盗む
-void Sus(MenuEntry *entry)
+void Sussybaka(MenuEntry *entry)
 {
 	if(Process::Read16(offset + 0x083ACA64 , cmp16) && (cmp16 & 0xFFFF) != 0xFF00)
 	{
