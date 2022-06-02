@@ -263,9 +263,6 @@ MenuFolder *VIPMode = new MenuFolder( dpa + "VIPモード");
 	*VIPMode += new MenuEntry(ski + "プレイヤームーブ式座標移動", PlayerMoveTypeCoordinateMovement, "スライドパッドで移動");
 	*VIPMode += new MenuEntry(ski + "ボマー V2", BomberV2, "AとRで実行\n使用のための条件を克服");
 	*VIPMode += new MenuEntry(ski + "ボマー", Bommer, "使用する際にタル爆弾を置く必要がある\nA+R");
-	*VIPMode += new MenuEntry(ski + "攻撃力書き換え", ATKChan, "");
-	*VIPMode += new MenuEntry(ski + "防御力書き換え", DFCChan, "");
-	*VIPMode += new MenuEntry(ski + "属性値書き換え", TASChan, "");
 }
 menu += VIPMode;
 
