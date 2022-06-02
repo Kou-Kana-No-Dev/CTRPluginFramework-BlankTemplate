@@ -7,6 +7,9 @@
 
 namespace CTRPluginFramework
 {
+   void ATKChan(MenuEntry *entry);
+   void DFCChan(MenuEntry *entry);
+   void TASChan(MenuEntry *entry);
    void Bommer(MenuEntry *entry);
    void BomberV2(MenuEntry *entry);
    void PlayerMoveTypeCoordinateMovement(MenuEntry *entry);
@@ -18,7 +21,7 @@ namespace CTRPluginFramework
    void StealingSuppliesBoxItems(MenuEntry *entry);
    void StealingSuppliesBoxIteems(MenuEntry *entry);
    void Bommeru(MenuEntry *entry);
-   void BeeHoop(MenuEntry *entry);
+   void BeeHoop(MenuEntry *entry)
    void TachiFireV2(MenuEntry *entry);
    void BomberVv2(MenuEntry *entry);
    void SlowHackX2(MenuEntry *entry);
