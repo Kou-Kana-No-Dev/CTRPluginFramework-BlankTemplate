@@ -7,6 +7,52 @@ float dataf = 0;
 
 namespace CTRPluginFramework
 {
+void TASChan(MenuEntry *entry)
+{
+  u16 Dfc;
+  if (!GetInput(Dfc, "属性値にしたい数を入力\n0～32766")) {
+    return;
+  }
+  Process::Write16(0x0831B45A , Tas);
+{
+//防御力最高
+void DFCChan(MenuEntry *entry)
+{
+  u16 Dfc;
+  if (!GetInput(Dfc, "防御力にしたい数を入力\n0～32766")) {
+    return;
+  }
+	Process::Write16(0x0831B45E , Dfc);
+}
+//攻撃力999
+void ATKChan(MenuEntry *entry)
+{
+  Process::Write32(0x008F1C0C , 0x00007FFE);
+  u16 Atk;
+  if (!GetInput(Atk, "攻撃力にしたい数を入力\n0～32766")) {
+    return;
+  }
+	Process::Write16(0x0831B450 , Atk);
+}
+//支給品ボックスアイテム盗む
+void HRchan(MenuEntry *entry)
+{
+u16 Howt;
+  if (!GetInput(Howt, "HRにしたい数を入力\n0～65535")) {
+    return;
+  }
+  	offset = 0x08000000;
+	Process::Write16(offset + 0x0031B76A , Howt);
+}
+//支給品ボックスアイテム盗む
+void Sus(MenuEntry *entry)
+{
+	if(Process::Read16(offset + 0x083ACA64 , cmp16) && (cmp16 & 0xFFFF) != 0xFF00)
+	{
+		Process::Write32(offset + 0x083658C8 , 0x00FF0100);
+	}
+
+}
 //スピードハック x2
 void SpeedHackX2(MenuEntry *entry)
 {
