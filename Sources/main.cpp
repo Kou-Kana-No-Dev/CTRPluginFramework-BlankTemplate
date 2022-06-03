@@ -82,7 +82,7 @@ const std::string ski = "" << Color::SkyBlue << "";
 
 		menu += new MenuEntry(Shyyy + "設定バグらせる", SetBug, "");
 		menu += new MenuEntry(Shyyy + "プレイヤーのフリーズを治す" + Shyyy, CurePlayerFreeze, "R+Lで実行");
-		menu += new MenuEntry(Shyyy + "Xコマンド" + Shyyy, XCommand, "コマンドツール                       使えるコマンド                                                        nam:名前変更                    例:nam あ                    itm:アイテムをポーチの1番上に出現                     例:itm 0 0 0 A ←最後に空白この状態でY+→                     plhk:チャット乗っ取り                   例:plhkと入力し1度決定してからPlayer/:1");
+		menu += new MenuEntry(Shyyy + "Xコマンド" + Shyyy, XCommand, "コマンドツール\n使えるコマンド\nnam:名前変更:例:nam あ\nitm:アイテムをポーチの1番上に出現:\n例:itm 0 0 0 A ←最後に空白この状態でY+→\nplhk:チャット乗っ取り:\n例:plhkと入力し1度決定してからPlayer/:と表示されるので1や2と付け足し\nプレイヤーを選択して再度決定");
 MenuFolder *Player = new MenuFolder(mving + "プレイヤー");
 {
 	*Player += new MenuEntry(Shyyy + "ハンターとにゃんたーを切り替え", SwitchBetweenHunterAndNyanta, "ハンター:→、にゃんたー:↑");
@@ -116,9 +116,9 @@ MenuFolder *Mobile = new MenuFolder(mving + "移動系");
 	}
 	*Mobile += CrazyMove;
 	*Mobile += new MenuEntry(Shyyy +  "バルスライド(バルファルク)", BalslideBalfalk, "ダッシュ中、スライドと速度上昇");
-	*Mobile += new MenuEntry(Shyyy +  "バルフライ(バルファルク:テスト段階)", BalflyBalfalkTestStage, "左右十字キーで方向転換                                   上下十字キーで高度変更                   Lでとぶ(低速)");
-	*Mobile += new MenuEntry(Shyyy +  "バルフライ v2(バルファルク)", BalflyV2Balfalk, "R+X:空中で停止                    A+R:高度上昇                                      R+L:高度低下                    R+Y:バルスライド              R+左右十字キー:向き変更                    R+B:バックバルスライド");
-	*Mobile += new MenuEntry(Shyyy +  "自動走行", AutomaticDriving, "走りながらR:走行キープ                      左右十字キー:向き変更                 L:停止");
+	*Mobile += new MenuEntry(Shyyy +  "バルフライ(バルファルク:テスト段階)", BalflyBalfalkTestStage, "左右十字キーで方向転換\n上下十字キーで高度変更\nLでとぶ(低速)");
+	*Mobile += new MenuEntry(Shyyy +  "バルフライ v2(バルファルク)", BalflyV2Balfalk, "R+X:空中で停止\nA+R:高度上昇\nR+L:高度低下\nR+Y:バルスライド\nR+左右十字キー:向き変更\nR+B:バックバルスライド");
+	*Mobile += new MenuEntry(Shyyy +  "自動走行", AutomaticDriving, "走りながらR:走行キープ\n左右十字キー:向き変更\nL:停止");
 	*Mobile += new MenuEntry(Shyyy +  "ベースキャンプテレポート", BaseCampTeleport, "実行されない場合、1度しゃがむ");
 	*Mobile += new MenuEntry(Shyyy + "ジャンプ", Jump, "Lで実行");
 	*Mobile += new MenuEntry(Shyyy +  "ムーンジャンプ", MoonJump, "Lで実行");
@@ -127,7 +127,7 @@ MenuFolder *Mobile = new MenuFolder(mving + "移動系");
 	*Mobile += new MenuEntry(Shyyy +  "スピードハックV2", SpeedHackV2, "");
 	*Mobile += new MenuEntry(Shyyy +  "スピードハックV2(遅め)", SpeedHackV2Slow, "");
 	*Mobile += new MenuEntry(Shyyy +  "スピードハックオフ", SpeedHackOff, "");
-	*Mobile += new MenuEntry(Shyyy + "ハイパーダッシュ", HyperDash, "Rでダッシュ中、移動速度アップ                  バルスライドとの違いは、滑らず、純粋なスピードハックのような動きをすること");
+	*Mobile += new MenuEntry(Shyyy + "ハイパーダッシュ", HyperDash, "Rでダッシュ中、移動速度アップ\nバルスライドとの違いは、滑らず、\n純粋なスピードハックのような動きをすること");
 	MenuFolder *SpeedHackUnstableVersion = new MenuFolder(Hunateiastus + "スピードハック(不安定版)");
 	{
 		*SpeedHackUnstableVersion += new MenuEntry(Hunateiastus + "スピードハックテスト", SpeedHackTest, "");
@@ -163,7 +163,7 @@ MenuFolder *Quest = new MenuFolder(mving + "クエスト");
 	*Quest += new MenuEntry(Shyyy + "クエ受注してなくても行ける(強制的)", YouCanGoWithoutPostingTheQuest, "");
 	*Quest += new MenuEntry(Shyyy + "クエ受注してなくても行けるオフ",YouCanGoWithoutPostingTheQuestOff, "");
 	*Quest += new MenuEntry(Shyyy + "全員クエストリタイア", QuestRetirement, "");
-	*Quest += new MenuEntry(Shyyy + "ヘルジェイル", HellJail, "L+→   クエストから帰って来れなくなる");
+	*Quest += new MenuEntry(Shyyy + "ヘルジェイル", HellJail, "L+→\nクエストから帰って来れなくなる");
 	*Quest += new MenuEntry(Shyyy + "タイマー0", Timer0, "");
 	*Quest += new MenuEntry(Shyyy + "タイマー増える", TimerIncreases, "");
 	*Quest += new MenuEntry(Shyyy + "タイマーコントローラー(早い)", TimerControllerFast, "");
@@ -231,40 +231,6 @@ MenuFolder *Danger = new MenuFolder(Hunateiastus + "危険なコード");
          *Danger += new MenuEntry(Hunateiastus + "ゲームをクラッシュさせる", CrashTheGame, "");
 }
 menu += Danger;
-
-MenuFolder *VIPMode = new MenuFolder( dpa + "VIPモード");
-{
-	MenuFolder *CrashDisabledCode = new MenuFolder( dpa + "クラッシュ無効化したコード");
-	{
-		MenuFolder *SpeedHacksInstabilityImprovedVersion = new MenuFolder( dpa + "スピードハックス(不安定改良版)");
-		{
-			*SpeedHacksInstabilityImprovedVersion += new MenuEntry(ski + "スピードハック x2", SpeedHackX2, "Rで速度変更");
-			*SpeedHacksInstabilityImprovedVersion += new MenuEntry(ski + "スピードハック", SpeedHacksss, "Rで速度変更");
-			*SpeedHacksInstabilityImprovedVersion += new MenuEntry(ski + "スローハック", SlowHacksss, "Rで速度変更");
-			*SpeedHacksInstabilityImprovedVersion += new MenuEntry(ski + "スローハック x2", SlowHackX2, "Rで速度変更");
-			
-		}
-		*CrashDisabledCode += SpeedHacksInstabilityImprovedVersion;
-		*CrashDisabledCode += new MenuEntry(ski + "ボマー V2", BomberVv2, "AとRで実行\n使用のための条件を克服");
-		*CrashDisabledCode += new MenuEntry(ski + "太刀連射 V2", TachiFireV2, "");
-		*CrashDisabledCode += new MenuEntry(ski + "ビーホップ", BeeHoop, "L+左右矢印でオンオフ\nスライドパッドで移動");
-		*CrashDisabledCode += new MenuEntry(ski + "ボマー", Bommeru, "使用する際にタル爆弾を置く必要がある\nA+R");
-		*CrashDisabledCode += new MenuEntry(ski + "支給品ボックスアイテム盗む", StealingSuppliesBoxIteems, "支給品ボックスを開いてL+A\nポーチの中身が消えるので注意");
-		*CrashDisabledCode += new MenuEntry(ski + "支給品ボックスを高速で取れる", Sussybaka, "支給品ボックスのアイテム移動モーションの制限解除");
-		
-	}
-	*VIPMode += CrashDisabledCode;
-	*VIPMode += new MenuEntry(ski + "支給品ボックスアイテム盗む", StealingSuppliesBoxItems, "支給品ボックスを開いてL+A\nポーチの中身が消えるので注意");
-	*VIPMode += new MenuEntry(ski + "空中でのプレイヤーのフリーズを対策", CountermeasuresAgainstPlayerFreezesInTheAir, "");
-	*VIPMode += new MenuEntry(ski + "基本的な攻撃で吹き飛ばない", DoesntBlowOffWithABasicAttack, "");
-	*VIPMode += new MenuEntry(ski + "ネオンオーラ(バージョン2)", NeonAuraVersion2, "→で実行");
-	*VIPMode += new MenuEntry(ski + "ネオンオーラ", NeonAura, "→で実行");
-	*VIPMode += new MenuEntry(ski + "ビーホップ", BeeHop, "L+左右矢印でオンオフ\nスライドパッドで移動");
-	*VIPMode += new MenuEntry(ski + "プレイヤームーブ式座標移動", PlayerMoveTypeCoordinateMovement, "スライドパッドで移動");
-	*VIPMode += new MenuEntry(ski + "ボマー V2", BomberV2, "AとRで実行\n使用のための条件を克服");
-	*VIPMode += new MenuEntry(ski + "ボマー", Bommer, "使用する際にタル爆弾を置く必要がある\nA+R");
-}
-menu += VIPMode;
 
     }
 
