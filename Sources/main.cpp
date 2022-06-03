@@ -231,6 +231,39 @@ MenuFolder *Danger = new MenuFolder(Hunateiastus + "危険なコード");
          *Danger += new MenuEntry(Hunateiastus + "ゲームをクラッシュさせる", CrashTheGame, "");
 }
 menu += Danger;
+MenuFolder *VIPMode = new MenuFolder( dpa + "VIPモード");
+{
+	MenuFolder *CrashDisabledCode = new MenuFolder( dpa + "クラッシュ無効化したコード");
+	{
+		MenuFolder *SpeedHacksInstabilityImprovedVersion = new MenuFolder( dpa + "スピードハックス(不安定改良版)");
+		{
+			*SpeedHacksInstabilityImprovedVersion += new MenuEntry(ski + "スピードハック x2", SpeedHackX2, "Rで速度変更");
+			*SpeedHacksInstabilityImprovedVersion += new MenuEntry(ski + "スピードハック", SpeedHacksss, "Rで速度変更");
+			*SpeedHacksInstabilityImprovedVersion += new MenuEntry(ski + "スローハック", SlowHacksss, "Rで速度変更");
+			*SpeedHacksInstabilityImprovedVersion += new MenuEntry(ski + "スローハック x2", SlowHackX2, "Rで速度変更");
+			
+		}
+		*CrashDisabledCode += SpeedHacksInstabilityImprovedVersion;
+		*CrashDisabledCode += new MenuEntry(ski + "ボマー V2", BomberVv2, "AとRで実行\n使用のための条件を克服");
+		*CrashDisabledCode += new MenuEntry(ski + "太刀連射 V2", TachiFireV2, "");
+		*CrashDisabledCode += new MenuEntry(ski + "ビーホップ", BeeHoop, "L+左右矢印でオンオフ\nスライドパッドで移動");
+		*CrashDisabledCode += new MenuEntry(ski + "ボマー", Bommeru, "使用する際にタル爆弾を置く必要がある\nA+R");
+		*CrashDisabledCode += new MenuEntry(ski + "支給品ボックスアイテム盗む", StealingSuppliesBoxIteems, "支給品ボックスを開いてL+A\nポーチの中身が消えるので注意");
+		*CrashDisabledCode += new MenuEntry(ski + "支給品ボックスを高速で取れる", Sussybaka, "支給品ボックスのアイテム移動モーションの制限解除");
+		
+	}
+	*VIPMode += CrashDisabledCode;
+	*VIPMode += new MenuEntry(ski + "支給品ボックスアイテム盗む", StealingSuppliesBoxItems, "支給品ボックスを開いてL+A\nポーチの中身が消えるので注意");
+	*VIPMode += new MenuEntry(ski + "空中でのプレイヤーのフリーズを対策", CountermeasuresAgainstPlayerFreezesInTheAir, "");
+	*VIPMode += new MenuEntry(ski + "基本的な攻撃で吹き飛ばない", DoesntBlowOffWithABasicAttack, "");
+	*VIPMode += new MenuEntry(ski + "ネオンオーラ(バージョン2)", NeonAuraVersion2, "→で実行");
+	*VIPMode += new MenuEntry(ski + "ネオンオーラ", NeonAura, "→で実行");
+	*VIPMode += new MenuEntry(ski + "ビーホップ", BeeHop, "L+左右矢印でオンオフ\nスライドパッドで移動");
+	*VIPMode += new MenuEntry(ski + "プレイヤームーブ式座標移動", PlayerMoveTypeCoordinateMovement, "スライドパッドで移動");
+	*VIPMode += new MenuEntry(ski + "ボマー V2", BomberV2, "AとRで実行\n使用のための条件を克服");
+	*VIPMode += new MenuEntry(ski + "ボマー", Bommer, "使用する際にタル爆弾を置く必要がある\nA+R");
+}
+menu += VIPMode;
 
     }
 
