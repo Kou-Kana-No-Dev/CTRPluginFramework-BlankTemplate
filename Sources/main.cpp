@@ -190,7 +190,7 @@ MenuFolder *Status = new MenuFolder(mving + "ステータス");
         *zksi += new MenuEntry(Shyyy + "全属性", AllAttributes, "");
 }
     *Status += zksi;
-    *Status += new MenuEntry("ファストイート", FastEat, "肉、笛、調合薬などを速く使用できます");
+    *Status += new MenuEntry(Shyyy + "ファストイート", FastEat, "肉、笛、調合薬などを速く使用できます");
 	*Status += new MenuEntry(Shyyy + "スキルスロット埋める", FillSkillSlots, "→:1番上のスキル↑:真ん中のスキル←:1番下のスキル");
 	*Status += new MenuEntry(Shyyy + "透明", Transparent, "テスト段階、使用不可");
 	*Status += new MenuEntry(Shyyy + "攻撃力1", AttackPower1, "");
@@ -207,8 +207,8 @@ MenuFolder *Status = new MenuFolder(mving + "ステータス");
 	*Status += new MenuEntry(Shyyy + "乗りゲージ常にMAX", RidingGaugeAlwaysMAX, "");
 	*Status += new MenuEntry(Shyyy + "HP0", HP0, "");
 
-	*Status +=new MenuEntry("エリアル用壁抜け", WallThroughForErial, "");
-	*Status +=new MenuEntry("壁抜け", WallThrough, "");
+	*Status +=new MenuEntry(Shyyy +"エリアル用壁抜け", WallThroughForErial, "");
+	*Status +=new MenuEntry(Shyyy +"壁抜け", WallThrough, "");
 }
 menu += Status;
 MenuFolder *Camera = new MenuFolder(mving + "カメラ");
