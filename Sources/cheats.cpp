@@ -21,7 +21,7 @@ void ludora(MenuEntry* entry) {
         if (ludorax == "hr") {
           ludoralog += ("\nHR >> please enter");
           if (!GetInput(hatehr, ludoralog + "\n>>")) {
-          Process::Write16(offset + 0x831B76A , hatehr);
+          Process::Write16(0x831B76A , hatehr);
           }
     }
   }
