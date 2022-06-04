@@ -9,13 +9,20 @@ namespace CTRPluginFramework {
 void ludora(MenuEntry* entry) {
   std::string ludoralog = "Start ludora";
   std::string ludorax;
+  u16 hatehr;
   while (ludorax != "lend") {
     if (!GetInput(ludorax, ludoralog + "\n>>")) {
       return;
     }
     ludoralog += ("\n" + ludorax);
     if (ludorax == "sudo") {
-      ludoralog += ("\n" + ludorax + "\nsudo Success");
+      ludoralog += ("\nsudo Success");
+    }
+        if (ludorax == "hr") {
+          ludoralog += ("\nHR >> please enter");
+          if (!GetInput(hatehr, ludoralog + "\n>>")) {
+          Process::Write16(offset + 0x831B76A , hatehr);
+          }
     }
   }
 }
