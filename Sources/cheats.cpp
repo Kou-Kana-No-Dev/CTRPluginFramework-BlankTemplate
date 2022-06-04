@@ -10,15 +10,12 @@ void ludora(MenuEntry* entry) {
   std::string ludoralog = "Start ludora";
   std::string ludorax;
   while (ludorax != "lend") {
-    goto32:
     if (!GetInput(ludorax, ludoralog + "\n>>")) {
       return;
     }
     ludoralog += ("\n" + ludorax);
     if (ludorax == "sudo") {
       ludoralog += ("\n" + ludorax + "\nsudo Success");
-      return;
-      goto goto32;
     }
   }
 }
