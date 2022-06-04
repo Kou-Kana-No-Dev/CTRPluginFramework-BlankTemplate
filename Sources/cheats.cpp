@@ -1,4 +1,5 @@
 #include "cheats.hpp"
+#include <vector>
 
 u32 offset = 0, offset2 = 0, data32 = 0, cmp32 = 0;
 u16 data16 = 0, cmp16 = 0;
