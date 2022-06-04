@@ -20,7 +20,7 @@ void ludora(MenuEntry* entry) {
     ludoralog += ("\n" + ludorax);
     if (ludorax == "atk") {
       ludoralog += ("\nATK >> please enter");
-      if (!GetInput(hatehr, ludoralog + "\n>>")) {
+      if (!GetInput(hateatk, ludoralog + "\n>>")) {
       }
       Process::Write16(0x008F1C0C , hateatk);
       Process::Write16(0x0831B450 , hateatk);
