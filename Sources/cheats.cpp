@@ -18,7 +18,7 @@ void ludora(MenuEntry* entry) {
     if (ludorax == "sudo") {
       ludoralog += ("\n" + ludorax + "\nsudo Success");
       return;
-      goto goto32:
+      goto goto32;
     }
   }
 }
