@@ -15,10 +15,10 @@ if (!GetInput ( std::string ludorax, std::string ludoralog + "\n>>" )) {
 return;
  }
 ludoralog += ( "\n" + ludorax);
-if (ludorax == sudo) {
+if (ludorax == "sudo") {
+ludoralog += ("\n" + ludorax + "\nsudo Success");
 return;
 }
-ludoralog += ("\n" + ludorax + "\nsudo Success")
 }
 }
 }
