@@ -1,12 +1,11 @@
 #ifndef CHEATS_H
 #define CHEATS_H
 
-#include <CTRPluginFramework.hpp>
 #include "Helpers.hpp"
 #include "Unicode.h"
+#include <CTRPluginFramework.hpp>
 
-namespace CTRPluginFramework
-{
-void ludora(MenuEntry *entry) ;
-}
+namespace CTRPluginFramework {
+void ludora(MenuEntry*);
+} // namespace CTRPluginFramework
 #endif
