@@ -10,9 +10,9 @@ namespace CTRPluginFramework
 void ludora(MenuEntry *entry) {
   std::string ludoralog = "Start ludora\n";
   std::string ludorax;
-if (!GetInput(ludorax, ludoralog)) { 
+if (!GetInput(  std::string ludorax,   std::string ludoralog)) { 
 return;
  }
-ludoralog += ( "\n" + ludorax)
+ludoralog += ( "\n" + ludorax);
 }
 }
