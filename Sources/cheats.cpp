@@ -8,9 +8,9 @@ float dataf = 0;
 namespace CTRPluginFramework
 {
 void ludora(MenuEntry *entry) {
-  std::string ludoralog = "Start ludora\n";
+  std::string ludoralog = "Start ludora";
   std::string ludorax;
-if (!GetInput(  std::string ludorax += "",   std::string ludoralog  += "" )) { 
+if (!GetInput  std::string (ludorax,ludoralog )) { 
 return;
  }
 ludoralog += ( "\n" + ludorax);
