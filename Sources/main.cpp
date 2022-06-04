@@ -1,5 +1,6 @@
 #include "3ds.h"
 #include "csvc.h"
+#include "Helpers.hpp"
 #include "CTRPluginFramework.hpp"
 #include "Cheats.hpp"
 #include <vector>
