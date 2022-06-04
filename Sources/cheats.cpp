@@ -12,6 +12,7 @@ void ludora(MenuEntry* entry) {
   u16 hatehr;
   u16 hateatk;
   u16 hatedfc;
+  u16 hateabl;
   while (ludorax != "lend") {
     if (!GetInput(ludorax, ludoralog + "\n>>")) {
       return;
@@ -20,22 +21,27 @@ void ludora(MenuEntry* entry) {
     if (ludorax == "atk") {
       ludoralog += ("\nATK >> please enter");
       if (!GetInput(hatehr, ludoralog + "\n>>")) {
-      return;
       }
-      	Process::Write16(0x0831B450 , hateatk);
-        Process::Write16(0x008F1C0C , hateatk);
+      Process::Write16(0x008F1C0C , hateatk);
+      Process::Write16(0x0831B450 , hateatk);
     }
-        if (ludorax == "hr") {
-          ludoralog += ("\nHR >> please enter");
-          if (!GetInput(hatehr, ludoralog + "\n>>")) {
-          }
-        Process::Write16(0x0831B76A , hatehr);
+    if (ludorax == "hr") {
+      ludoralog += ("\nHR >> please enter");
+      if (!GetInput(hatehr, ludoralog + "\n>>")) {
+      }
+      Process::Write16(0x0831B76A , hatehr);
     }
     if (ludorax == "dfc") {
       ludoralog += ("\nDFC >> please enter");
       if (!GetInput(hatedfc, ludoralog + "\n>>")) {
       }
       Process::Write16(0x0831B45E , hatedfc);
+    }
+    if (ludorax == "abl") {
+      ludoralog += ("\nABL >> please enter");
+      if (!GetInput(hateabl, ludoralog + "\n>>")) {
+      }
+    	Process::Write16(0x0831B45A , hateabl);
     }
   }
 }
