@@ -10,11 +10,11 @@ namespace CTRPluginFramework
 //支給品ボックスアイテム盗む
 void Sussybaka(MenuEntry *entry)
 {
-	if(Process::Read16(offset + 0x083ACA64 , cmp16) && (cmp16 & 0xFFFF) != 0xFF00)
+    Process::Read16(0x83ACA64, cmp16);
+	if(cmp16 != 0xFF00)
 	{
-		Process::Write32(offset + 0x083658C8 , 0x00FF0100);
+		Process::Write32(0x83658C8, 0x00FF0100);
 	}
-
 }
 //スピードハック x2
 void SpeedHackX2(MenuEntry *entry)
