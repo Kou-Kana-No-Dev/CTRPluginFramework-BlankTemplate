@@ -13,7 +13,7 @@ void ludora(MenuEntry* entry) {
   u16 hateatk;
   u16 hatedfc;
   u16 hateabl;
-  int rnd;
+  u16 rnd;
   u32 rndst;
   while (ludorax != "lend") {
     if (!GetInput(ludorax, ludoralog + "\n>>")) {
@@ -46,7 +46,7 @@ void ludora(MenuEntry* entry) {
      }
     }
     if (ludorax == "rnd") {
-      rnd = rand % 32766 + 0;
+      rnd = u16(rand)
       ludoralog += ("\n" + rnd);
     }
     if (ludorax == "dfc 2rnd") {
