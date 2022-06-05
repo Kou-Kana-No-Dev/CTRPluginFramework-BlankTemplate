@@ -44,7 +44,6 @@ void ludora(MenuEntry* entry) {
       Process::Write16(0x008F1C0C , rnd);
       Process::Write16(0x0831B450 , rnd);
      }
-    }
     if (ludorax == "rnd") {
       rndst = int(rand);
       while (rndst > 32766) {
@@ -63,7 +62,7 @@ void ludora(MenuEntry* entry) {
       ludoralog += ("\nABL :" + rnd);
       Process::Write16(0x0831B45A , rnd);
   }
-  if (ludorax == "abl") {
+    if (ludorax == "abl") {
       ludoralog += ("\nABL >> please enter");
       if (!GetInput(hateabl, ludoralog + "\n>>")) {
       }
@@ -73,5 +72,6 @@ void ludora(MenuEntry* entry) {
       ludoralog += ("\nHR :" + rnd);
       Process::Write16(0x0831B76A , rnd);
      }
+}
 }
 }  // namespace CTRPluginFramework
