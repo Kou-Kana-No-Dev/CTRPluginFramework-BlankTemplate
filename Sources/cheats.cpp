@@ -13,13 +13,15 @@ void ludora(MenuEntry* entry) {
   u16 hateatk;
   u16 hatedfc;
   u16 hateabl;
+  u16 rnd;
+  u32 rndst;
   while (ludorax != "lend") {
     if (!GetInput(ludorax, ludoralog + "\n>>")) {
       return;
     }
     ludoralog += ("\n" + ludorax);
     if (ludorax == "atk") {
-      ludoralog += ("\nATK >> please enter");
+      ludoralog += ("\nATK >> please enter()");
       if (!GetInput(hateatk, ludoralog + "\n>>")) {
       }
       Process::Write16(0x008F1C0C , hateatk);
@@ -37,12 +39,35 @@ void ludora(MenuEntry* entry) {
       }
       Process::Write16(0x0831B45E , hatedfc);
     }
-    if (ludorax == "abl") {
+    if (ludorax == "atk 2rnd") {
+      ludoralog += ("\nATK :" + rnd);
+      Process::Write16(0x008F1C0C , rnd);
+      Process::Write16(0x0831B450 , rnd);
+     }
+    }
+    if (ludorax == "rnd") {
+      rnd = rand % 32766 + 0;
+      ludoralog += ("\n" + rnd);
+    }
+    if (ludorax == "dfc 2rnd") {
+      
+      ludoralog += ("\nDFC :" + rnd);
+      Process::Write16(0x0831B45E , rnd);
+    }
+    if (ludorax == "abl 2rnd") {
+      
+      ludoralog += ("\nABL :" + rnd);
+      Process::Write16(0x0831B45A , rnd);
+  }
+  if (ludorax == "abl") {
       ludoralog += ("\nABL >> please enter");
       if (!GetInput(hateabl, ludoralog + "\n>>")) {
       }
-    	Process::Write16(0x0831B45A , hateabl);
+      Process::Write16(0x0831B45A , hateabl);
     }
-  }
+    if (ludorax == "hr 2rnd") {
+      ludoralog += ("\nHR :" + rnd);
+      Process::Write16(0x0831B76A , rnd);
+     }
 }
 }  // namespace CTRPluginFramework
