@@ -53,22 +53,22 @@ void ludora(MenuEntry* entry) {
       }
       ludoralog += ("\n" + rnd);
     }
-    if (ludorax == "atk 2rnd") {
+    if (ludorax == "atkn2rnd") {
       ludoralog += ("\nATK :" + rnd);
       Process::Write16(0x008F1C0C , rnd);
       Process::Write16(0x0831B450 , rnd);
      }
-    if (ludorax == "dfc 2rnd") {
+    if (ludorax == "dfcn2rnd") {
       
       ludoralog += ("\nDFC :" + rnd);
       Process::Write16(0x0831B45E , rnd);
     }
-    if (ludorax == "abl 2rnd") {
+    if (ludorax == "abln2rnd") {
       
       ludoralog += ("\nABL :" + rnd);
       Process::Write16(0x0831B45A , rnd);
   }
-    if (ludorax == "hr 2rnd") {
+    if (ludorax == "hrn2rnd") {
       ludoralog += ("\nHR :" + rnd);
       Process::Write16(0x0831B76A , rnd);
      }
