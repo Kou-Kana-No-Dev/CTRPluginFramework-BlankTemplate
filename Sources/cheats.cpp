@@ -46,7 +46,7 @@ void ludora(MenuEntry* entry) {
      }
     }
     if (ludorax == "rnd") {
-      rnd = rand(32766)
+      rnd = rand % 32766 + 0;
       ludoralog += ("\n" + rnd);
     }
     if (ludorax == "dfc 2rnd") {
