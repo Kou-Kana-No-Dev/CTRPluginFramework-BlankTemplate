@@ -15,7 +15,7 @@ void ludora(MenuEntry* entry) {
   u16 hateabl;
   u16 rnd;
   int rndst;
-  while (ludorax != "lend") {
+  while (ludorax != "Fend") {
     if (!GetInput(ludorax, ludoralog + "\n>>")) {
       return;
     }
@@ -39,11 +39,12 @@ void ludora(MenuEntry* entry) {
       }
       Process::Write16(0x0831B45E , hatedfc);
     }
-    if (ludorax == "atk 2rnd") {
-      ludoralog += ("\nATK :" + rnd);
-      Process::Write16(0x008F1C0C , rnd);
-      Process::Write16(0x0831B450 , rnd);
-     }
+    if (ludorax == "abl") {
+      ludoralog += ("\nABL >> please enter");
+      if (!GetInput(hateabl, ludoralog + "\n>>")) {
+      }
+      Process::Write16(0x0831B45A , hateabl);
+    }
     if (ludorax == "rnd") {
       rndst = int(rand);
       while (rndst > 32766) {
@@ -52,6 +53,11 @@ void ludora(MenuEntry* entry) {
       }
       ludoralog += ("\n" + rnd);
     }
+    if (ludorax == "atk 2rnd") {
+      ludoralog += ("\nATK :" + rnd);
+      Process::Write16(0x008F1C0C , rnd);
+      Process::Write16(0x0831B450 , rnd);
+     }
     if (ludorax == "dfc 2rnd") {
       
       ludoralog += ("\nDFC :" + rnd);
@@ -62,12 +68,6 @@ void ludora(MenuEntry* entry) {
       ludoralog += ("\nABL :" + rnd);
       Process::Write16(0x0831B45A , rnd);
   }
-    if (ludorax == "abl") {
-      ludoralog += ("\nABL >> please enter");
-      if (!GetInput(hateabl, ludoralog + "\n>>")) {
-      }
-      Process::Write16(0x0831B45A , hateabl);
-    }
     if (ludorax == "hr 2rnd") {
       ludoralog += ("\nHR :" + rnd);
       Process::Write16(0x0831B76A , rnd);
