@@ -13,7 +13,7 @@ void ludora(MenuEntry* entry) {
   u16 hateatk;
   u16 hatedfc;
   u16 hateabl;
-  u16 rnd;
+  int16_t rnd;
   u32 rndst;
   while (ludorax != "lend") {
     if (!GetInput(ludorax, ludoralog + "\n>>")) {
