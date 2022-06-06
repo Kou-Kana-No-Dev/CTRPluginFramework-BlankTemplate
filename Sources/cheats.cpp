@@ -10,8 +10,7 @@ void ludora(MenuEntry* entry) {
  const std::string ldcl = "" << Color::Red << ""; //色
  const std::string ldcl2 = "" << Color::Orange << ""; //色2
   std::string ludoralog = "Start ludora"; //ログの役割
-  std::string ludorax; //何を書き込んだのか判断
-  std::string rndch; //rnd命令の際、数字を文字に変える役割
+  std::string ludorax; //何を書き込んだのか確認、
   u16 hatehr; //HRを書き換える時に使用
   u16 hateatk; //攻撃力を書き換える時に使用
   u16 hatedfc; //防御力を書き換える時に使用
@@ -54,8 +53,7 @@ void ludora(MenuEntry* entry) {
         rndst = (rndst - 32766);
       }
       rnd = rndst;
-      rndch = (rndst);
-      ludoralog += ("\n" + rndch);
+      ludoralog += ("\nrnd Success");
       ludorax = ("");
     }
     if (ludorax == "atkn2rnd") {
