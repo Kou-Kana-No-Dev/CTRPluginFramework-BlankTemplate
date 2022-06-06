@@ -56,27 +56,28 @@ void ludora(MenuEntry* entry) {
       rnd = rndst;
       rndch = (rndst);
       ludoralog += ("\n" + rndch);
+      ludorax = ("");
     }
     if (ludorax == "atkn2rnd") {
       ludoralog += ("\nATK :" + rnd);
       Process::Write16(0x008F1C0C , rnd);
       Process::Write16(0x0831B450 , rnd);
-      ludorax = "";
+      ludorax = ("");
      }
     if (ludorax == "dfcn2rnd") {
       ludoralog += ("\nDFC :" + rnd);
       Process::Write16(0x0831B45E , rnd);
-      ludorax = "";
+      ludorax = ("");
     }
     if (ludorax == "abln2rnd") {
       ludoralog += ("\nABL :" + rnd);
       Process::Write16(0x0831B45A , rnd);
-      ludorax = "";
+      ludorax = ("");
   }
     if (ludorax == "hrn2rnd") {
       ludoralog += ("\nHR :" + rnd);
       Process::Write16(0x0831B76A , rnd);
-      ludorax = "";
+      ludorax = ("");
      }
 }
 }
