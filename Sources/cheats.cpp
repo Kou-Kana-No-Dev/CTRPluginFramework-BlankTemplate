@@ -9,14 +9,15 @@ namespace CTRPluginFramework {
 void ludora(MenuEntry* entry) {
  const std::string ldcl = "" << Color::Red << ""; //色
  const std::string ldcl2 = "" << Color::Orange << ""; //色2
-  std::string ludoralog = "Start ludora";
-  std::string ludorax;
-  u16 hatehr;
-  u16 hateatk;
-  u16 hatedfc;
-  u16 hateabl;
-  u16 rnd;
-  int rndst;
+  std::string ludoralog = "Start ludora"; //ログの役割
+  std::string ludorax; //何を書き込んだのか判断
+  std::string rndch; //rnd命令の際、数字を文字に変える役割
+  u16 hatehr; //HRを書き換える時に使用
+  u16 hateatk; //攻撃力を書き換える時に使用
+  u16 hatedfc; //防御力を書き換える時に使用
+  u16 hateabl; //属性値を書き換える時に使用
+  u16 rnd; //ランダム変数をintからこっちに移動する
+  int rndst; //ランダム変数を作成
   while (ludorax != "Fend") {
     if (!GetInput(ludorax, ludoralog + "\n>>")) {
       return;
@@ -53,26 +54,29 @@ void ludora(MenuEntry* entry) {
         rndst = (rndst - 32766);
       }
       rnd = rndst;
-      ludoralog += ("\n" + rnd);
+      rndch = (rndst);
+      ludoralog += ("\n" + rndch);
     }
     if (ludorax == "atkn2rnd") {
       ludoralog += ("\nATK :" + rnd);
       Process::Write16(0x008F1C0C , rnd);
       Process::Write16(0x0831B450 , rnd);
+      ludorax = "";
      }
     if (ludorax == "dfcn2rnd") {
-      
       ludoralog += ("\nDFC :" + rnd);
       Process::Write16(0x0831B45E , rnd);
+      ludorax = "";
     }
     if (ludorax == "abln2rnd") {
-      
       ludoralog += ("\nABL :" + rnd);
       Process::Write16(0x0831B45A , rnd);
+      ludorax = "";
   }
     if (ludorax == "hrn2rnd") {
       ludoralog += ("\nHR :" + rnd);
       Process::Write16(0x0831B76A , rnd);
+      ludorax = "";
      }
 }
 }
