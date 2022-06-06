@@ -7,6 +7,8 @@ float dataf = 0;
 
 namespace CTRPluginFramework {
 void ludora(MenuEntry* entry) {
+ const std::string ldcl = "" << Color::Red << ""; //色
+ const std::string ldcl2 = "" << Color::Orange << ""; //色2
   std::string ludoralog = "Start ludora";
   std::string ludorax;
   u16 hatehr;
