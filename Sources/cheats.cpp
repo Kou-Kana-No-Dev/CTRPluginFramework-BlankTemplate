@@ -57,23 +57,23 @@ void ludora(MenuEntry* entry) {
       ludorax = ("");
     }
     if (ludorax == "atkn2rnd") {
-      ludoralog += ("\nATK :" + rnd);
       Process::Write16(0x008F1C0C , rnd);
       Process::Write16(0x0831B450 , rnd);
+      ludoralog += ("\nATK : Random Number");
       ludorax = ("");
      }
     if (ludorax == "dfcn2rnd") {
-      ludoralog += ("\nDFC :" + rnd);
+      ludoralog += ("\nDFC : Random Number");
       Process::Write16(0x0831B45E , rnd);
       ludorax = ("");
     }
     if (ludorax == "abln2rnd") {
-      ludoralog += ("\nABL :" + rnd);
+      ludoralog += ("\nABL : Random Number");
       Process::Write16(0x0831B45A , rnd);
       ludorax = ("");
   }
     if (ludorax == "hrn2rnd") {
-      ludoralog += ("\nHR :" + rnd);
+      ludoralog += ("\nHR : Random Number");
       Process::Write16(0x0831B76A , rnd);
       ludorax = ("");
      }
