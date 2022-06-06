@@ -51,8 +51,8 @@ void ludora(MenuEntry* entry) {
       rndst = int(rand);
       while (rndst > 32766) {
         rndst = (rndst - 32766);
-        rnd = rndst;
       }
+      rnd = rndst;
       ludoralog += ("\n" + rnd);
     }
     if (ludorax == "atkn2rnd") {
