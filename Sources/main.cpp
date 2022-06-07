@@ -66,7 +66,7 @@ void InitMenu(PluginMenu &menu) {
   const std::string kRuu2 = "" << Color::Orange << "";
   const std::string kRuu3 = "" << Color::Yellow << "";
   menu +=
-      new MenuEntry("BO_Dev",ludora, kAbout);
+      new MenuEntry("BO_Dev",ludora, "");
 }
 
 int main() {
