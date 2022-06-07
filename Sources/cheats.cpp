@@ -21,9 +21,6 @@ void ludora(MenuEntry* entry) {
   Color foreground = Color::SkyBlue;
   Color background = Color::Black;
   top_screen.Draw(str, x, y, foreground, background);
-  if (isopned == 0) {
-    str2 = "";
-  }
   if (slct == 0) {
     str2 = "World";
   }
@@ -35,6 +32,9 @@ void ludora(MenuEntry* entry) {
   }
   if (slct == 3) {
     str2 = "movement";
+  }
+  if (isopned == 0) {
+    str2 = "";
   }
   if (Controller::IsKeyPressed(L)) {
   if(isopned == 0) {
