@@ -42,6 +42,10 @@ void ludora(MenuEntry* entry) {
   while (isopned == 1) {
   	if(Controller::IsKeyPressed(DPadDown)) {
   	  slct=slct-1;
+  	  if (slct == -1) {
+  	    slct=4;
+  	    str2 = "movement";
+  	  }
   	  if (slct == 0) {
         str2 = "World";
       }
@@ -54,8 +58,8 @@ void ludora(MenuEntry* entry) {
       if (slct == 3) {
         str2 = "movement";
       }
-      tp_screen.Draw(str2, x, y+20, foreground, background);
-  	}
+       }
+      }
     	if(Controller::IsKeyPressed(DPadUp)) {
      	  slct++;
     	  if (slct == 0) {
@@ -70,7 +74,10 @@ void ludora(MenuEntry* entry) {
         if (slct == 3) {
           str2 = "movement";
         }
-        tp_screen.Draw(str2, x, y+20, foreground, background);
+        if (slct == 4) {
+        slct = 0
+        str2 = "World";
+        }
     	}
       if (Controller::IsKeyPressed(L)) {
         if(isopned == 1) {
@@ -79,7 +86,7 @@ void ludora(MenuEntry* entry) {
   	}
    
   }
+     tp_screen.Draw(str2, x, y+20, foreground, background);
   }
-   tp_screen.Draw(str2, x, y+20, foreground, background);
 }  // namespace CTRPluginFramework
 }
