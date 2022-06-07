@@ -10,20 +10,47 @@ void ludora(MenuEntry* entry) {
   const Screen &top_screen = OSD::GetTopScreen();
   const Screen &btm_screen = OSD::GetBottomScreen();
   std::string str;
+  std::string str2;
   int slct = 0;
   int slct2 = 0;
   int isopned = 0;
   str = "Black OUT";
-  u32 x = 0;
-  u32 y = 0;
+  u32 x = 1;
+  u32 y = 1;
   Color foreground = Color::SkyBlue;
   Color background = Color::Black;
   top_screen.Draw(str, x, y, foreground, background);
   	if(Controller::IsKeyDown(DPadDown)) {
-  	  slct--;
+  	  slct=slct-1
+  	  if (slct == 0) {
+        str2 = "World";
+      }
+      if (slct == 1) {
+        str2 = "combat";
+      }
+      if (slct == 2) {
+        str2 = "Player";
+      }
+      if (slct == 3) {
+        str2 = "movement";
+      }
+      top_screen.Draw(str, x, y+2, foreground, background);
   	}
   	if(Controller::IsKeyDown(DPadUp)) {
   	  slct++;
+  	  if (slct == 0) {
+        str2 = "World";
+      }
+      if (slct == 1) {
+        str2 = "combat";
+      }
+      if (slct == 2) {
+        str2 = "Player";
+      }
+      if (slct == 3) {
+        str2 = "movement";
+      }
+      top_screen.Draw(str, x, y+2, foreground, background);
   	}
 }
 }  // namespace CTRPluginFramework
