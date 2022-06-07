@@ -7,6 +7,7 @@ float dataf = 0;
 
 namespace CTRPluginFramework {
 void ludora(MenuEntry* entry) {
+  Controller::Update()
   const Screen &top_screen = OSD::GetTopScreen();
   const Screen &top_screen2 = OSD::GetTopScreen();
   std::string logo = "Black Out";
@@ -22,14 +23,12 @@ void ludora(MenuEntry* entry) {
   top_screen2.Draw(logo2, x2, y2, foreground, background);
   int asd = 1;
   while (asd = 1) { // Main Loop
-  	if(Controller::IsKeyDown(DPadUp)) {
+  	if(Controller::IsKeysPressed(DPadUp)) {
       pushed++;
       if (pushed == 1) {
-      logo2 = "Enigma";
+        logo2="1"
       top_screen2.Draw(logo2, x2, y2, foreground, background);
       }
-    }else{
-      pushed = 0;
     }
   }
 }
