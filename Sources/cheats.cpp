@@ -12,9 +12,9 @@ void ludora(MenuEntry* entry) {
   const Screen &btm_screen = OSD::GetBottomScreen();
   std::string str;
   std::string str2;
-  u32 slct = 0;
-  u32 slct2 = 0;
-  u32 isopned = 0;
+  int slct = 0;
+  int slct2 = 0;
+  int isopned = 0;
   str = "Black OUT";
   u32 x = 1;
   u32 y = 1;
