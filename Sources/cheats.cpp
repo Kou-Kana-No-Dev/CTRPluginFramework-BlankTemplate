@@ -47,7 +47,7 @@ void ludora(MenuEntry* entry) {
   	if(Controller::IsKeyPressed(DPadDown)) {
   	  slct=slct-1;
   	  if (slct == -1) {
-  	    slct=4;
+  	    slct=3;
   	    str2 = "movement";
   	  }
   	  if (slct == 0) {
@@ -78,7 +78,7 @@ void ludora(MenuEntry* entry) {
           str2 = "movement";
         }
         if (slct == 4) {
-        slct = 0
+        slct = 0;
         str2 = "World";
         }
     	}
