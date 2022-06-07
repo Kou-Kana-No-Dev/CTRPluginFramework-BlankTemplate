@@ -21,8 +21,8 @@ void ludora(MenuEntry* entry) {
   Color background = Color::Black;
   top_screen.Draw(logo, x, y, foreground, background);
   top_screen2.Draw(logo2, x2, y2, foreground, background);
-  int asd = 1;
-  while (asd = 1) { // Main Loop
+  int asd;
+  while (asd == 0) { // Main Loop
   	if(Controller::IsKeysPressed(DPadUp)) {
         logo2="1";
       top_screen2.Draw(logo2, x2, y2, foreground, background);
