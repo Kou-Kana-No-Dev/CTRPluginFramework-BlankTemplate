@@ -21,6 +21,27 @@ void ludora(MenuEntry* entry) {
   Color foreground = Color::SkyBlue;
   Color background = Color::Black;
   top_screen.Draw(str, x, y, foreground, background);
+  if (slct == 0) {
+    str2 = "World";
+  }
+  if (slct == 1) {
+    str2 = "combat";
+  }
+  if (slct == 2) {
+    str2 = "Player";
+  }
+  if (slct == 3) {
+    str2 = "movement";
+  }
+  if(Controller::IsKeyPressed(DPadDown + R + L)) {
+    if (isopned == 1) {
+      isopned = 0;
+    }else{
+      isopned = 1;
+    }
+  }
+  tp_screen.Draw(str2, x, y+20, foreground, background);
+  while (isopned == 1) {
   	if(Controller::IsKeyPressed(DPadDown)) {
   	  slct=slct-1;
   	  if (slct == 0) {
@@ -37,21 +58,22 @@ void ludora(MenuEntry* entry) {
       }
       tp_screen.Draw(str2, x, y+20, foreground, background);
   	}
-  	if(Controller::IsKeyPressed(DPadUp)) {
-  	  slct++;
-  	  if (slct == 0) {
-        str2 = "World";
-      }
-      if (slct == 1) {
-        str2 = "combat";
-      }
-      if (slct == 2) {
-        str2 = "Player";
-      }
-      if (slct == 3) {
-        str2 = "movement";
-      }
-      tp_screen.Draw(str2, x, y+20, foreground, background);
+    	if(Controller::IsKeyPressed(DPadUp)) {
+     	  slct++;
+    	  if (slct == 0) {
+         str2 = "World";
+        }
+        if (slct == 1) {
+          str2 = "combat";
+        }
+        if (slct == 2) {
+         str2 = "Player";
+        }
+        if (slct == 3) {
+          str2 = "movement";
+        }
+        tp_screen.Draw(str2, x, y+20, foreground, background);
+    	}
   	}
 }
 }  // namespace CTRPluginFramework
