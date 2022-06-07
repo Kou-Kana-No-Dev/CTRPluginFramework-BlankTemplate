@@ -18,6 +18,10 @@ void ludora(MenuEntry* entry) {
   str = "Black OUT";
   u32 x = 1;
   u32 y = 1;
+  u32 bt1;
+  u32 bt2;
+  u32 bt3;
+  u32 bt4;
   Color foreground = Color::SkyBlue;
   Color background = Color::Black;
   top_screen.Draw(str, x, y, foreground, background);
@@ -37,17 +41,21 @@ void ludora(MenuEntry* entry) {
     str2="";
   }
   tp_screen.Draw(str2, x, y+20, foreground, background);
-  if (Controller::IsKeyPressed(L)) {
+  if(Controller::IsKeyDown(L) && bt1==0) {
+    bt1 = 0;
+    if (bt1== 0) {
+      isopned = 1;
+    bt1++;
+    }
+    }else {
+      bt1 = 0;
     
-  if(isopned == 0) {
-   isopned =1;
-  }
   }
   while (isopned == 1) {
   	if(Controller::IsKeyPressed(DPadDown)) {
   	  slct=slct-1;
   	  if (slct == -1) {
-  	    slct=3;
+  	    slct=4;
   	    str2 = "movement";
   	  }
   	  if (slct == 0) {
@@ -78,7 +86,7 @@ void ludora(MenuEntry* entry) {
           str2 = "movement";
         }
         if (slct == 4) {
-        slct = 0;
+        slct = 0
         str2 = "World";
         }
     	}
