@@ -7,13 +7,23 @@ float dataf = 0;
 
 namespace CTRPluginFramework {
 void ludora(MenuEntry* entry) {
-  std::string str = "K Plugin";
+  const Screen &top_screen = OSD::GetTopScreen();
+  const Screen &btm_screen = OSD::GetBottomScreen();
+  std::string str;
+  int slct = 0;
+  int slct2 = 0;
+  int isopned = 0;
+  str = "Black OUT";
   u32 x = 0;
   u32 y = 0;
-  Color foreground = Color::White;
+  Color foreground = Color::SkyBlue;
   Color background = Color::Black;
-  OSD::Draw(str, x, y, foreground, background);
-}
-
+  top_screen.Draw(str, x, y, foreground, background);
+  	if(Controller::IsKeyDown(DPadDown)) {
+  	  slct--;
+  	}
+  	if(Controller::IsKeyDown(DPadUp)) {
+  	  slct++;
+  	}
 }
 }  // namespace CTRPluginFramework
