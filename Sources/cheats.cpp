@@ -41,23 +41,12 @@ void ludora(MenuEntry* entry) {
     str2="";
   }
   tp_screen.Draw(str2, x, y+20, foreground, background);
-  if(Controller::IsKeyDown(L) && bt1==0) {
-    bt1 = 0;
-    if (bt1== 0) {
+  if(Controller::IsKeysPressed(L) && bt1==0) {
       isopned = 1;
-    bt1++;
-    }
-    }else {
-      bt1 = 0;
-    
   }
   while (isopned == 1) {
-  	if(Controller::IsKeyPressed(DPadDown)) {
+  	if(Controller::IsKeysPressed(DPadDown) && bt2==0) {
   	  slct=slct-1;
-  	  if (slct == -1) {
-  	    slct=4;
-  	    str2 = "movement";
-  	  }
   	  if (slct == 0) {
         str2 = "World";
       }
@@ -70,8 +59,12 @@ void ludora(MenuEntry* entry) {
       if (slct == 3) {
         str2 = "movement";
       }
+      if (slct == -1) {
+  	    slct=3;
+  	    str2 = "movement";
+  	  }
       }
-    	if(Controller::IsKeyPressed(DPadUp)) {
+    	if(Controller::IsKeysPressed(DPadUp)) {
      	  slct++;
     	  if (slct == 0) {
          str2 = "World";
@@ -86,11 +79,11 @@ void ludora(MenuEntry* entry) {
           str2 = "movement";
         }
         if (slct == 4) {
-        slct = 0
+        slct = 0;
         str2 = "World";
         }
     	}
-      if (Controller::IsKeyPressed(L)) {
+      if (Controller::IsKeysPressed(L)) {
         if(isopned == 1) {
       isopned =0;
         }
