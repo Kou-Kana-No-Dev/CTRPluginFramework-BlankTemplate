@@ -12,9 +12,9 @@ void ludora(MenuEntry* entry) {
   const Screen &btm_screen = OSD::GetBottomScreen();
   std::string str;
   std::string str2;
-  int slct = 0;
-  int slct2 = 0;
-  int isopned = 0;
+  u32 slct = 0;
+  u32 slct2 = 0;
+  u32 isopned = 0;
   str = "Black OUT";
   u32 x = 1;
   u32 y = 1;
@@ -34,9 +34,11 @@ void ludora(MenuEntry* entry) {
     str2 = "movement";
   }
   if (isopned == 0) {
-    str2 = "";
+    str2="";
   }
+  tp_screen.Draw(str2, x, y+20, foreground, background);
   if (Controller::IsKeyPressed(L)) {
+    
   if(isopned == 0) {
    isopned =1;
   }
@@ -76,18 +78,17 @@ void ludora(MenuEntry* entry) {
           str2 = "movement";
         }
         if (slct == 4) {
-        slct = 0;
+        slct = 0
         str2 = "World";
         }
     	}
       if (Controller::IsKeyPressed(L)) {
         if(isopned == 1) {
       isopned =0;
-      
+        }
   	}
    
   }
      tp_screen.Draw(str2, x, y+20, foreground, background);
-  }
 }  // namespace CTRPluginFramework
 }
