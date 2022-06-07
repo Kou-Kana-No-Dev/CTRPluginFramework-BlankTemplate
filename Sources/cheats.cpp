@@ -9,8 +9,8 @@ namespace CTRPluginFramework {
 void ludora(MenuEntry* entry) {
   const Screen &top_screen = OSD::GetTopScreen();
   const Screen &top_screen2 = OSD::GetTopScreen();
-  std::string logo = "Black Out"
-  std::string logo2 = "ver 0.1"
+  std::string logo = "Black Out";
+  std::string logo2 = "ver 0.1";
   u32 x = 1;
   u32 y = 1;
   u32 x2 = 1;
