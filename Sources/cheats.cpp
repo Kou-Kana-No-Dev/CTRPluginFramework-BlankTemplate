@@ -21,7 +21,7 @@ void ludora(MenuEntry* entry) {
   Color background = Color::Black;
   top_screen.Draw(str, x, y, foreground, background);
   	if(Controller::IsKeyDown(DPadDown)) {
-  	  slct=slct-1
+  	  slct=slct-1;
   	  if (slct == 0) {
         str2 = "World";
       }
