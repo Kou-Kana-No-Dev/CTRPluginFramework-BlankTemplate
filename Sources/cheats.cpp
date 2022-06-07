@@ -58,7 +58,6 @@ void ludora(MenuEntry* entry) {
       if (slct == 3) {
         str2 = "movement";
       }
-       }
       }
     	if(Controller::IsKeyPressed(DPadUp)) {
      	  slct++;
