@@ -8,7 +8,7 @@
 
 namespace CTRPluginFramework {
 // aboutの部分
-static const std::string kAbout = "ludora ※===";
+static const std::string About = "Black OUT By Kou Kana\nDiscord:Kou Kana#7262";
 
 // This patch the NFC disabling the touchscreen when scanning an amiibo, which
 // prevents ctrpf to be used
@@ -66,17 +66,16 @@ void InitMenu(PluginMenu &menu) {
   const std::string kRuu2 = "" << Color::Orange << "";
   const std::string kRuu3 = "" << Color::Yellow << "";
   menu +=
-      new MenuEntry(kRuu3 + "lu" + kRuu2 + "do" + kRuu + "ra v.1.0 Thx Download",nullptr,
-                    ludora, kAbout);
+      new MenuEntry("BO_Dev",ludora, kAbout);
 }
 
 int main() {
-  auto *menu = new PluginMenu("ludora！", 6, 6, 6, kAbout);
+  auto *menu = new PluginMenu("", 6, 6, 6, About);
 
   // Synnchronize the menu with frame event
   menu->SynchronizeWithFrame(true);
   menu->ShowWelcomeMessage(false);
-  OSD::Notify(Color::Red << "ludora Ver 1.0");
+  OSD::Notify(Color::SkyBlue << "Black OUT...");
 
   // Init our menu entries & folders
   InitMenu(*menu);
