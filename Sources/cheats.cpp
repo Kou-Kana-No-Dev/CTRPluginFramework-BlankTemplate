@@ -15,15 +15,21 @@ void ludora(MenuEntry* entry) {
   u32 y = 1;
   u32 x2 = 1;
   u32 y2 = 21;
+  int pushed;
   Color foreground = Color::SkyBlue;
   Color background = Color::Black;
   top_screen.Draw(logo, x, y, foreground, background);
   top_screen2.Draw(logo2, x2, y2, foreground, background);
   int asd = 1;
   while (asd = 1) { // Main Loop
-    if (Controller::IsKeysPressed(DPadUp)) {
+    if (Controller::IsKeysDown(DPadUp)) {
+      pushed++;
+      if (pushed == 1;) {
       logo2 = "Enigma";
       top_screen2.Draw(logo2, x2, y2, foreground, background);
+      }
+    }else{
+      pushed = 0;
     }
   }
 }
