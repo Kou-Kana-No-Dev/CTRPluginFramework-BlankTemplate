@@ -8,91 +8,23 @@ float dataf = 0;
 namespace CTRPluginFramework {
 void ludora(MenuEntry* entry) {
   const Screen &top_screen = OSD::GetTopScreen();
-  const Screen &tp_screen = OSD::GetTopScreen();
-  const Screen &btm_screen = OSD::GetBottomScreen();
-  std::string str;
-  std::string str2;
-  int slct = 0;
-  int slct2 = 0;
-  int isopned = 0;
-  str = "Black OUT";
+  const Screen &top_screen2 = OSD::GetTopScreen();
+  std::string logo = "Black Out"
+  std::string logo2 = "ver 0.1"
   u32 x = 1;
   u32 y = 1;
-  int bt1;
+  u32 x2 = 1;
+  u32 y = 21;
   Color foreground = Color::SkyBlue;
   Color background = Color::Black;
-  top_screen.Draw(str, x, y, foreground, background);
-  if (slct == 0) {
-    str2 = "World";
-  }
-  if (slct == 1) {
-    str2 = "combat";
-  }
-  if (slct == 2) {
-    str2 = "Player";
-  }
-  if (slct == 3) {
-    str2 = "movement";
-  }
-  if (isopned == 0) {
-    str2="";
-    bt1 = 100;
-  }
-  tp_screen.Draw(str2, x, y+20, foreground, background);
-  if(Controller::IsKeysPressed(L)) {
-    if (isopned == 0) {
-      isopned = 1;
+  top_screen.Draw(logo, x, y, foreground, background);
+  top_screen2.Draw(logo2, x2, y2, foreground, background);
+  int asd = 1;
+  while (asd = 1) { // Main Loop
+    if (Controller::IsKeysPressed(DPadUp)) {
+      logo2 = "Enigma";
+      top_screen2.Draw(logo2, x2, y2, foreground, background);
     }
   }
-  while (isopned == 1) {
-    if (bt1 =! 0) {
-      bt1 = bt1 + -1;
-    }
-  	if(Controller::IsKeysPressed(DPadDown) && bt2==0) {
-  	  slct=slct + -1;
-  	  if (slct == 0) {
-        str2 = "World";
-      }
-      if (slct == 1) {
-        str2 = "combat";
-      }
-      if (slct == 2) {
-        str2 = "Player";
-      }
-      if (slct == 3) {
-        str2 = "movement";
-      }
-      if (slct == -1) {
-  	    slct=3;
-  	    str2 = "movement";
-  	  }
-      }
-    	if(Controller::IsKeysPressed(DPadUp)) {
-     	  slct = slct + 1;
-    	  if (slct == 0) {
-         str2 = "World";
-        }
-        if (slct == 1) {
-          str2 = "combat";
-        }
-        if (slct == 2) {
-         str2 = "Player";
-        }
-        if (slct == 3) {
-          str2 = "movement";
-        }
-        if (slct == 4) {
-        slct = 0;
-        str2 = "World";
-        }
-    	}
-      if (Controller::IsKeysPressed(L)) {
-        if(isopned == 1) {
-      isopned =0;
-        }
-  	}
-   
-  }
-     tp_screen.Draw(str2, x, y+20, foreground, background);
-}  // namespace CTRPluginFramework
 }
+}  // namespace CTRPluginFramework
