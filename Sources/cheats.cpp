@@ -14,7 +14,7 @@ void ludora(MenuEntry* entry) {
   u32 x = 1;
   u32 y = 1;
   u32 x2 = 1;
-  u32 y = 21;
+  u32 y2 = 21;
   Color foreground = Color::SkyBlue;
   Color background = Color::Black;
   top_screen.Draw(logo, x, y, foreground, background);
