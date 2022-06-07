@@ -24,11 +24,8 @@ void ludora(MenuEntry* entry) {
   int asd = 1;
   while (asd = 1) { // Main Loop
   	if(Controller::IsKeysPressed(DPadUp)) {
-      pushed++;
-      if (pushed == 1) {
         logo2="1";
       top_screen2.Draw(logo2, x2, y2, foreground, background);
-      }
     }
   }
 }
