@@ -8,6 +8,7 @@ float dataf = 0;
 namespace CTRPluginFramework {
 void ludora(MenuEntry* entry) {
   const Screen &top_screen = OSD::GetTopScreen();
+  const Screen &tp_screen = OSD::GetTopScreen();
   const Screen &btm_screen = OSD::GetBottomScreen();
   std::string str;
   std::string str2;
@@ -20,7 +21,7 @@ void ludora(MenuEntry* entry) {
   Color foreground = Color::SkyBlue;
   Color background = Color::Black;
   top_screen.Draw(str, x, y, foreground, background);
-  	if(Controller::IsKeyDown(DPadDown)) {
+  	if(Controller::IsKeyPressed(DPadDown)) {
   	  slct=slct-1;
   	  if (slct == 0) {
         str2 = "World";
@@ -34,9 +35,9 @@ void ludora(MenuEntry* entry) {
       if (slct == 3) {
         str2 = "movement";
       }
-      top_screen.Draw(str, x, y+2, foreground, background);
+      tp_screen.Draw(str2, x, y+20, foreground, background);
   	}
-  	if(Controller::IsKeyDown(DPadUp)) {
+  	if(Controller::IsKeyPressed(DPadUp)) {
   	  slct++;
   	  if (slct == 0) {
         str2 = "World";
@@ -50,7 +51,7 @@ void ludora(MenuEntry* entry) {
       if (slct == 3) {
         str2 = "movement";
       }
-      top_screen.Draw(str, x, y+2, foreground, background);
+      tp_screen.Draw(str2, x, y+20, foreground, background);
   	}
 }
 }  // namespace CTRPluginFramework
