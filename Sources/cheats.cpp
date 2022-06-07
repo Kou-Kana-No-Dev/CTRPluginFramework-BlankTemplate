@@ -79,5 +79,6 @@ void ludora(MenuEntry* entry) {
         tp_screen.Draw(str2, x, y+20, foreground, background);
     	}
   	}
-}
+    tp_screen.Draw(str2, x, y+20, foreground, background);
+  }
 }  // namespace CTRPluginFramework
