@@ -33,7 +33,6 @@ void ludora(MenuEntry* entry) {
   if (slct == 3) {
     str2 = "movement";
   }
-  tp_screen.Draw(str2, x, y+20, foreground, background);
   if (Controller::IsKeyPressed(L)) {
   if(isopned == 0) {
    isopned =1;
