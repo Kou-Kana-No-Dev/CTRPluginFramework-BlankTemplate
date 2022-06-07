@@ -74,7 +74,7 @@ void ludora(MenuEntry* entry) {
           str2 = "movement";
         }
         if (slct == 4) {
-        slct = 0
+        slct = 0;
         str2 = "World";
         }
     	}
