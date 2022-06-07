@@ -38,6 +38,7 @@ void ludora(MenuEntry* entry) {
   if(isopned == 0) {
    isopned =1;
   }
+    }
   while (isopned == 1) {
   	if(Controller::IsKeyPressed(DPadDown)) {
   	  slct=slct-1;
@@ -78,6 +79,6 @@ void ludora(MenuEntry* entry) {
      ]
   	}
     tp_screen.Draw(str2, x, y+20, foreground, background);
-  }
+  
  }
 }  // namespace CTRPluginFramework
