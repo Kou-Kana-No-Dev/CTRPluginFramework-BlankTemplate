@@ -7,7 +7,7 @@ float dataf = 0;
 
 namespace CTRPluginFramework {
 void ludora(MenuEntry* entry) {
-  Controller::Update()
+  Controller::Update();
   const Screen &top_screen = OSD::GetTopScreen();
   const Screen &top_screen2 = OSD::GetTopScreen();
   std::string logo = "Black Out";
