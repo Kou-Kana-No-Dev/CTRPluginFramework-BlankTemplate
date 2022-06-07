@@ -22,7 +22,7 @@ void ludora(MenuEntry* entry) {
   top_screen2.Draw(logo2, x2, y2, foreground, background);
   int asd = 1;
   while (asd = 1) { // Main Loop
-    if (Controller::IsKeysDown(DPadUp)) {
+  	if(Controller::IsKeyDown(DPadUp)) {
       pushed++;
       if (pushed == 1) {
       logo2 = "Enigma";
