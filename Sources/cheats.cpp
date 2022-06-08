@@ -45,7 +45,7 @@ void ludora(MenuEntry* entry) {
       Changed=1;
     }
   if(Changed==1) {
-    Chanhed=0;
+    Changed=0;
     top_screen2.Draw(logo2, x, y, foreground, background);
   }
   }
