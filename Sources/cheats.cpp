@@ -10,6 +10,7 @@ void ludora(MenuEntry* entry) {
   const Screen &top_screen = OSD::GetTopScreen();
   const Screen &top_screen2 = OSD::GetTopScreen();
   std::string logo = "Black Out";
+  std::string logo2;
   u32 x = 1;
   u32 y = 1;
   u32 x2 = 1;
@@ -18,14 +19,14 @@ void ludora(MenuEntry* entry) {
   int opned;
   int oneunce;
   Color foreground = Color::SkyBlue;
-  Color background = Color::Black
+  Color background = Color::Black;
   if (oneunce == 0) {
-  std::string logo2 = "ver 0.1";
+  logo2 = "ver 0.1";
   top_screen.Draw(logo, x, y, foreground, background);
   top_screen2.Draw(logo2, x2, y2, foreground, background);
   oneunce = 1;
   }
-  	if(Controller::IsKeysPressed(L) && opned=0) {
+  	if(Controller::IsKeysPressed(L) and opned=0) {
   	  slct = 0;
       logo2 = "World";
       top_screen2.Draw(logo2, x2, y2, foreground, background);
