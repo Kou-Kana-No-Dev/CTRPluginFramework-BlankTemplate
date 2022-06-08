@@ -18,6 +18,7 @@ void ludora(MenuEntry* entry) {
   u32 x2 = 1;
   u32 y2 = 21;
   int slct;
+  int opned;
   Color foreground = Color::SkyBlue;
   Color background = Color::Black;
   top_screen.Draw(logo, x, y, foreground, background);
@@ -28,9 +29,11 @@ void ludora(MenuEntry* entry) {
   	  slct = 0;
       logo2 = "World";
       top_screen2.Draw(logo2, x2, y2, foreground, background);
+      opned =1;
   	}else{
   	  logo2 = "ver 0.1";
   	  top_screen2.Draw(logo2, x2, y2, foreground, background);
+  	  opned = 0;
   	}
   	if(Controller::IsKeysPressed(Right)) {
   	  slct++;
