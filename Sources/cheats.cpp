@@ -46,7 +46,7 @@ void ludora(MenuEntry* entry) {
       Changed=1;
     }
   if(Changed==1) {
-    Chanhed=0;
+    Changed=0;
     goto raberu;
   }
   raberu:
