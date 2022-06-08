@@ -7,20 +7,20 @@ float dataf = 0;
 
 namespace CTRPluginFramework {
 void ludora(MenuEntry* entry) {
-  int oneunce;
-  if (oneunce == 1) {
   const Screen &top_screen = OSD::GetTopScreen();
   const Screen &top_screen2 = OSD::GetTopScreen();
   std::string logo = "Black Out";
-  std::string logo2 = "ver 0.1";
   u32 x = 1;
   u32 y = 1;
   u32 x2 = 1;
   u32 y2 = 21;
   int slct;
   int opned;
+  int oneunce;
   Color foreground = Color::SkyBlue;
-  Color background = Color::Black;
+  Color background = Color::Black
+  if (oneunce == 0) {
+  std::string logo2 = "ver 0.1";
   top_screen.Draw(logo, x, y, foreground, background);
   top_screen2.Draw(logo2, x2, y2, foreground, background);
   oneunce = 1;
