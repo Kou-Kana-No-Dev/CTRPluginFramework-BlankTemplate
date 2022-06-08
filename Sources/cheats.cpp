@@ -25,21 +25,28 @@ void ludora(MenuEntry* entry) {
     if(Controller::IsKeysPressed(L)) {
       if (indian==0) {
         indian = 1;
-        top_screen.Draw(logo, x, y, foreground, background);
+        Changed=1;
       }else{
         indian=0;
-    }
+        Changed=1;
+      }
     }
     if(Controller::IsKeysPressed(R)) {
       whilend = 1;
+      Changed=1;
     }
     if(Controller::IsKeysPressed(Right)) {
-      slct++;
+      slct
+      Changed=1;
     }
     if(Controller::IsKeysPressed(Left)) {
       slct += -1;
+      Changed=1;
     }
-  
+  if(Changed==1) {
+    Chanhed=0;
+    top_screen2.Draw(logo2, x, y, foreground, background);
+  }
   }
  }
 }  // namespace CTRPluginFramework
