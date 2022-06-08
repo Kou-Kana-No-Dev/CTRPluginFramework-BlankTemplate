@@ -27,9 +27,11 @@ void ludora(MenuEntry* entry) {
     top_screen2.Draw(logo2, x2, y2, foreground, background);
     opned =1;
   }else{
+    if(Controller::IsKeysPressed(L)) {
   	logo2 = "ver 0.1";
   	top_screen2.Draw(logo2, x2, y2, foreground, background);
   	opned = 0;
+    }
   }
   }
   if((Controller::IsKeysPressed(Right)) && (opned == 1)) {
