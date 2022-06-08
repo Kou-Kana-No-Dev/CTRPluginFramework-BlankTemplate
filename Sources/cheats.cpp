@@ -17,38 +17,32 @@ void ludora(MenuEntry* entry) {
   u32 y2 = 21;
   int slct;
   int opned;
-  int oneunce;
   Color foreground = Color::SkyBlue;
   Color background = Color::Black;
-  if (oneunce == 0) {
-  logo2 = "ver 0.1";
   top_screen.Draw(logo, x, y, foreground, background);
-  top_screen2.Draw(logo2, x2, y2, foreground, background);
-  oneunce = 1;
+  if(Controller::IsKeysPressed(L)) {
+  	slct = 0;
+    logo2 = "World";
+    top_screen2.Draw(logo2, x2, y2, foreground, background);
+    opned =1;
   }else{
-  	if((Controller::IsKeysPressed(L)) && (opned = 0)) {
-  	  slct = 0;
-      logo2 = "World";
-      top_screen2.Draw(logo2, x2, y2, foreground, background);
-      opned =1;
-  	}else{
-  	  logo2 = "ver 0.1";
-  	  top_screen2.Draw(logo2, x2, y2, foreground, background);
-  	  opned = 0;
-  	}
-  	if(Controller::IsKeysPressed(Right)) {
-  	  slct++;
-  	  if(slct ==-1) {
-  	    slct = 4;
-  	  }
-  	  if(slct == 4) {
-  	    slct =0;
+  	logo2 = "ver 0.1";
+  	top_screen2.Draw(logo2, x2, y2, foreground, background);
+  	opned = 0;
+  }
+  if(Controller::IsKeysPressed(Right)) {
+  	slct++;
+    if(slct ==-1) {
+    slct = 4;
+  }
+  	if(slct == 4) {
+  	  slct =0;
   	  }
   	  if(slct == 0){
   	    logo2="World";
   	  }
-  	  if(slct == 1){
-  	    logo2="Combat";
+  	if(slct == 1){
+  	  logo2="Combat";
   	  }
   	  if(slct == 2){
   	    logo2="Player";
@@ -78,6 +72,6 @@ void ludora(MenuEntry* entry) {
   	    logo2="Movement";
   	  }
   	}
-  }
+  
 }
 }  // namespace CTRPluginFramework
