@@ -23,6 +23,7 @@ void ludora(MenuEntry* entry) {
   Color background = Color::Black;
   top_screen.Draw(logo, x, y, foreground, background);
   while (whilend == 0) {
+    back:
     if(Controller::IsKeysPressed(L)) {
       if (indian==0) {
         indian = 1;
@@ -45,9 +46,12 @@ void ludora(MenuEntry* entry) {
       Changed=1;
     }
   if(Changed==1) {
-    Changed=0;
-    top_screen2.Draw(logo2, x, y, foreground, background);
+    Chanhed=0;
+    goto raberu;
   }
+  raberu:
+  top_screen2.Draw(logo2, x, y, foreground, background);
+  goto back;
   }
  }
 }  // namespace CTRPluginFramework
