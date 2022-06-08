@@ -7,7 +7,6 @@ float dataf = 0;
 
 namespace CTRPluginFramework {
 void ludora(MenuEntry* entry) {
-  if (antiLoop == 0) {
   const Screen &top_screen = OSD::GetTopScreen();
   const Screen &top_screen2 = OSD::GetTopScreen();
   std::string logo = "Black Out";
@@ -17,12 +16,13 @@ void ludora(MenuEntry* entry) {
   u32 x2 = 1;
   u32 y2 = 21;
   int slct;
+  int loop;
   int opned;
   Color foreground = Color::SkyBlue;
   Color background = Color::Black;
   top_screen.Draw(logo, x, y, foreground, background);
-  int antiLoop = 1;
-  }
+  
+  while (loop==0) {
   if(Controller::IsKeysPressed(L)) {
     opned++;
     if (opned ==2) {
@@ -81,5 +81,6 @@ void ludora(MenuEntry* entry) {
   	  }
   	  top_screen2.Draw(logo2, x2, y2, foreground, background);
   	}
+
 }
 }  // namespace CTRPluginFramework
