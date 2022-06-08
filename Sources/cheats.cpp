@@ -16,7 +16,7 @@ void ludora(MenuEntry* entry) {
   u32 x2 = 1;
   u32 y2 = 21;
   int whilend = 0;
-  int Changed
+  int Changed;
   int slct = 0;
   int indian;
   Color foreground = Color::SkyBlue;
@@ -37,7 +37,7 @@ void ludora(MenuEntry* entry) {
       Changed=1;
     }
     if(Controller::IsKeysPressed(Right)) {
-      slct
+      slct++;
       Changed=1;
     }
     if(Controller::IsKeysPressed(Left)) {
