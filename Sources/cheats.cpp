@@ -26,7 +26,7 @@ void ludora(MenuEntry* entry) {
   top_screen2.Draw(logo2, x2, y2, foreground, background);
   oneunce = 1;
   }
-  	if(Controller::IsKeysPressed(L) , opned = 0) {
+  	if((Controller::IsKeysPressed(L)) && (opned = 0)) {
   	  slct = 0;
       logo2 = "World";
       top_screen2.Draw(logo2, x2, y2, foreground, background);
