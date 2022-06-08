@@ -21,6 +21,7 @@ void ludora(MenuEntry* entry) {
   Color background = Color::Black;
   top_screen.Draw(logo, x, y, foreground, background);
   if(Controller::IsKeysPressed(L)) {
+    if (opned == 0) {
   	slct = 0;
     logo2 = "World";
     top_screen2.Draw(logo2, x2, y2, foreground, background);
@@ -30,7 +31,8 @@ void ludora(MenuEntry* entry) {
   	top_screen2.Draw(logo2, x2, y2, foreground, background);
   	opned = 0;
   }
-  if(Controller::IsKeysPressed(Right)) {
+  }
+  if((Controller::IsKeysPressed(Right)) && (opned == 1)) {
   	slct++;
     if(slct ==-1) {
     slct = 4;
@@ -50,8 +52,9 @@ void ludora(MenuEntry* entry) {
   	  if(slct == 3){
   	    logo2="Movement";
   	  }
+  	  top_screen2.Draw(logo2, x2, y2, foreground, background);
   	}
-  	if(Controller::IsKeysPressed(Left)) {
+  if((Controller::IsKeysPressed(Left)) && (opned == 1)) {
   	  slct += -1;
   	  if(slct ==-1) {
   	    slct = 4;
@@ -71,7 +74,7 @@ void ludora(MenuEntry* entry) {
   	  if(slct == 3){
   	    logo2="Movement";
   	  }
+  	  top_screen2.Draw(logo2, x2, y2, foreground, background);
   	}
-  
 }
 }  // namespace CTRPluginFramework
