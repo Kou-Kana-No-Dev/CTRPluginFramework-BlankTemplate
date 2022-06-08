@@ -25,7 +25,7 @@ void ludora(MenuEntry* entry) {
       indian = 1;
       }else{
         indian=0;
-      }
+      
     }
     }
     if(Controller::IsKeysPressed(R)) {
@@ -35,7 +35,7 @@ void ludora(MenuEntry* entry) {
       slct++;
     }
     if(Controller::IsKeysPressed(Left)) {
-      slct += -1
+      slct += -1;
     }
   
   }
