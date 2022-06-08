@@ -79,5 +79,5 @@ void ludora(MenuEntry* entry) {
   	  }
   	}
   }
-}
+
 }  // namespace CTRPluginFramework
