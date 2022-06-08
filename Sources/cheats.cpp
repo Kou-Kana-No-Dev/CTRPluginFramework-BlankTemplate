@@ -25,7 +25,7 @@ void ludora(MenuEntry* entry) {
   top_screen.Draw(logo, x, y, foreground, background);
   top_screen2.Draw(logo2, x2, y2, foreground, background);
   oneunce = 1;
-  }
+  }else{
   	if((Controller::IsKeysPressed(L)) && (opned = 0)) {
   	  slct = 0;
       logo2 = "World";
@@ -79,5 +79,5 @@ void ludora(MenuEntry* entry) {
   	  }
   	}
   }
-
+}
 }  // namespace CTRPluginFramework
