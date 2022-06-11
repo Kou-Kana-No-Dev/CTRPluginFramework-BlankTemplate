@@ -35,7 +35,7 @@ void ludora(MenuEntry* entry) {
   if(Controller::IsKeysPressed(Right)) {
     if (english == 1) {
       Process::Write16(0x350B4A , slct += 1);
-      Process::Read16(0x350B4A , slct)
+      Process::Read16(0x350B4A , slct);
       if((slct == 0) && (english == 1)) {
         logo2 = "World";
         top_screen2.Draw(logo2, x2, y2, foreground, background);
