@@ -7,18 +7,14 @@ float dataf = 0;
 
 namespace CTRPluginFramework {
 void ludora(MenuEntry* entry) {
-  u16 english;
-  u16 slct = 0;
-  Process::Read16(0x350B48 , english);
-  Process::Read16(0x350B4A , slct);
-  int slt;
-  int englih;
+  u16 englih;
+  u16 slt = 0;
+  Process::Read16(0x350B48 , englih);
+  Process::Read16(0x350B4A , slt);
   const Screen &top_screen = OSD::GetTopScreen();
   const Screen &top_screen2 = OSD::GetTopScreen();
   std::string logo = "Black Out";
   std::string logo2 = "Die";
-  slt = slct;
-  englih = english;
   u32 x = 1;
   u32 y = 1;
   u32 x2 = 1;
@@ -31,7 +27,7 @@ void ludora(MenuEntry* entry) {
   top_screen.Draw(logo, x, y, foreground, background);
   if(Controller::IsKeysPressed(L)) {
    if (englih == 1) {
-    Process::Write16(0x350B48 , 0x0000
+    Process::Write16(0x350B48 , 0x0000);
     slt = 0;
     logo2 = "World";
     top_screen2.Draw(logo2, x2, y2, foreground, background);
