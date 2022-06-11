@@ -7,8 +7,8 @@ float dataf = 0;
 
 namespace CTRPluginFramework {
 void ludora(MenuEntry* entry) {
-  int english;
-  int slct = 0;
+  u16 english;
+  u16 slct = 0;
   Process::Read16(0x350B48 , english);
   Process::Read16(0x350B4A , slct)
   const Screen &top_screen = OSD::GetTopScreen();
