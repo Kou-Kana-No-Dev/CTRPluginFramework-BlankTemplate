@@ -10,7 +10,7 @@ void ludora(MenuEntry* entry) {
   u16 english;
   u16 slct = 0;
   Process::Read16(0x350B48 , english);
-  Process::Read16(0x350B4A , slct)
+  Process::Read16(0x350B4A , slct);
   const Screen &top_screen = OSD::GetTopScreen();
   const Screen &top_screen2 = OSD::GetTopScreen();
   std::string logo = "Black Out";
@@ -63,7 +63,7 @@ void ludora(MenuEntry* entry) {
   if(Controller::IsKeysPressed(Left)) {
     if (english == 1) {
       Process::Write16(0x350B4A , slct += -1);
-      Process::Read16(0x350B4A , slct)
+      Process::Read16(0x350B4A , slct);
       if((slct == 0) && (english == 1)) {
         logo2 = "World";
         top_screen2.Draw(logo2, x2, y2, foreground, background);
