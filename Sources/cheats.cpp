@@ -28,9 +28,6 @@ void ludora(MenuEntry* entry) {
   if(Controller::IsKeysPressed(L)) {
    if (englih == 1) {
     Process::Write16(0x350B48 , 0x0000);
-    slt = 0;
-    logo2 = "World";
-    top_screen2.Draw(logo2, x2, y2, foreground, background);
    }else{
     Process::Write16(0x350B48 , 0x0001);
    }
@@ -90,6 +87,9 @@ void ludora(MenuEntry* entry) {
   }
       }
     }
+  }
+  if (englih == 1) {
+    top_screen2.Draw(logo2, x2, y2, foreground, background);
   }
  }
 }  // namespace CTRPluginFramework
