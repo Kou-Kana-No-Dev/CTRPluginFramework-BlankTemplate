@@ -36,58 +36,46 @@ void ludora(MenuEntry* entry) {
     if (englih == 1) {
       Process::Write16(0x350B4A , slt += 1);
       Process::Read16(0x350B4A , slt);
-      if((slt == 0) && (englih == 1)) {
-        logo2 = "World";
-        top_screen2.Draw(logo2, x2, y2, foreground, background);
-      }else{
-      if((slt == 1) && (englih == 1)) {
-        logo2 = "combat";
-        top_screen2.Draw(logo2, x2, y2, foreground, background);
-      }else{
-      if((slt == 2) && (englih == 1)) {
-        logo2 = "Player";
-        top_screen2.Draw(logo2, x2, y2, foreground, background);
-      }else{
-        if((slt == 3) && (englih == 1)) {
-        logo2 = "Movement";
-        top_screen2.Draw(logo2, x2, y2, foreground, background);
-      }else{
-        Process::Write16(0x350B4A , 0x0000);
-        Process::Read16(0x350B4A , slt);
+      if(slt!=1) {
+        if(slt!=0) {
+          if(slt!=2) {
+            if(slt!=3) {
+              slct = 0;
+            }
+          }
       }
     }
-  }
       }
-    }
   }
   if(Controller::IsKeysPressed(Left)) {
     if (englih == 1) {
       Process::Write16(0x350B4A , slt += -1);
       Process::Read16(0x350B4A , slt);
-      if((slt == 0) && (englih == 1)) {
-        logo2 = "World";
-        top_screen2.Draw(logo2, x2, y2, foreground, background);
-      }else{
-      if((slt == 1) && (englih == 1)) {
-        logo2 = "combat";
-        top_screen2.Draw(logo2, x2, y2, foreground, background);
-      }else{
-      if((slt == 2) && (englih == 1)) {
-        logo2 = "Player";
-        top_screen2.Draw(logo2, x2, y2, foreground, background);
-      }else{
-        if((slt == 3) && (englih == 1)) {
-        logo2 = "Movement";
-        top_screen2.Draw(logo2, x2, y2, foreground, background);
-      }else{
-        Process::Write16(0x350B4A , 0x0000);
-        Process::Read16(0x350B4A , slt);
+      if(slt!=1) {
+        if(slt!=0) {
+          if(slt!=2) {
+            if(slt!=3) {
+              slct = 0;
+            }
+          }
       }
     }
   }
-      }
-    }
+  if(slct == 0) {
+    logo2 = "World";
   }
+  if(slct == 1) {
+    logo2 = "combat";
+  }
+  if(slct == 2) {
+    logo2 = "Player";
+  }
+  if(slct == 3) {
+    logo2 = "Movement";
+  }
+  
+  
+  
   if (englih == 1) {
     top_screen2.Draw(logo2, x2, y2, foreground, background);
   }
