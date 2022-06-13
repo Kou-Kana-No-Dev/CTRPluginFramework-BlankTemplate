@@ -1,7 +1,7 @@
 #include "3ds.h"
 #include "csvc.h"
 #include "CTRPluginFramework.hpp"
-#include "Cheats.hpp"
+#include "cheats.hpp"
 #include <vector>
 
 namespace CTRPluginFramework
