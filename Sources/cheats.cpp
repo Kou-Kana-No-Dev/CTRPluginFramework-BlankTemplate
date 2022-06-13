@@ -61,6 +61,7 @@ void ludora(MenuEntry* entry) {
       }
     }
   }
+  }
   if(slct == 0) {
     logo2 = "World";
   }
