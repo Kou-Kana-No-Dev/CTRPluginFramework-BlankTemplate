@@ -66,11 +66,11 @@ void InitMenu(PluginMenu &menu) {
   const std::string kRuu2 = "" << Color::Orange << "";
   const std::string kRuu3 = "" << Color::Yellow << "";
   menu +=
-      new MenuEntry("Boot:\nBlack OUT",ludora, "");
+      new MenuEntry("BO_Dev",ludora, );
 }
 
 int main() {
-  auto *menu = new PluginMenu("", 6, 6, 6, About);
+  auto *menu = new PluginMenu("Black out dev menu", 6, 6, 6, About);
 
   // Synnchronize the menu with frame event
   menu->SynchronizeWithFrame(true);
