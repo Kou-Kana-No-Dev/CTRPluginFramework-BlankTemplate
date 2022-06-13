@@ -13,12 +13,18 @@ void E_field(MenuEntry* entry){
   Process::Read32(0x8195384 , B_fieldP);
   offset = B_fieldP;
   Process::Read8(offset + 0x00000CF4 , B_fieldN);
-  const Screen &top_screen = OSD::GetTopScreen();
-  std::string str = ("Boss living : " + B_fieldN);
+  const Screen &boss1 = OSD::GetTopScreen();
+  const Screen &boss2 = OSD::GetTopScreen();
+  const Screen &boss3 = OSD::GetTopScreen();
+  const Screen &boss4 = OSD::GetTopScreen();
+  const Screen &boss5 = OSD::GetTopScreen();
+  string Blv = B_fieldN;
+  std::string str = ("Boss1 : " + Blv);
+  
   u32 x = 10;
   u32 y = 0;
   Color foreground = Color::SkyBlue;
   Color background = Color::Black;
-  top_screen.Draw(str, x, y, foreground, background);
+  boss1.Draw(str, x, y, foreground, background);
 }
 }
