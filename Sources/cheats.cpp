@@ -9,12 +9,12 @@ namespace CTRPluginFramework
 {
 void E_field(MenuEntry* entry){
   u32 B_fieldP
-  u8 B_field
+  u8 B_fieldN
   Process::Read32(0x8195384 , B_fieldP)
   Offset = B_fieldP
-  Process::Read8(Offset + 0x00000CF4 , B_field)
+  Process::Read8(Offset + 0x00000CF4 , B_fieldN)
   const Screen &top_screen = OSD::GetTopScreen();
-  std::string str = ("Boss living : " + B_field);
+  std::string str = ("Boss living : " + B_fieldN);
   u32 x = 10;
   u32 y = 0;
   Color foreground = Color::SkyBlue;
