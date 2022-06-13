@@ -5,80 +5,20 @@ u16 data16 = 0, cmp16 = 0;
 u8 data8 = 0, cmp8 = 0;
 float dataf = 0;
 
-namespace CTRPluginFramework {
-void ludora(MenuEntry* entry) {
-  u16 english;
-  u16 slct = 0;
-  Process::Read16(0x350B48 , english);
-  Process::Read16(0x350B4A , slct);
+namespace CTRPluginFramework
+{
+void E_field(MenuEntry* entry){
+  u32 B_fieldP
+  u8 B_field
+  Process::Read32(0x8195384 , B_fieldP)
+  Offset = B_fieldP
+  Process::Read8(Offset + 0x00000CF4 , B_field)
   const Screen &top_screen = OSD::GetTopScreen();
-  const Screen &top_screen2 = OSD::GetTopScreen();
-  std::string logo = "Black Out";
-  std::string logo2 = "Die";
-  u32 x = 1;
-  u32 y = 1;
-  u32 x2 = 1;
-  u32 y2 = 21;
-  int whilend = 0;
-  int Changed;
-  int indian;
+  std::string str = ("Boss living : " + B_field);
+  u32 x = 10;
+  u32 y = 0;
   Color foreground = Color::SkyBlue;
   Color background = Color::Black;
-  top_screen.Draw(logo, x, y, foreground, background);
-  if(Controller::IsKeysPressed(L)) {
-   if (english == 1) {
-    Process::Write16(0x350B48 , 0x0000);
-   }else{
-    Process::Write16(0x350B48 , 0x0001);
-   }
-  }
-  if(Controller::IsKeysPressed(Right)) {
-    if (english == 1) {
-      Process::Write16(0x350B4A , slct += 1);
-      Process::Read16(0x350B4A , slct);
-      if(slct!=1) {
-        if(slct!=0) {
-          if(slct!=2) {
-            if(slct!=3) {
-              slct = 0;
-            }
-          }
-      }
-    }
-      }
-  }
-  if(Controller::IsKeysPressed(Left)) {
-    if (english == 1) {
-      Process::Write16(0x350B4A , slct += -1);
-      Process::Read16(0x350B4A , slct);
-      if(slct!=1) {
-        if(slct!=0) {
-          if(slct!=2) {
-            if(slct!=3) {
-              slct = 0;
-            }
-          }
-      }
-    }
-  }
-  }
-  if(slct == 0) {
-    logo2 = "World";
-  }
-  if(slct == 1) {
-    logo2 = "combat";
-  }
-  if(slct == 2) {
-    logo2 = "Player";
-  }
-  if(slct == 3) {
-    logo2 = "Movement";
-  }
-  
-  
-  
-  if (english == 1) {
-    top_screen2.Draw(logo2, x2, y2, foreground, background);
-  }
- }
-}  // namespace CTRPluginFramework
+  top_screen.Draw(str, x, y, foreground, background);
+}
+}
