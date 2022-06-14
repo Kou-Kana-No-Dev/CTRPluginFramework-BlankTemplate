@@ -8,5 +8,6 @@
 namespace CTRPluginFramework
 {
    void keykeysokesb(MenuEntry* entry);
+   void keykeysokesp(MenuEntry* entry);
 }
 #endif
