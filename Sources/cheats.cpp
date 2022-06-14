@@ -58,7 +58,7 @@ void keykeysokesb(MenuEntry* entry){
 void keykeysokesp(MenuEntry* entry) {
   const Screen &topkeyp = OSD::GetTopScreen();
   const Screen &topkeyp2 = OSD::GetTopScreen();
-  u32 x2 = 320;
+  u32 x2 = 350;
   u32 y2 = 5;
   Color foreground = Color::SkyBlue;
   Color background = Color::Black;
@@ -66,21 +66,22 @@ void keykeysokesp(MenuEntry* entry) {
   std::string pad2;
   pad = "_";
   pad2 = "_ _ _";
+  u8 Disdown;
   if(Controller::IsKeysDown(CPadUp)) {
-    pad = "↑";
+    pad = "X";
   }
   if(Controller::IsKeysDown(CPadDown)) {
     if(Controller::IsKeysDown(CPadRight)) {
-      pad2 = "_ ↓  →";
+      pad2 = "_ X X"; 
     }else{
-      if(Controller::IsKeysDown(Left)) {
-        pad2 = "←  ↓ _";
-      }
-      
+    if(Controller::IsKeysDown(CPadLeft)) {
+      pad2 = "X X _";
+    }else{
+    pad2 = "_ X _";
     }
-    pad2 = "_ ↓ _";
+    }
   }
-  topkeyp.Draw(pad, x2+10, y2, foreground, background);
+  topkeyp.Draw(pad, x2+14, y2, foreground, background);
   topkeyp2.Draw(pad2, x2, y2+13, foreground, background);
 }
 }
