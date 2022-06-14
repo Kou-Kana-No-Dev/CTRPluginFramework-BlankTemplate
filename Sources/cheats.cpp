@@ -80,7 +80,7 @@ void keykeysokesp(MenuEntry* entry) {
     }
     pad2 = "_ ↓ _";
   }
-  topkeyp.Draw(keys, x2+10, y2, foreground, background);
-  topkeyp2.Draw(keys, x2, y2+13, foreground, background);
+  topkeyp.Draw(pad, x2+10, y2, foreground, background);
+  topkeyp2.Draw(pad2, x2, y2+13, foreground, background);
 }
 }
