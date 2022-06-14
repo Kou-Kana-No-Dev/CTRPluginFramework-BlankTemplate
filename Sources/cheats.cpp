@@ -96,7 +96,7 @@ void keykeysokesp(MenuEntry* entry) {
      }
     }
     }
-  }
+  
   }
   topkeyp.Draw(pad, x2+12, y2, foreground, background);
   topkeyp2.Draw(pad2, x2, y2+13, foreground, background);
