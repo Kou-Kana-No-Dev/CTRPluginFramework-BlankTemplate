@@ -9,8 +9,8 @@ namespace CTRPluginFramework
 {
 void keykeysokesb(MenuEntry* entry){
   const Screen &top_screen = OSD::GetTopScreen();
-  u32 x = 0;
-  u32 y = 0;
+  u32 x = 5;
+  u32 y = 200;
   Color foreground = Color::SkyBlue;
   Color background = Color::Black;
   std::string keys;
@@ -54,5 +54,32 @@ void keykeysokesb(MenuEntry* entry){
     keys += "Select  ";
     top_screen.Draw(keys, x, y, foreground, background);
   }
+}
+void keykeysokesp(MenuEntry* entry) {
+  const Screen &topkeyp = OSD::GetTopScreen();
+  const Screen &topkeyp2 = OSD::GetTopScreen();
+  u32 x2 = 320;
+  u32 y2 = 5;
+  Color foreground = Color::SkyBlue;
+  Color background = Color::Black;
+  std::string pad;
+  std::string pad2;
+  pad = "_"
+  if(Controller::IsKeysDown(CPadUp)) {
+    pad = "↑"
+  }
+  if(Controller::IsKeysDown(CPadDown)) {
+    if(Controller::IsKeysDown(CPadRight)) {
+      pad2 = "_ ↓  →"
+    }else{
+      if(Controller::IsKeysDown(Left)) {
+        pad2 = "←  ↓ _"
+      }
+      
+    }
+    pad2 = "_ ↓ _"
+  }
+  topkeyp.Draw(keys, x+10, y, foreground, background);
+  topkeyp2.Draw(keys, x, y+13, foreground, background);
 }
 }

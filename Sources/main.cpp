@@ -72,7 +72,8 @@ exit:
 
     void    InitMenu(PluginMenu &menu)
     {
-		menu += new MenuEntry("B_Field Test", keykeysokesb);
+		menu += new MenuEntry("Keystrokes", keykeysokesb);
+		menu += new MenuEntry("Keystrokes Pad", keykeysokesp);
 			
     }
 
