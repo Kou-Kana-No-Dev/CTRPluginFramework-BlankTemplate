@@ -7,7 +7,7 @@
 namespace CTRPluginFramework
 {
 	//aboutの部分
-	static const std::string About ="ここに説明を書くよ！";
+	static const std::string About ="Hinoki Ver 0.1 \n    Made BY Kou Kana";
 	
     // This patch the NFC disabling the touchscreen when scanning an amiibo, which prevents ctrpf to be used
     static void    ToggleTouchscreenForceOn(void)
@@ -72,18 +72,24 @@ exit:
 
     void    InitMenu(PluginMenu &menu)
     {
-		menu += new MenuEntry("Keystrokes", keykeysokesb);
-		menu += new MenuEntry("Keystrokes Pad", keykeysokesp);
+    const std::string fol = "" << Color::Red << ""; //色
+    const std::string cod = "" << Color::Orange << ""; //色2
+    MenuFolder *Keystr = new MenuFolder(fol + "Keystrokes");
+		*Keystr += new MenuEntry(cod + "Keystrokes", keykeysokesb);
+		*Keystr += new MenuEntry(cod + "Keystrokes Pad", keykeysokesp);
+		*Keystr += new MenuEntry(cod + "Keystrokes signpost ", keykeysokesc);
 			
     }
 
     int     main(void)
     {
-        PluginMenu* menu = new PluginMenu("名前", 9,9,9,About);
+       const std::string nameplu = "" << Color::Orange << ""; //色2
+        PluginMenu* menu = new PluginMenu(nameplu + "hinoki", 0,0,6,About);
 
         // Synnchronize the menu with frame event
         menu->SynchronizeWithFrame(true);
-		OSD::Notify(Color::Cyan << "Enjoy the search life :)");
+        menu->ShowWelcomeMessage(false);
+		OSD::Notify(Color::Orange << "Hinoki No Cheat Plugin Ready");
 		
         // Init our menu entries & folders
         InitMenu(*menu);
