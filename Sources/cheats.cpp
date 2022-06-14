@@ -113,31 +113,31 @@ void keykeysokesc(MenuEntry* entry) {
   pad = "_";
   pad2 = "_ _ _";
   u8 Disdown;
-  if(Controller::IsKeysDown(Up)) {
+  if(Controller::IsKeysDown(DPadUp)) {
     pad = "X";
-    if(Controller::IsKeysDown(Right)) {
+    if(Controller::IsKeysDown(DPadRight)) {
       pad2 = "_ _ X"; 
     }else{
-    if(Controller::IsKeysDown(Left)) {
+    if(Controller::IsKeysDown(DPadLeft)) {
       pad2 = "X _ _";
     }
     }
   }else{
-  if(Controller::IsKeysDown(Down)) {
-    if(Controller::IsKeysDown(Right)) {
+  if(Controller::IsKeysDown(DPadDown)) {
+    if(Controller::IsKeysDown(DPadRight)) {
       pad2 = "_ X X"; 
     }else{
-    if(Controller::IsKeysDown(Left)) {
+    if(Controller::IsKeysDown(DPadLeft)) {
       pad2 = "X X _";
     }else{
     pad2 = "_ X _";
     }
     }
   }else{
-    if(Controller::IsKeysDown(Left)) {
+    if(Controller::IsKeysDown(DPadLeft)) {
       pad2 = "X _ _";
     }else{
-     if(Controller::IsKeysDown(Right)) {
+     if(Controller::IsKeysDown(DPadRight)) {
        pad2 = "_ _ X";
      }
     }
