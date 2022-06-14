@@ -7,6 +7,6 @@
 
 namespace CTRPluginFramework
 {
-   void E_field(MenuEntry* entry);
+   void keykeysokesb(MenuEntry* entry);
 }
 #endif
