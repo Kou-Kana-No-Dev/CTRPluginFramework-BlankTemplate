@@ -75,10 +75,11 @@ exit:
     const std::string fol = "" << Color::Red << ""; //色
     const std::string cod = "" << Color::Orange << ""; //色2
     MenuFolder *Keystr = new MenuFolder(fol + "Keystrokes");
+    {
 		*Keystr += new MenuEntry(cod + "Keystrokes", keykeysokesb);
 		*Keystr += new MenuEntry(cod + "Keystrokes Pad", keykeysokesp);
 		*Keystr += new MenuEntry(cod + "Keystrokes signpost ", keykeysokesc);
-			
+    }
     }
 
     int     main(void)
