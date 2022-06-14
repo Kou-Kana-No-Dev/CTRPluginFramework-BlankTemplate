@@ -80,6 +80,7 @@ exit:
 		*Keystr += new MenuEntry(cod + "Keystrokes Pad", keykeysokesp);
 		*Keystr += new MenuEntry(cod + "Keystrokes signpost ", keykeysokesc);
     }
+    menu += Keystr;
     }
 
     int     main(void)
