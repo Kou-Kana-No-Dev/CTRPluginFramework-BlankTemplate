@@ -7,24 +7,52 @@ float dataf = 0;
 
 namespace CTRPluginFramework
 {
-void E_field(MenuEntry* entry){
-  u32 B_fieldP;
-  u8 B_fieldN;
-  Process::Read32(0x8195384 , B_fieldP);
-  offset = B_fieldP;
-  Process::Read8(offset + 0x00000CF4 , B_fieldN);
-  const Screen &boss1 = OSD::GetTopScreen();
-  const Screen &boss2 = OSD::GetTopScreen();
-  const Screen &boss3 = OSD::GetTopScreen();
-  const Screen &boss4 = OSD::GetTopScreen();
-  const Screen &boss5 = OSD::GetTopScreen();
-  string Blv = B_fieldN;
-  std::string str = ("Boss1 : " + Blv);
-  
-  u32 x = 10;
+void keykeysokesb(MenuEntry* entry){
+  const Screen &top_screen = OSD::GetTopScreen();
+  u32 x = 0;
   u32 y = 0;
   Color foreground = Color::SkyBlue;
   Color background = Color::Black;
-  boss1.Draw(str, x, y, foreground, background);
+  std::string keys
+  if(Controller::IsKeysDown(A)) {
+    keys += "A  ";
+    top_screen.Draw(keys, x, y, foreground, background);
+  }
+  if(Controller::IsKeysDown(B)) {
+    keys += "B  ";
+    top_screen.Draw(keys, x, y, foreground, background);
+  }
+  if(Controller::IsKeysDown(X)) {
+    keys += "X  ";
+    top_screen.Draw(keys, x, y, foreground, background);
+  }
+  if(Controller::IsKeysDown(Y)) {
+    keys += "Y  ";
+    top_screen.Draw(keys, x, y, foreground, background);
+  }
+  if(Controller::IsKeysDown(R)) {
+    keys += "R  ";
+    top_screen.Draw(keys, x, y, foreground, background);
+  }
+  if(Controller::IsKeysDown(L)) {
+    keys += "L  ";
+    top_screen.Draw(keys, x, y, foreground, background);
+  }
+  if(Controller::IsKeysDown(ZR)) {
+    keys += "ZR  ";
+    top_screen.Draw(keys, x, y, foreground, background);
+  }
+  if(Controller::IsKeysDown(ZL)) {
+    keys += "ZL  ";
+    top_screen.Draw(keys, x, y, foreground, background);
+  }
+  if(Controller::IsKeysDown(Start)) {
+    keys += "Start  ";
+    top_screen.Draw(keys, x, y, foreground, background);
+  }
+  if(Controller::IsKeysDown(Select)) {
+    keys += "Select  ";
+    top_screen.Draw(keys, x, y, foreground, background);
+  }
 }
 }

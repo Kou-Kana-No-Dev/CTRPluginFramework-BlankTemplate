@@ -72,7 +72,7 @@ exit:
 
     void    InitMenu(PluginMenu &menu)
     {
-		menu += new MenuEntry("B_Field Test", E_field);
+		menu += new MenuEntry("B_Field Test", keykeysokesb);
 			
     }
 
