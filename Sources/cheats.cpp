@@ -64,22 +64,23 @@ void keykeysokesp(MenuEntry* entry) {
   Color background = Color::Black;
   std::string pad;
   std::string pad2;
-  pad = "_"
+  pad = "_";
+  pad2 = "_ _ _";
   if(Controller::IsKeysDown(CPadUp)) {
-    pad = "↑"
+    pad = "↑";
   }
   if(Controller::IsKeysDown(CPadDown)) {
     if(Controller::IsKeysDown(CPadRight)) {
-      pad2 = "_ ↓  →"
+      pad2 = "_ ↓  →";
     }else{
       if(Controller::IsKeysDown(Left)) {
-        pad2 = "←  ↓ _"
+        pad2 = "←  ↓ _";
       }
       
     }
-    pad2 = "_ ↓ _"
+    pad2 = "_ ↓ _";
   }
-  topkeyp.Draw(keys, x+10, y, foreground, background);
-  topkeyp2.Draw(keys, x, y+13, foreground, background);
+  topkeyp.Draw(keys, x2+10, y2, foreground, background);
+  topkeyp2.Draw(keys, x2, y2+13, foreground, background);
 }
 }
