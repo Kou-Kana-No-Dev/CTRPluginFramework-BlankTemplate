@@ -13,7 +13,7 @@ void keykeysokesb(MenuEntry* entry){
   u32 y = 0;
   Color foreground = Color::SkyBlue;
   Color background = Color::Black;
-  std::string keys
+  std::string keys;
   if(Controller::IsKeysDown(A)) {
     keys += "A  ";
     top_screen.Draw(keys, x, y, foreground, background);
