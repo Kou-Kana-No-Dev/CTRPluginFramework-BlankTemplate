@@ -75,6 +75,7 @@ void keykeysokesp(MenuEntry* entry) {
     if(Controller::IsKeysDown(CPadLeft)) {
       pad2 = "X _ _";
     }
+    }
   }else{
   if(Controller::IsKeysDown(CPadDown)) {
     if(Controller::IsKeysDown(CPadRight)) {
@@ -94,10 +95,11 @@ void keykeysokesp(MenuEntry* entry) {
        pad2 = "_ _ X";
      }
     }
+    }
   }
   }
-  topkeyp.Draw(pad, x2+14, y2, foreground, background);
+  topkeyp.Draw(pad, x2+12, y2, foreground, background);
   topkeyp2.Draw(pad2, x2, y2+13, foreground, background);
 }
 }
-}
+
