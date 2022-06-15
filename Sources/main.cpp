@@ -85,6 +85,7 @@ exit:
     {
       *Cam += new MenuEntry(cod + "Zoom(FPS Cam)" ,Zoom,"A + R + L");
     }
+    menu += Cam;
     }
 
     int     main(void)
