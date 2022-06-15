@@ -158,9 +158,9 @@ void ATCK(MenuEntry* entry) {
   Process::Read32(0x00101194 , aiueo);
   if(Controller::IsKeysPressed(X + R + L)) { 
     if(aiueo == 0) {
-      Process::32(0x00101194 , 0x00000001);
+      Process::Write32(0x00101194 , 0x00000001);
     }else{
-      aiueo = 0;
+      Process::Write32(0x00101194 , 0x00000000);
     }
   }
   if (aiueo == 1) {
