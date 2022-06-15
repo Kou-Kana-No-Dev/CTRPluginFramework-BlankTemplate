@@ -168,6 +168,6 @@ void ATCK(MenuEntry* entry) {
     OTCLI.Draw(OTKR, x3, y3, foreground, background);
   }
   }
-}
+
 }
 
