@@ -147,16 +147,20 @@ void keykeysokesc(MenuEntry* entry) {
   topkeyp.Draw(pad, x2+12, y2, foreground, background);
   topkeyp2.Draw(pad2, x2, y2+13, foreground, background);
 }
-void Zoom(MenuEntry* entry) {
-  if(Controller::IsKeysDown(A + R + L)) {
-    Process::ReadFloat(0x081944A4 , dataf);
-    dataf += -8;
-    Process::WriteFloat(0x081944A4 , dataf);
-    Process::ReadFloat(0x081944A8 , dataf);
-    dataf += 532;
-    Process::Write32(0x081944A8 , dataf);
-    Process::Write32(0x081944C4 , 0x40F8B3D5);
-    Process::Write32(0x081944B0 , 0x40900580);
+void ATCK(MenuEntry* entry) {
+  int aiueo;
+  int aiueko
+  while (aiueko =! 35626463) {
+  if(Controller::IsKeysPresed(X + R + L)) { 
+    if(aiueo == 0) {
+      aiueo = 1;
+    }else{
+      aiueo = 0;
+    }
+  }
+  if (aiueo = 1) {
+    Process::Write32(0x0819428C , 0x00000000);
+  }
   }
 }
 }

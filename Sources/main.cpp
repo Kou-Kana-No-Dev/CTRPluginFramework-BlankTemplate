@@ -81,11 +81,7 @@ exit:
 		*Keystr += new MenuEntry(cod + "Keystrokes signpost ", keykeysokesc);
     }
     menu += Keystr;
-    MenuFolder *Cam = new MenuFolder(fol + "camera");
-    {
-      *Cam += new MenuEntry(cod + "Zoom(FPS Cam)" ,Zoom,"A + R + L");
-    }
-    menu += Cam;
+    menu += ATCK
     }
 
     int     main(void)
