@@ -83,7 +83,7 @@ exit:
     menu += Keystr;
     MenuFolder *Cam = new MenuFolder(fol + "camera");
     {
-      *Cam += new MenuEntry(cod + "Zoom(FPS Cam)" ,Zoom,"A + R + L")
+      *Cam += new MenuEntry(cod + "Zoom(FPS Cam)" ,Zoom,"A + R + L");
     }
     }
 
