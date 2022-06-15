@@ -11,5 +11,6 @@ namespace CTRPluginFramework
    void keykeysokesp(MenuEntry* entry);
    void keykeysokesc(MenuEntry* entry);
    void ATCK(MenuEntry* entry);
+   void Readanim(MenuEntry* entry);
 }
 #endif
