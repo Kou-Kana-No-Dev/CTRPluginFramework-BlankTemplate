@@ -161,6 +161,6 @@ void ATCK(MenuEntry* entry) {
     Process::Write32(0x0819428C , 0x00000000);
   }
   }
-}
+
 }
 
