@@ -149,8 +149,8 @@ void keykeysokesc(MenuEntry* entry) {
 }
 void ATCK(MenuEntry* entry) {
   const Screen &OTCLI = OSD::GetTopScreen();
-  u32 x = 5;
-  u32 y = 180;
+  u32 x3 = 5;
+  u32 y3 = 180;
   Color foreground = Color::SkyBlue;
   Color background = Color::Black;
   std::string OTKR = "Auto Clicker : Enable";
