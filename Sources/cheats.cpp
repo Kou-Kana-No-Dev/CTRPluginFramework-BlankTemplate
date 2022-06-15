@@ -149,7 +149,7 @@ void keykeysokesc(MenuEntry* entry) {
 }
 void ATCK(MenuEntry* entry) {
   int aiueo;
-  int aiueko
+  int aiueko;
   while (aiueko =! 35626463) {
   if(Controller::IsKeysPresed(X + R + L)) { 
     if(aiueo == 0) {
@@ -159,7 +159,7 @@ void ATCK(MenuEntry* entry) {
     }
   }
   if (aiueo = 1) {
-    Process::Write32(0x0819428C , 0x00000000);
+    Process::Write32(0x0819428C , 0x00000000)
   }
   }
 }
