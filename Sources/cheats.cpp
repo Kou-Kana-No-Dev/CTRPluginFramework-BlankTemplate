@@ -156,7 +156,7 @@ void Zoom(MenuEntry* entry) {
     dataf += 532;
     Process::Write32(0x081944A8 , dataf);
     Process::Write32(0x081944C4 , 0x40F8B3D5);
-    process::Write32(0x081944B0 , 0x40900580);
+    Process::Write32(0x081944B0 , 0x40900580);
   }
 }
 }
