@@ -147,5 +147,17 @@ void keykeysokesc(MenuEntry* entry) {
   topkeyp.Draw(pad, x2+12, y2, foreground, background);
   topkeyp2.Draw(pad2, x2, y2+13, foreground, background);
 }
+void Zoom(MenuEntry* entry) {
+  if(Controller::IsKeysDown(A + R + L)) {
+    Process::ReadFloat(0x081944A4 , dataf);
+    dataf += -8;
+    Process::WriteFloat(0x081944A4 , dataf);
+    Process::ReadFloat(0x081944A8 , dataf);
+    dataf += 532
+    Process::Write32(0x081944A8 , dataf);
+    Process::Write32(0x081944C4 , 0x40F8B3D5)
+    process::Write32(0x081944B0 , 0x40900580)
+  }
+}
 }
 
