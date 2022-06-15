@@ -105,7 +105,7 @@ void keykeysokesc(MenuEntry* entry) {
   const Screen &topkeyp = OSD::GetTopScreen();
   const Screen &topkeyp2 = OSD::GetTopScreen();
   u32 x2 = 5;
-  u32 y2 = 173;
+  u32 y2 = 175;
   Color foreground = Color::SkyBlue;
   Color background = Color::Black;
   std::string pad;
@@ -150,13 +150,13 @@ void keykeysokesc(MenuEntry* entry) {
 void ATCK(MenuEntry* entry) {
   const Screen &OTCLI = OSD::GetTopScreen();
   u32 x3 = 5;
-  u32 y3 = 210;
+  u32 y3 = 180;
   Color foreground = Color::SkyBlue;
   Color background = Color::Black;
   std::string OTKR = "Auto Clicker : Enable";
   u32 aiueo;
   Process::Read32(0x00101194 , aiueo);
-  if(Controller::IsKeysPressed(X + R + L)) { 
+  if(Controller::IsKeysPressed(A + X + R + L)) { 
     if(aiueo == 0) {
       Process::Write32(0x00101194 , 0x00000001);
     }else{
@@ -167,7 +167,17 @@ void ATCK(MenuEntry* entry) {
     Process::Write32(0x0819428C , 0x00000000);
     OTCLI.Draw(OTKR, x3, y3, foreground, background);
   }
-  }
-
+}
+void Readanim(MenuEntry* entry) {
+  u32 animu;
+  const Screen &anima = OSD::GetTopScreen();
+  u32 x4= 5;
+  u32 y4 = 100;
+  Color foreground = Color::SkyBlue;
+  Color background = Color::Black;
+  Process::Read32(0x08195350 , offset);
+  Process::ReadFloat(offset + 0x0294 , animu);
+  anima.Draw(Utils::Format(animu), x2, y2+13, foreground, background);
+}
 }
 

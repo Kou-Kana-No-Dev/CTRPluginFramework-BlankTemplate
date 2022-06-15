@@ -81,7 +81,8 @@ exit:
 		*Keystr += new MenuEntry(cod + "Keystrokes signpost ", keykeysokesc);
     }
     menu += Keystr;
-    menu += new MenuEntry(cod + "Auto Clicker" , ATCK );
+    new MenuEntry(cod + "Auto Clicker" , ATCK );
+    menu += new MenuEntry(cod + "Autocker" , Readanim );
     }
 
     int     main(void)
