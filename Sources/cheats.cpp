@@ -148,14 +148,13 @@ void keykeysokesc(MenuEntry* entry) {
   topkeyp2.Draw(pad2, x2, y2+13, foreground, background);
 }
 void ATCK(MenuEntry* entry) {
-  int aiueo;
-  int aiueko;
-  while (aiueko =! 35626463) {
+  u32 aiueo;
+  Process::Read32(0x00101194 , aiueo);
   if(Controller::IsKeysPressed(X + R + L)) { 
     if(aiueo == 0) {
-      aiueo = 1;
+      Process::Write32(0x00101194 , 0x00000001);
     }else{
-      aiueo = 0;
+      Process::Write32(0x00101194 , 0x00000000);
     }
   }
   if (aiueo = 1) {
