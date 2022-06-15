@@ -159,7 +159,7 @@ void ATCK(MenuEntry* entry) {
     }
   }
   if (aiueo = 1) {
-    Process::Write32(0x0819428C , 0x00000000)
+    Process::Write32(0x0819428C , 0x00000000);
   }
   }
 }
