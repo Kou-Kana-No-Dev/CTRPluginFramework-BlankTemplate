@@ -105,7 +105,7 @@ void keykeysokesc(MenuEntry* entry) {
   const Screen &topkeyp = OSD::GetTopScreen();
   const Screen &topkeyp2 = OSD::GetTopScreen();
   u32 x2 = 5;
-  u32 y2 = 180;
+  u32 y2 = 173;
   Color foreground = Color::SkyBlue;
   Color background = Color::Black;
   std::string pad;
