@@ -169,7 +169,7 @@ void ATCK(MenuEntry* entry) {
   }
 }
 void Readanim(MenuEntry* entry) {
-  u32 animu;
+  float animu;
   const Screen &anima = OSD::GetTopScreen();
   u32 x4= 5;
   u32 y4 = 100;
