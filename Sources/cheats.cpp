@@ -151,7 +151,7 @@ void ATCK(MenuEntry* entry) {
   int aiueo;
   int aiueko;
   while (aiueko =! 35626463) {
-  if(Controller::IsKeysPresed(X + R + L)) { 
+  if(Controller::IsKeysPressed(X + R + L)) { 
     if(aiueo == 0) {
       aiueo = 1;
     }else{
