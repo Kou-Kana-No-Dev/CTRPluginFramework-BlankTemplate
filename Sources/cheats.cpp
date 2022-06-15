@@ -171,13 +171,13 @@ void ATCK(MenuEntry* entry) {
 void Readanim(MenuEntry* entry) {
   float animu;
   const Screen &anima = OSD::GetTopScreen();
-  u32 x4= 5;
-  u32 y4 = 100;
+  u32 x4= 100;
+  u32 y4 = 150;
   Color foreground = Color::SkyBlue;
   Color background = Color::Black;
   Process::Read32(0x08195350 , offset);
   Process::ReadFloat(offset + 0x0294 , animu);
-  anima.Draw(Utils::Format(animu), x2, y2+13, foreground, background);
+  anima.Draw(Utils::Format("%d" , animu), x4, y4, foreground, background);
 }
 }
 
