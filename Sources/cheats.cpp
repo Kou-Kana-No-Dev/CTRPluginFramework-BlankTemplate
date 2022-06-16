@@ -186,10 +186,10 @@ void Readanim(MenuEntry* entry) {
   Process::Read8(offset + 0x0F5E , Sutam);
   Process::Read16(offset + 0x2214 , sharp);
   Process::Read8(offset + 0x0CF4 , field);
-  anima.Draw("HP : " + Utils::Format("%d" , HP), x4, y4, foreground, background
-  anima.Draw("Moving : " + Utils::Format("%d" , Sutam), x4, y4+10, foreground, background);
-  anima.Draw("Sharpness : " + Utils::Format("%d" , sharp), x4, y4+20, foreground, background);
-  anima.Draw("Field : " + Utils::Format("%d" , field), x4, y4+30, foreground, background);
+  HPi.Draw("HP : " + Utils::Format("%d" , HP), x4, y4, foreground, background);
+  Sutami.Draw("Moving : " + Utils::Format("%d" , Sutam), x4, y4+10, foreground, background);
+  sharpi.Draw("Sharpness : " + Utils::Format("%d" , sharp), x4, y4+20, foreground, background);
+  fieldi.Draw("Field : " + Utils::Format("%d" , field), x4, y4+30, foreground, background);
 }
 }
 
