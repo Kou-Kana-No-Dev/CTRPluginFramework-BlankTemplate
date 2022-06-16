@@ -82,7 +82,8 @@ exit:
     }
     menu += Keystr;
     new MenuEntry(cod + "Auto Clicker" , ATCK );
-    menu += new MenuEntry(cod + "Autocker" , Readanim );
+    menu += new MenuEntry(cod + "Player Info In quest" , Readanim
+    menu += new MenuEntry(cod + "Player Info" , Readanim2 );
     }
 
     int     main(void)

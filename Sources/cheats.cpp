@@ -177,7 +177,7 @@ void Readanim(MenuEntry* entry) {
   const Screen &Sutami = OSD::GetTopScreen();
   const Screen &sharpi = OSD::GetTopScreen();
   const Screen &fieldi = OSD::GetTopScreen();
-  u32 x4= 100;
+  u32 x4= 10;
   u32 y4 = 120;
   Color foreground = Color::SkyBlue;
   Color background = Color::Black;
@@ -190,6 +190,36 @@ void Readanim(MenuEntry* entry) {
   Sutami.Draw("Moving : " + Utils::Format("%d" , Sutam), x4, y4+10, foreground, background);
   sharpi.Draw("Sharpness : " + Utils::Format("%d" , sharp), x4, y4+20, foreground, background);
   fieldi.Draw("Field : " + Utils::Format("%d" , field), x4, y4+30, foreground, background);
+}
+void Readanim2(MenuEntry* entry) {
+  const Screen &HRi = OSD::GetTopScreen();
+  const Screen &atki = OSD::GetTopScreen();
+  const Screen &dfci = OSD::GetTopScreen();
+  const Screen &abli = OSD::GetTopScreen();
+  const Screen &monyi = OSD::GetTopScreen();
+  const Screen &pointi = OSD::GetTopScreen();
+  u32 x5 = 10;
+  u32 y5 = 50;
+  Color foreground = Color::SkyBlue;
+  Color background = Color::Black;
+  u16 atk;
+  u16 dfc;
+  u16 abl;
+  u16 HR;
+  u32 Money;
+  u32 point;
+  Process::Read16(0x831B450 , atk);
+  Process::Read16(0x831B45C , dfc);
+  Process::Read16(0x831B45A , abl);
+  Process::Read16(0x831B76A , HR);
+  Process::Read32(0x83B3818 , Money);
+  Process::Read32(0x83B3820 , point);
+  atki.Draw("attacks : " + Utils::Format("%d" , atk), x5, y5, foreground, background);
+  dfci.Draw("Defenses : " + Utils::Format("%d" , dfc), x5, y5+10, foreground, background);
+  abli.Draw("attributes : " + Utils::Format("%d" , abl), x5, y5+20, foreground, background
+  HRi.Draw("HR : " + Utils::Format("%d" , HR), x5, y5+30, foreground, background);
+  monyi.Draw("Money : " + Utils::Format("%d" , Money), x5, y5+40, foreground, background);
+  pointi.Draw("ryuurekiinn Point : " + Utils::Format("%d" , point), x5, y5+50, foreground, background);
 }
 }
 
