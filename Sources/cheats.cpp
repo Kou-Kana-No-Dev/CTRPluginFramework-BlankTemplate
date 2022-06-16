@@ -209,11 +209,12 @@ void Readanim2(MenuEntry* entry) {
   u32 Money;
   u32 point;
   Process::Read16(0x831B450 , atk);
-  Process::Read16(0x831B45C , dfc);
+  Process::Read16(0x831B45E , dfc);
   Process::Read16(0x831B45A , abl);
   Process::Read16(0x831B76A , HR);
   Process::Read32(0x83B3818 , Money);
   Process::Read32(0x83B3820 , point);
+  dfc += 1;
   atki.Draw("attacks : " + Utils::Format("%d" , atk), x5, y5, foreground, background);
   dfci.Draw("Defenses : " + Utils::Format("%d" , dfc), x5, y5+10, foreground, background);
   abli.Draw("attributes : " + Utils::Format("%d" , abl), x5, y5+20, foreground, background);
