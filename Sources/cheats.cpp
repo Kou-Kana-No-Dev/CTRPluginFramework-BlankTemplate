@@ -169,15 +169,27 @@ void ATCK(MenuEntry* entry) {
   }
 }
 void Readanim(MenuEntry* entry) {
-  float animu;
-  const Screen &anima = OSD::GetTopScreen();
+  u8 HP;
+  u8 Sutam;
+  u16 sharp;
+  u8 field;
+  const Screen &HPi = OSD::GetTopScreen();
+  const Screen &Sutami = OSD::GetTopScreen();
+  const Screen &sharpi = OSD::GetTopScreen();
+  const Screen &fieldi = OSD::GetTopScreen();
   u32 x4= 100;
-  u32 y4 = 150;
+  u32 y4 = 120;
   Color foreground = Color::SkyBlue;
   Color background = Color::Black;
   Process::Read32(0x08195350 , offset);
-  Process::ReadFloat(offset + 0x0294 , animu);
-  anima.Draw(Utils::Format("%d" , animu), x4, y4, foreground, background);
+  Process::Read8(offset + 0x0F52 , HP);
+  Process::Read8(offset + 0x0F5E , Sutam);
+  Process::Read16(offset + 0x2214 , sharp);
+  Process::Read8(offset + 0x0CF4 , field);
+  anima.Draw("HP : " + Utils::Format("%d" , HP), x4, y4, foreground, background
+  anima.Draw("Moving : " + Utils::Format("%d" , Sutam), x4, y4+10, foreground, background);
+  anima.Draw("Sharpness : " + Utils::Format("%d" , sharp), x4, y4+20, foreground, background);
+  anima.Draw("Field : " + Utils::Format("%d" , field), x4, y4+30, foreground, background);
 }
 }
 
