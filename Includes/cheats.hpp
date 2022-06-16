@@ -10,7 +10,6 @@ namespace CTRPluginFramework
    void keykeysokesb(MenuEntry* entry);
    void keykeysokesp(MenuEntry* entry);
    void keykeysokesc(MenuEntry* entry);
-   void ATCK(MenuEntry* entry);
    void Readanim(MenuEntry* entry);
    void Readanim2(MenuEntry* entry);
 }
