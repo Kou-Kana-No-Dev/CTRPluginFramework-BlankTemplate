@@ -82,7 +82,7 @@ exit:
     }
     menu += Keystr;
     new MenuEntry(cod + "Auto Clicker" , ATCK );
-    menu += new MenuEntry(cod + "Player Info In quest" , Readanim
+    menu += new MenuEntry(cod + "Player Info In quest" , Readanim);
     menu += new MenuEntry(cod + "Player Info" , Readanim2 );
     }
 
