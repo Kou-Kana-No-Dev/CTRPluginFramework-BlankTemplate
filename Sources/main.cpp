@@ -62,12 +62,17 @@ void PatchProcess(FwkSettings &settings) { ToggleTouchscreenForceOn(); }
 void OnProcessExit(void) { ToggleTouchscreenForceOn(); }
 
 void InitMenu(PluginMenu &menu) {
-  const std::string kRuu = "" << Color::Red << "";
-  const std::string kRuu2 = "" << Color::Orange << "";
-  const std::string kRuu3 = "" << Color::Yellow << "";
-  menu +=
-      new MenuEntry(kRuu3 + "lu" + kRuu2 + "do" + kRuu + "ra v.1.0 Thx Download",nullptr,
-                    ludora, kAbout);
+  const std::string fol = "" << Color::Red << ""; //色
+    const std::string cod = "" << Color::Orange << ""; //色2
+    MenuFolder *Keystr = new MenuFolder(fol + "Keystrokes");
+    {
+		*Keystr += new MenuEntry(cod + "Keystrokes", keykeysokesb);
+		*Keystr += new MenuEntry(cod + "Keystrokes Pad", keykeysokesp);
+		*Keystr += new MenuEntry(cod + "Keystrokes signpost ", keykeysokesc);
+    }
+    menu += Keystr;
+    menu += new MenuEntry(cod + "Player Info In quest" , Readanim);
+    menu += new MenuEntry(cod + "Player Info" , Readanim2 );
 }
 
 int main() {
