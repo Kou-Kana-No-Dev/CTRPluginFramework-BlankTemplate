@@ -72,7 +72,7 @@ exit:
 
     void    InitMenu(PluginMenu &menu)
     {
-      menu += new MenuEntey("Test" , KeyStrokesButtom);
+      menu += new MenuEntry("Test" , KeyStrokesButtom);
     }
 
     int     main(void)
