@@ -216,7 +216,7 @@ void Readanim2(MenuEntry* entry) {
   Process::Read32(0x83B3820 , point);
   atki.Draw("attacks : " + Utils::Format("%d" , atk), x5, y5, foreground, background);
   dfci.Draw("Defenses : " + Utils::Format("%d" , dfc), x5, y5+10, foreground, background);
-  abli.Draw("attributes : " + Utils::Format("%d" , abl), x5, y5+20, foreground, background
+  abli.Draw("attributes : " + Utils::Format("%d" , abl), x5, y5+20, foreground, background);
   HRi.Draw("HR : " + Utils::Format("%d" , HR), x5, y5+30, foreground, background);
   monyi.Draw("Money : " + Utils::Format("%d" , Money), x5, y5+40, foreground, background);
   pointi.Draw("ryuurekiinn Point : " + Utils::Format("%d" , point), x5, y5+50, foreground, background);
