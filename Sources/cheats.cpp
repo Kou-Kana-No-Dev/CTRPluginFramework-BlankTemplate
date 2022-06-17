@@ -49,7 +49,7 @@ namespace CTRPluginFramework
   void KeyStrokesPad(MenuEntry* entry) {
     const Screen &Pad = OSD::GetTopScreen();
     const Screen &Pat = OSD::GetTopScreen();
-    u32 KSTX = 355;
+    u32 KSTX = 360;
     u32 KSTY = 5;
     Color foreground = Color::White;
     Color background = Color::Black;
@@ -79,6 +79,45 @@ namespace CTRPluginFramework
         Pad2 = "_ _ X";
       }
     if(Controller::IsKeysDown(CPadLeft)) {
+        Pad2 = "X _ _";
+      }
+    }
+  Pad.Draw(Pad1, KSTX+12, KSTY, foreground, background);
+  Pat.Draw(Pad2, KSTX, KSTY+13, foreground, background);
+  }
+  void KeyStrokesDPad(MenuEntry* entry) {
+    const Screen &Pad = OSD::GetTopScreen();
+    const Screen &Pat = OSD::GetTopScreen();
+    u32 KSTX = 5;
+    u32 KSTY = 220;
+    Color foreground = Color::White;
+    Color background = Color::Black;
+    std::string Pad1 = "_";
+    std::string Pad2 = "_ _ _";
+    if(Controller::IsKeysDown(DPadUp)) {
+      Pad1 = "X";
+      if(Controller::IsKeysDown(DPadRight)) {
+        Pad2 = "_ _ X";
+      }
+      if(Controller::IsKeysDown(DPadLeft)) {
+        Pad2 = "X _ _";
+      }
+    }
+    if(Controller::IsKeysDown(DPadDown)) {
+      if(Controller::IsKeysDown(DPadRight)) {
+        Pad2 = "_ X X";
+      }else{
+      if(Controller::IsKeysDown(DPadLeft)) {
+        Pad2 = "X X _";
+      }else{
+        Pad2 = "_ X _";
+      }
+      }
+    }else{
+    if(Controller::IsKeysDown(DPadRight)) {
+        Pad2 = "_ _ X";
+      }
+    if(Controller::IsKeysDown(DPadLeft)) {
         Pad2 = "X _ _";
       }
     }
