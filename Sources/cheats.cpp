@@ -88,8 +88,8 @@ namespace CTRPluginFramework
         Pad2 = "X _ _";
       }
   }
-    pad.Draw(Pad1, KSTX, KSTY, foreground, background);
-    pat.Draw(Pad2, KSTX, KSTY+13, foreground, background);
+    Pad.Draw(Pad1, KSTX, KSTY, foreground, background);
+    Pat.Draw(Pad2, KSTX, KSTY+13, foreground, background);
   }
 }
 
