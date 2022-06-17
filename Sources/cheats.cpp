@@ -71,22 +71,17 @@ namespace CTRPluginFramework
       if(Controller::IsKeysDown(CPadLeft)) {
         Pad2 = "X X _";
       }else{
-      if(Controller::IsKeysDown(CPadRight)) {
-        Pad2 = "_ _ X";
+        Pad2 = "_ X _";
       }
-      if(Controller::IsKeysDown(CPadLeft)) {
-        Pad2 = "X _ _";
       }
-    }
-  }else{
+    }else{
     if(Controller::IsKeysDown(CPadRight)) {
         Pad2 = "_ _ X";
       }
-      if(Controller::IsKeysDown(CPadLeft)) {
+    if(Controller::IsKeysDown(CPadLeft)) {
         Pad2 = "X _ _";
       }
     }
-  }
   Pad.Draw(Pad1, KSTX+13, KSTY, foreground, background);
   Pat.Draw(Pad2, KSTX, KSTY+13, foreground, background);
   }
