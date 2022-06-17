@@ -89,7 +89,7 @@ namespace CTRPluginFramework
     const Screen &Pad = OSD::GetTopScreen();
     const Screen &Pat = OSD::GetTopScreen();
     u32 KSTX = 5;
-    u32 KSTY = 220;
+    u32 KSTY = 210;
     Color foreground = Color::White;
     Color background = Color::Black;
     std::string Pad1 = "_";
