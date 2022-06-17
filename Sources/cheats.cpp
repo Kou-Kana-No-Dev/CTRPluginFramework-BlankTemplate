@@ -49,7 +49,7 @@ namespace CTRPluginFramework
   void KeyStrokesPad(MenuEntry* entry) {
     const Screen &Pad = OSD::GetTopScreen();
     const Screen &Pat = OSD::GetTopScreen();
-    u32 KSTX = 340;
+    u32 KSTX = 355;
     u32 KSTY = 5;
     Color foreground = Color::White;
     Color background = Color::Black;
@@ -82,7 +82,7 @@ namespace CTRPluginFramework
         Pad2 = "X _ _";
       }
     }
-  Pad.Draw(Pad1, KSTX+13, KSTY, foreground, background);
+  Pad.Draw(Pad1, KSTX+12, KSTY, foreground, background);
   Pat.Draw(Pad2, KSTX, KSTY+13, foreground, background);
   }
 }
