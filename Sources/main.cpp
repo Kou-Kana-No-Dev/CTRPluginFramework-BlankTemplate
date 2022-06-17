@@ -72,7 +72,8 @@ exit:
 
     void    InitMenu(PluginMenu &menu)
     {
-      menu += new MenuEntry("Test" , KeyStrokesButtom);
+      menu += new MenuEntry("Buttom" , KeyStrokesButtom);
+      menu += new MenuEntry("Pad" , KeyStrokesPad)
     }
 
     int     main(void)

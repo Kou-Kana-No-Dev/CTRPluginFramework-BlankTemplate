@@ -12,38 +12,81 @@ namespace CTRPluginFramework
     std::string IsK = "";
     u32 KSTX = 10;
     u32 KSTY = 50;
-    Color foreground = Color::Orange;
+    Color foreground = Color::White;
     Color background = Color::Black;
     if(Controller::IsKeysDown(A)) {
-      IsK += "A_";
+      IsK += "A  ";
     }
     if(Controller::IsKeysDown(B)) {
-      IsK += "B_";
+      IsK += "B  ";
     }
     if(Controller::IsKeysDown(X)) {
-      IsK += "X_";
+      IsK += "X  ";
     }
     if(Controller::IsKeysDown(Y)) {
-      IsK += "Y_";
+      IsK += "Y  ";
     }
     if(Controller::IsKeysDown(R)) {
-      IsK += "R_";
+      IsK += "R  ";
     }
     if(Controller::IsKeysDown(L)) {
-      IsK += "L_";
+      IsK += "L  ";
     }
     if(Controller::IsKeysDown(ZR)) {
-      IsK += "ZR_";
+      IsK += "ZR  ";
     }
     if(Controller::IsKeysDown(ZL)) {
-      IsK += "ZL_";
+      IsK += "ZL  ";
     }
     if(Controller::IsKeysDown(Start)) {
-      IsK += "Start_";
+      IsK += "Start  ";
     }
     if(Controller::IsKeysDown(Select)) {
-      IsK += "Select_";
+      IsK += "Select  ";
     }
+    KSTSC.Draw(IsK, KSTX, KSTY, foreground, background);
+  }
+  void KeyStrokesPad(MenuEntry* entry) {
+    const Screen &KSTSC = OSD::GetTopScreen();
+    u32 KSTX = 25;
+    u32 KSTY = 60;
+    Color foreground = Color::White;
+    Color background = Color::Black;
+    std::string Pad1 = "_";
+    std::string Pad2 = "_ _ _";
+    if(Controller::IsKeysDown(CPadUp)) {
+      Pad1 = "X";
+      if(Controller::IsKeysDown(CPadRight)) {
+        Pad2 = "_ _ X";
+      }
+      if(Controller::IsKeysDown(CPadLeft)) {
+        Pad2 = "X _ _";
+      }
+    }
+    if(Controller::IsKeysDown(CPadDown)) {
+      
+      Pad2 = "_ X _";
+      if(Controller::IsKeysDown(CPadRight)) {
+        Pad2 = "_ X X";
+      }
+      if(Controller::IsKeysDown(CPadLeft)) {
+        Pad2 = "X X _";
+      }else{
+      if(Controller::IsKeysDown(CPadRight)) {
+        Pad2 = "_ _ X";
+      }
+      if(Controller::IsKeysDown(CPadLeft)) {
+        Pad2 = "X _ _";
+      }
+    }
+  }else{
+    if(Controller::IsKeysDown(CPadRight)) {
+        Pad2 = "_ _ X";
+      }
+      if(Controller::IsKeysDown(CPadLeft)) {
+        Pad2 = "X _ _";
+      }
+  }
     KSTSC.Draw(IsK, KSTX, KSTY, foreground, background);
   }
 }
