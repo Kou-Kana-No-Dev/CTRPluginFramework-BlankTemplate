@@ -7,7 +7,7 @@
 namespace CTRPluginFramework
 {
 	//aboutの部分
-	static const std::string About ="Hinoki Ver 0.1 \n    Made BY Kou Kana";
+	static const std::string About ="Made By Kou Kana                                      Discord:Kou Kana#7262";
 	
     // This patch the NFC disabling the touchscreen when scanning an amiibo, which prevents ctrpf to be used
     static void    ToggleTouchscreenForceOn(void)
@@ -72,28 +72,20 @@ exit:
 
     void    InitMenu(PluginMenu &menu)
     {
-    const std::string fol = "" << Color::Red << ""; //色
-    const std::string cod = "" << Color::Orange << ""; //色2
-    MenuFolder *Keystr = new MenuFolder(fol + "Keystrokes");
-    {
-		*Keystr += new MenuEntry(cod + "Keystrokes", keykeysokesb);
-		*Keystr += new MenuEntry(cod + "Keystrokes Pad", keykeysokesp);
-		*Keystr += new MenuEntry(cod + "Keystrokes signpost ", keykeysokesc);
-    }
-    menu += Keystr;
-    menu += new MenuEntry(cod + "Player Info In quest" , Readanim);
-    menu += new MenuEntry(cod + "Player Info" , Readanim2 );
+      menu += new MenuEntry("Buttom" , KeyStrokesButtom);
+      menu += new MenuEntry("Pad" , KeyStrokesPad);
+      menu += new MenuEntry("DPad" , KeyStrokesDPad);
+      menu += new MenuEntry("test" , Test);
     }
 
     int     main(void)
     {
-       const std::string nameplu = "" << Color::Orange << ""; //色2
-        PluginMenu* menu = new PluginMenu(nameplu + "hinoki", 0,0,6,About);
+        PluginMenu* menu = new PluginMenu(Color::Cyan << "Gen3z", 6,6,6,About);
 
         // Synnchronize the menu with frame event
         menu->SynchronizeWithFrame(true);
         menu->ShowWelcomeMessage(false);
-		OSD::Notify(Color::Orange << "Hinoki No Cheat Plugin Ready");
+		OSD::Notify(Color::Cyan << "Luanch");
 		
         // Init our menu entries & folders
         InitMenu(*menu);
