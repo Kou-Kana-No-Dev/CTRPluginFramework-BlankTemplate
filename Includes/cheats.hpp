@@ -10,6 +10,6 @@ namespace CTRPluginFramework
   void KeyStrokesButtom(MenuEntry* entry);
   void KeyStrokesPad(MenuEntry* entry);
   void KeyStrokesDPad(MenuEntry* entry);
-  void Test(MenuEntry* entry)
+  void Test(MenuEntry* entry);
 }
 #endif
