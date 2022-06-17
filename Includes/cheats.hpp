@@ -8,5 +8,6 @@
 namespace CTRPluginFramework
 {
   void KeyStrokesButtom(MenuEntry* entry);
+  void KeyStrokesPad(MenuEntry* entry);
 }
 #endif
