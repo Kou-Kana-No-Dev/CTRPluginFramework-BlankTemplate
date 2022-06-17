@@ -74,7 +74,6 @@ exit:
     {
       menu += new MenuEntry("Buttom" , KeyStrokesButtom);
       menu += new MenuEntry("Pad" , KeyStrokesPad);
-      menu += new MenuEntry("Pad" , KeyStrokesDPad);
     }
 
     int     main(void)
