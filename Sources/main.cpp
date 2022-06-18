@@ -75,7 +75,6 @@ exit:
       menu += new MenuEntry("Buttom" , KeyStrokesButtom);
       menu += new MenuEntry("Pad" , KeyStrokesPad);
       menu += new MenuEntry("DPad" , KeyStrokesDPad);
-      menu += new MenuEntry("test" , Test);
     }
 
     int     main(void)
@@ -85,7 +84,7 @@ exit:
         // Synnchronize the menu with frame event
         menu->SynchronizeWithFrame(true);
         menu->ShowWelcomeMessage(false);
-		OSD::Notify(Color::Cyan << "Luanch");
+		OSD::Notify(Color::Cyan << "Hhhh");
 		
         // Init our menu entries & folders
         InitMenu(*menu);

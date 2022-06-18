@@ -16,37 +16,47 @@ namespace CTRPluginFramework
     Color background = Color::Black;
     if(Controller::IsKeysDown(A)) {
       IsK += "A  ";
+      KSTSC.Draw(IsK, KSTX, KSTY, foreground, background);
     }
     if(Controller::IsKeysDown(B)) {
       IsK += "B  ";
+      KSTSC.Draw(IsK, KSTX, KSTY, foreground, background);
     }
     if(Controller::IsKeysDown(X)) {
       IsK += "X  ";
+      KSTSC.Draw(IsK, KSTX, KSTY, foreground, background);
     }
     if(Controller::IsKeysDown(Y)) {
       IsK += "Y  ";
+      KSTSC.Draw(IsK, KSTX, KSTY, foreground, background);
     }
     if(Controller::IsKeysDown(R)) {
-      IsK += "R  ";
+      IsK += "R
+      KSTSC.Draw(IsK, KSTX, KSTY, foreground, background);
     }
     if(Controller::IsKeysDown(L)) {
       IsK += "L  ";
+      KSTSC.Draw(IsK, KSTX, KSTY, foreground, background);
     }
     if(Controller::IsKeysDown(ZR)) {
       IsK += "ZR  ";
+      KSTSC.Draw(IsK, KSTX, KSTY, foreground, background);
     }
     if(Controller::IsKeysDown(ZL)) {
       IsK += "ZL  ";
+      KSTSC.Draw(IsK, KSTX, KSTY, foreground, background);
     }
     if(Controller::IsKeysDown(Start)) {
       IsK += "Start  ";
+      KSTSC.Draw(IsK, KSTX, KSTY, foreground, background);
     }
     if(Controller::IsKeysDown(Select)) {
       IsK += "Select  ";
+      KSTSC.Draw(IsK, KSTX, KSTY, foreground, background);
     }
-    KSTSC.Draw(IsK, KSTX, KSTY, foreground, background);
   }
   void KeyStrokesPad(MenuEntry* entry) {
+    if(Controller::IsKeysDown(CPadUp) || Controller::IsKeysDown(CPadDown) || Controller::IsKeysDown(CPadRight) || Controller::IsKeysDown(CPadLeft)) {
     const Screen &Pad = OSD::GetTopScreen();
     const Screen &Pat = OSD::GetTopScreen();
     u32 KSTX = 360;
@@ -85,7 +95,9 @@ namespace CTRPluginFramework
   Pad.Draw(Pad1, KSTX+12, KSTY, foreground, background);
   Pat.Draw(Pad2, KSTX, KSTY+13, foreground, background);
   }
+  }
   void KeyStrokesDPad(MenuEntry* entry) {
+    if(Controller::IsKeysDown(DPadUp) || Controller::IsKeysDown(DPadDown) || Controller::IsKeysDown(DPadRight) || Controller::IsKeysDown(DPadLeft)) {
     const Screen &Pad = OSD::GetTopScreen();
     const Screen &Pat = OSD::GetTopScreen();
     u32 KSTX = 5;
@@ -124,17 +136,7 @@ namespace CTRPluginFramework
   Pad.Draw(Pad1, KSTX+12, KSTY, foreground, background);
   Pat.Draw(Pad2, KSTX, KSTY+13, foreground, background);
   }
-   void Test(MenuEntry* entry) {
-    const Screen &KSTSC = OSD::GetTopScreen();
-    std::string IsK = "";
-    u32 KSTX = 10;
-    u32 KSTY = 50;
-    Color foreground = Color::White;
-    Color background = Color::Black;
-    std::string ads = "Int";
-    std::string ad2 = "Str";
-    KSTSC.Draw(ads + "\n" + ad2, KSTX, KSTY, foreground, background);
-   }
+  }
 }
 
 
