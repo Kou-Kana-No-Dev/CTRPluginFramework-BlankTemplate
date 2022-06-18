@@ -31,7 +31,7 @@ namespace CTRPluginFramework
       KSTSC.Draw(IsK, KSTX, KSTY, foreground, background);
     }
     if(Controller::IsKeysDown(R)) {
-      IsK += "R
+      IsK += "R  ";
       KSTSC.Draw(IsK, KSTX, KSTY, foreground, background);
     }
     if(Controller::IsKeysDown(L)) {
