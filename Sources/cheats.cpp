@@ -93,15 +93,15 @@ void n2(MenuEntry *entry)//Function Tester1
     fakreg = pmm16(false,MonsterP2 + 0x1318);
   }
   if(fakreg != pmm16(false,MonsterP2 + 0x1318)){
-    osd_mana(1,std::to_string(pmm16(false,MonsterP2 + 0x1318) - fakreg));
-    fakreg = pmm16(false,MonsterP + 0x1318);
+    osd_mana(1,std::to_string(pmm16(false,fakreg - MonsterP2 + 0x1318)));
+    fakreg = pmm16(false,MonsterP2 + 0x1318);
   }
   if(fakreg2 == 0){
     fakreg2 = pmm16(false,MonsterP + 0x1318);
     
   }
-  if(fakreg2 != pmm16(false,MonsterP2 + 0x1318)){
-    osd_mana(1,std::to_string(pmm16(false,MonsterP + 0x1318) - fakreg2));
+  if(fakreg2 != pmm16(false,MonsterP + 0x1318)){
+    osd_mana(1,std::to_string(pmm16(false,fakreg2 - MonsterP + 0x1318)));
     fakreg2 = pmm16(false,MonsterP + 0x1318);
   }
 }
@@ -115,6 +115,8 @@ ItemP = pmm32(false,0x8195380);
 if(Controller::IsKeysDown(R)){
 OSD::Notify(std::to_string(pmm32(false,0x8195350)));
 osd_mana(1,"by osdmana" + std::to_string(pmm32(false,0x8195350)));
+OSD::Notify(std::to_string("boss2" + fakreg));
+OSD::Notify(std::to_string("boss1" + fakreg2));
 }//独自関数
 }
 }
