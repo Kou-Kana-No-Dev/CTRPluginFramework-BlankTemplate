@@ -1,6 +1,6 @@
 #include "cheats.hpp"
 #include "CTRPluginFramework.hpp"
-
+#include <string>
 u32 offset=0;
 u32 PlayerP=0;//
 u32 MonsterP=0;//
@@ -115,11 +115,10 @@ MonsterP = pmm32(false,0x8195380);
 MonsterP2 = pmm32(false,0x8195384);
 ItemP = pmm32(false,0x8195380);
 if(Controller::IsKeysDown(R)){
-;
-Notify(std::string to_string(pmm32(false,0x8195350)));
+OSD::Notify(std::to_string(pmm32(false,0x8195350)));
 }//独自関数
 }
-
+}
 
 /*メモｍ
 Color(u8 red, u8 green, u8 blue, u8 alpha = 255);
