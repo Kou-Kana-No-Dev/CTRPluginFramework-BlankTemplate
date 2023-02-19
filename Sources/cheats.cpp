@@ -89,22 +89,20 @@ ItemP = pmm32(false,0x8195380);
 }
 void n2(MenuEntry *entry)//Function Tester1
 {
-  if(MonsterP != 0){
-    osd_mana(1,"Monster1 Calculation start");
+  if(fakreg == 0){
+    fakreg = pmm16(false,MonsterP2 + 0x1318);
+  }
+  if(fakreg != pmm16(false,MonsterP2 + 0x1318)){
+    osd_mana(1,std::to_string(pmm16(false,MonsterP2 + 0x1318) - fakreg));
     fakreg = pmm16(false,MonsterP + 0x1318);
   }
-  if(fakreg2 == 0 && MonsterP2 != 0){
-    osd_mana(1,"Monster2 Calculation start");
-    fakreg2= pmm16(false,MonsterP2+ 0x1318);
-  }else{
-    if(fakreg != 0 && fakreg != pmm16(false,MonsterP + 0x1318)){
-      osd_mana(1,std::to_string(fakreg - pmm16(false,MonsterP + 0x1318)));
-      fakreg = pmm16(false,MonsterP + 0x1318);
-    }
-    if(fakreg2 != 0 && fakreg2 != pmm16(false,MonsterP2 + 0x1318)){
-      osd_mana(1,std::to_string(fakreg2 - pmm16(false,MonsterP2 + 0x1318)));
-      fakreg2 = pmm16(false,MonsterP2 + 0x1318);
-    }
+  if(fakreg2 == 0){
+    fakreg2 = pmm16(false,MonsterP + 0x1318);
+    
+  }
+  if(fakreg2 != pmm16(false,MonsterP2 + 0x1318)){
+    osd_mana(1,std::to_string(pmm16(false,MonsterP + 0x1318) - fakreg2));
+    fakreg2 = pmm16(false,MonsterP + 0x1318);
   }
 }
 
@@ -116,7 +114,7 @@ MonsterP2 = pmm32(false,0x8195384);
 ItemP = pmm32(false,0x8195380);
 if(Controller::IsKeysDown(R)){
 OSD::Notify(std::to_string(pmm32(false,0x8195350)));
-osd_mana(1,std::to_string(pmm32(false,0x8195350)));
+osd_mana(1,"by osdmana" + std::to_string(pmm32(false,0x8195350)));
 }//独自関数
 }
 }
