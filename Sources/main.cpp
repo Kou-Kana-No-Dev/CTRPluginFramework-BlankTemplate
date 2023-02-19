@@ -51,6 +51,7 @@ namespace CTRPluginFramework
 		MenuFolder *folderA = new MenuFolder("");
 		*menu += new MenuEntry("Core",n1,"");
 		*menu += new MenuEntry("DamCul",n1,"");
+		*menu += new MenuEntry("check",n3,"");
 	}
 
 		int main(void)

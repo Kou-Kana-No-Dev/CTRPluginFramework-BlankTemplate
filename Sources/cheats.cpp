@@ -89,7 +89,7 @@ ItemP = pmm32(false,0x8195380);
 }
 void n2(MenuEntry *entry)//Function Tester1
 {
-  if(fakreg == 0 && MonsterP != 0){
+  if(MonsterP != 0){
     osd_mana(1,"Monster1 Calculation start");
     fakreg = pmm16(false,MonsterP + 0x1318);
   }
@@ -108,11 +108,18 @@ void n2(MenuEntry *entry)//Function Tester1
   }
 }
 
-
-//独自関数
-//ProcessMemoryManager Better
-
+void n3(MenuEntry *entry)//Pointer Refresher
+{
+PlayerP = pmm32(false,0x8195350);
+MonsterP = pmm32(false,0x8195380);
+MonsterP2 = pmm32(false,0x8195384);
+ItemP = pmm32(false,0x8195380);
+if(Controller::IsKeysDown(R)){
+;
+Notify(std::string to_string(pmm32(false,0x8195350)));
+}//独自関数
 }
+
 
 /*メモｍ
 Color(u8 red, u8 green, u8 blue, u8 alpha = 255);
