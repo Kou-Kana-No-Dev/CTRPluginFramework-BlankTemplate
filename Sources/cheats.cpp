@@ -116,6 +116,7 @@ MonsterP2 = pmm32(false,0x8195384);
 ItemP = pmm32(false,0x8195380);
 if(Controller::IsKeysDown(R)){
 OSD::Notify(std::to_string(pmm32(false,0x8195350)));
+osd_mana(1,std::to_string(pmm32(false,0x8195350)));
 }//独自関数
 }
 }
