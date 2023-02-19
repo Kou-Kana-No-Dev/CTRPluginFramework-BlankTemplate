@@ -115,8 +115,8 @@ ItemP = pmm32(false,0x8195380);
 if(Controller::IsKeysDown(R)){
 OSD::Notify(std::to_string(pmm32(false,0x8195350)));
 osd_mana(1,"by osdmana" + std::to_string(pmm32(false,0x8195350)));
-OSD::Notify(std::to_string("boss2" + fakreg));
-OSD::Notify(std::to_string("boss1" + fakreg2));
+OSD::Notify("boss2" + std::to_string(fakreg));
+OSD::Notify("boss1" + std::to_string(fakreg2));
 }//独自関数
 }
 }
