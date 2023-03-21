@@ -99,7 +99,7 @@ void osd_mana(int osdtype,const std::string mes, const Color fg = Color::White, 
 
 void start_bruet(MenuEntry *entry)//Pointer Refresher
 {
-  if(!address1=>address2){
+  if(!(address1-1 > address2)){
     hits=0;
     progress = address1;
     while(progress!=address2){
@@ -246,7 +246,7 @@ u32 getvar32(std::string str) {
   Keyboard key(str);
   key.IsHexadecimal(true);
   if (key.Open(getvaritem) != -1) {
-    return;
+    return getvaritem;
   }
   return getvaritem;
 }
@@ -255,7 +255,7 @@ u16 getvar16(std::string str) {
   Keyboard key(str);
   key.IsHexadecimal(true);
   if (key.Open(getvaritem) != -1) {
-    return;
+    return getvaritem;
   }
   return getvaritem;
 }
@@ -264,7 +264,7 @@ u8 getvar8(std::string str) {
   Keyboard key(str);
   key.IsHexadecimal(true);
   if (key.Open(getvaritem) != -1) {
-    return;
+    return getvaritem;
   }
   return getvaritem;
 }
