@@ -227,34 +227,46 @@ void editor1(MenuEntry *entry)
 }
 void setup_bruet(MenuEntry *entry)
 {
-  if(GetInput(address1,"Start address",true)){
-    return;
-  }
-  if(GetInput(address2,"end address",true)){
-    return;
-  }
-  if(GetInput(bruetvar,"Search Var",true)){
-    return;
-  }
-  if(GetInput(var2edit,"Var2var",true)){
-    return;
-  }
+  address1 = getvar32("start_bruet");
+  bruetvar = getvar32("Search");
+  address2 = getvar32("end");
+  var2edit = getvar32("edit");
+  
+  
 }
 void setup_bruet_custom(MenuEntry *entry)
 {
-  if(GetInput(bruetvar_16,"SV_16b",true)){
+  bruetvar_16 = getvar16("bruetvar_16");
+  var2edit_16 = getvar16("var2edit_16");
+  bruetvar_8 = getvar8("bruetvar_8");
+  var2edit_8 = getvar8("var2edit_8");
+}
+u32 getvar32(string str) {
+  u32 getvaritem;
+  Keyboard key(str);
+  key.IsHexadecimal(true);
+  if (key.Open(getvaritem) != -1) {
     return;
   }
-  if(GetInput(var2edit_16,"V2V_16b",true)){
+  return getvaritem;
+}
+u16 getvar16(string str) {
+  u16 getvaritem;
+  Keyboard key(str);
+  key.IsHexadecimal(true);
+  if (key.Open(getvaritem) != -1) {
     return;
   }
-  if(GetInput(bruetvar_8,"SV_8b",true)){
+  return getvaritem;
+}
+u8 getvar8(string str) {
+  u8 getvaritem;
+  Keyboard key(str);
+  key.IsHexadecimal(true);
+  if (key.Open(getvaritem) != -1) {
     return;
   }
-  if(GetInput(var2edit_8,"V2V_8b",true)){
-    return;
-  }
-  
+  return getvaritem;
 }
 }
 /*メモｍ
