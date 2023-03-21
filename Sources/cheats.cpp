@@ -39,6 +39,33 @@ namespace CTRPluginFramework
     return mem_manage;
   }
 }
+u32 getvar32(std::string str) {
+  u32 getvaritem;
+  Keyboard key(str);
+  key.IsHexadecimal(true);
+  if (key.Open(getvaritem) != -1) {
+    return getvaritem;
+  }
+  return getvaritem;
+}
+u16 getvar16(std::string str) {
+  u16 getvaritem;
+  Keyboard key(str);
+  key.IsHexadecimal(true);
+  if (key.Open(getvaritem) != -1) {
+    return getvaritem;
+  }
+  return getvaritem;
+}
+u8 getvar8(std::string str) {
+  u8 getvaritem;
+  Keyboard key(str);
+  key.IsHexadecimal(true);
+  if (key.Open(getvaritem) != -1) {
+    return getvaritem;
+  }
+  return getvaritem;
+}
 //プロセス管理の関数(コード短縮)
 u16 pmm16(bool Write_or_Read,u32 mem,u16 mem_manage = 0){
   if(Write_or_Read){/*true=write*/
@@ -241,33 +268,7 @@ void setup_bruet_custom(MenuEntry *entry)
   bruetvar_8 = getvar8("bruetvar_8");
   var2edit_8 = getvar8("var2edit_8");
 }
-u32 getvar32(std::string str) {
-  u32 getvaritem;
-  Keyboard key(str);
-  key.IsHexadecimal(true);
-  if (key.Open(getvaritem) != -1) {
-    return getvaritem;
-  }
-  return getvaritem;
-}
-u16 getvar16(std::string str) {
-  u16 getvaritem;
-  Keyboard key(str);
-  key.IsHexadecimal(true);
-  if (key.Open(getvaritem) != -1) {
-    return getvaritem;
-  }
-  return getvaritem;
-}
-u8 getvar8(std::string str) {
-  u8 getvaritem;
-  Keyboard key(str);
-  key.IsHexadecimal(true);
-  if (key.Open(getvaritem) != -1) {
-    return getvaritem;
-  }
-  return getvaritem;
-}
+
 }
 /*メモｍ
 Color(u8 red, u8 green, u8 blue, u8 alpha = 255);

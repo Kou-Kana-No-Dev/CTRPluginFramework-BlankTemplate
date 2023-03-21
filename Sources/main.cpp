@@ -52,6 +52,7 @@ namespace CTRPluginFramework
 		*menu += new MenuEntry("start_bruet",nullptr,start_bruet,"");
 		*menu += new MenuEntry("setup_bruet",nullptr,setup_bruet,"");
 		*menu += new MenuEntry("editor",editor1,"");
+		*menu += new MenuEntry("setup_bruet_custom",nullptr,setup_bruet_custom,"");
 	}
 
 		int main(void)
