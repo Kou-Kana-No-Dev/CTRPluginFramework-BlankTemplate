@@ -227,34 +227,35 @@ void editor1(MenuEntry *entry)
 }
 void setup_bruet(MenuEntry *entry)
 {
-  if(GetInput(address1,"Start address", bool use_hex = true)){
+  if(GetInput(address1,"Start address",true)){
     return;
   }
-  if(GetInput(address2,"end address", bool use_hex = true)){
+  if(GetInput(address2,"end address",true)){
     return;
   }
-  if(GetInput(bruetvar,"Search Var", bool use_hex = true)){
+  if(GetInput(bruetvar,"Search Var",true)){
     return;
   }
-  if(GetInput(var2edit,"Var2var", bool use_hex = true)){
+  if(GetInput(var2edit,"Var2var",true)){
     return;
   }
 }
 void setup_bruet_custom(MenuEntry *entry)
 {
-  if(GetInput(bruetvar_16,"SV_16b", bool use_hex = true)){
+  if(GetInput(bruetvar_16,"SV_16b",true)){
     return;
   }
-  if(GetInput(var2edit_16,"V2V_16b", bool use_hex = true)){
+  if(GetInput(var2edit_16,"V2V_16b",true)){
     return;
   }
-  if(GetInput(bruetvar_8,"SV_8b", bool use_hex = true)){
+  if(GetInput(bruetvar_8,"SV_8b",true)){
     return;
   }
-  if(GetInput(var2edit_8,"V2V_8b", bool use_hex = true)){
+  if(GetInput(var2edit_8,"V2V_8b",true)){
     return;
   }
   
+}
 }
 /*メモｍ
 Color(u8 red, u8 green, u8 blue, u8 alpha = 255);
