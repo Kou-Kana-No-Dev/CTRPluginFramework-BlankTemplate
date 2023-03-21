@@ -6,8 +6,7 @@
 
 namespace CTRPluginFramework
 {
-	void n1(MenuEntry *entry);
-	void n2(MenuEntry *entry);
-  void n3(MenuEntry *entry);
+	void editor1(MenuEntry *entry);
+	void start_bruet(MenuEntry *entry);
 }
 #endif
