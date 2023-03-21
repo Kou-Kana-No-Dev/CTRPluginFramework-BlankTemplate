@@ -17,7 +17,7 @@ int hits = 0;
 u16 memories_16[] = {};
 u8 memories_8[] = {};
 int sel_mem = 0;
-
+u32 isrestorewhenbon = 1;
 u32 vari0 = 0;
 u32 vari1 = 0;
 u32 vari2 = 0;
@@ -172,6 +172,7 @@ void mode_selt(MenuEntry *entry)
   if(mode >4 && mode < 1){
     mode=1;
   }
+  OSD::Notify("mode is " + std::to_string(mode));
 }
 void editor1(MenuEntry *entry)
 {
@@ -180,6 +181,7 @@ void editor1(MenuEntry *entry)
       case 1://32bit Var
       if(sel_mem < hits && sel_mem < 0){
       pmm32(true,memories[sel_mem],var2edit);
+      pmm32(true,memories[sel_mem+1],bruetvar);
       }else{
         sel_mem = 0;
       }
@@ -192,6 +194,7 @@ void editor1(MenuEntry *entry)
       case 2:
       if(sel_mem < hits && sel_mem < 0){
       pmm16(true,memories_16[sel_mem],var2edit_16);
+      pmm16(true,memories_16[sel_mem+1],bruetvar_16);
       }else{
         sel_mem = 0;
       }
@@ -203,6 +206,7 @@ void editor1(MenuEntry *entry)
       case 3:
       if(sel_mem < hits && sel_mem < 0){
       pmm8(true,memories_8[sel_mem],var2edit_8);
+      pmm8(true,memories_8[sel_mem+1],bruetvar_8);
       }else{
         sel_mem = 0;
       }
@@ -222,6 +226,7 @@ void editor1(MenuEntry *entry)
       case 1://32bit Var
       if(sel_mem < hits && sel_mem < 0){
       pmm32(true,memories[sel_mem],var2edit);
+      pmm32(true,memories[sel_mem-1],bruetvar);
       }else{
         sel_mem = 0;
       }
@@ -233,6 +238,7 @@ void editor1(MenuEntry *entry)
       case 2:
       if(sel_mem < hits && sel_mem < 0){
       pmm16(true,memories_16[sel_mem],var2edit_16);
+      pmm16(true,memories_16[sel_mem-1],bruetvar_16);
       }else{
         sel_mem = 0;
       }
@@ -244,6 +250,7 @@ void editor1(MenuEntry *entry)
       case 3:
       if(sel_mem < hits && sel_mem < 0){
       pmm8(true,memories_8[sel_mem],var2edit_8);
+      pmm8(true,memories_8[sel_mem-1],bruetvar_8);
       }else{
         sel_mem = 0;
       }
@@ -261,12 +268,27 @@ void editor1(MenuEntry *entry)
 }
 void setup_bruet(MenuEntry *entry)
 {
+  std::string boolfake = "false"
   address1 = getvar32("start_bruet");
-  bruetvar = getvar32("Search");
   address2 = getvar32("end");
+  bruetvar = getvar32("Search");
   var2edit = getvar32("edit");
-  
-  
+  isrestorewhenbon = getvar32("do restore");
+  if(isrestorewhenbon != 0 || isrestorewhenbon != 1)
+  {
+    isrestorewhenbon = 1;
+  }
+  if(isrestorewhenbon == 0) {
+    boolfake ="false"
+  }
+  if(isrestorewhenbon == 1) {
+    boolfake ="true"
+  }
+  OSD::Notify("start_bruet is " + std::to_string(address1));
+  OSD::Notify("end is " + std::to_string(address2));
+  OSD::Notify("Search is " + std::to_string(bruetvar));
+  OSD::Notify("edit is " + std::to_string(var2edit));
+  OSD::Notify("Do restore is " + std::to_string(boolfake));
 }
 void setup_bruet_custom(MenuEntry *entry)
 {
