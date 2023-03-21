@@ -268,7 +268,7 @@ void editor1(MenuEntry *entry)
 }
 void setup_bruet(MenuEntry *entry)
 {
-  std::string boolfake = "false"
+  std::string boolfake = "false";
   address1 = getvar32("start_bruet");
   address2 = getvar32("end");
   bruetvar = getvar32("Search");
@@ -279,16 +279,16 @@ void setup_bruet(MenuEntry *entry)
     isrestorewhenbon = 1;
   }
   if(isrestorewhenbon == 0) {
-    boolfake ="false"
+    boolfake ="false";
   }
   if(isrestorewhenbon == 1) {
-    boolfake ="true"
+    boolfake ="true";
   }
   OSD::Notify("start_bruet is " + std::to_string(address1));
   OSD::Notify("end is " + std::to_string(address2));
   OSD::Notify("Search is " + std::to_string(bruetvar));
   OSD::Notify("edit is " + std::to_string(var2edit));
-  OSD::Notify("Do restore is " + std::to_string(boolfake));
+  OSD::Notify("Do restore is " + std::to_string(isrestorewhenbon));
 }
 void setup_bruet_custom(MenuEntry *entry)
 {
