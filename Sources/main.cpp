@@ -60,6 +60,8 @@ namespace CTRPluginFramework
 	{
 		menu = new PluginMenu("Hello", 0, 0, 0, "hi");
 		menu->SynchronizeWithFrame(true);
+		OSD::Notify(Color::Cyan << "Luanch Success");
+		OSD::Notify("Luanch Success");
 		InitMenu();
 		menu->Run();
 		delete menu;
