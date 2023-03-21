@@ -129,7 +129,7 @@ void start_bruet(MenuEntry *entry)//Pointer Refresher
   if(!(address1-1 > address2)){
     hits=0;
     progress = address1;
-    while(progres<address2){
+    while(progress -1<address2){
     switch(mode){
       case 1://32bit Var
       
@@ -168,10 +168,9 @@ void start_bruet(MenuEntry *entry)//Pointer Refresher
 
 void mode_selt(MenuEntry *entry)
 {
-  Keyboard key("mode");
-  key.IsHexadecimal(false);
-  if (key.Open(mode) != -1 &&mode != 4) {
-    return;
+  mode++;
+  if(mode >4 && mode < 1){
+    mode=1;
   }
 }
 void editor1(MenuEntry *entry)
