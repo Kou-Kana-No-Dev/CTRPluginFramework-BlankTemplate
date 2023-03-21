@@ -10,7 +10,7 @@ u16 bruetvar_16=0;
 u16 var2edit_16=0;
 u8 bruetvar_8=0;
 u8 var2edit_8=0;
-int mode=0;
+int mode=1;
 u32 memories[] = {};
 u32 progress=0;
 int hits = 0;
@@ -129,7 +129,7 @@ void start_bruet(MenuEntry *entry)//Pointer Refresher
   if(!(address1-1 > address2)){
     hits=0;
     progress = address1;
-    while(progress!=address2){
+    while(progres<address2){
     switch(mode){
       case 1://32bit Var
       
@@ -166,7 +166,14 @@ void start_bruet(MenuEntry *entry)//Pointer Refresher
 }
 
 
-
+void mode_selt(MenuEntry *entry)
+{
+  Keyboard key("mode");
+  key.IsHexadecimal(false);
+  if (key.Open(mode) != -1 &&mode != 4) {
+    return;
+  }
+}
 void editor1(MenuEntry *entry)
 {
   if(Controller::IsKeysDown(X) && Controller::IsKeysPressed(R)){
