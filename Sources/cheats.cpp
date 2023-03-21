@@ -16,7 +16,7 @@ u32 progress=0;
 int hits = 0;
 u16 memories_16[] = {};
 u8 memories_8[] = {};
-int select = 0;
+int sel_mem = 0;
 
 u32 vari0 = 0;
 u32 vari1 = 0;
@@ -144,38 +144,38 @@ void editor1(MenuEntry *entry)
   if(IsKeysPressed(R + X)){
     switch(mode){
       case 1://32bit Var
-      if(select < hits && select < 0){
-      pmm32(true,memories[select],var2edit);
+      if(sel_mem < hits && sel_mem < 0){
+      pmm32(true,memories[sel_mem],var2edit);
       }else{
-        select = 0;
+        sel_mem = 0;
       }
-      OSD::Notify("m32 edited " + std::to_string(memories[select]));
-    OSD::Notify("m32 next " + std::to_string(memories[select+1]));
-    OSD::Notify("m32 backs " + std::to_string(memories[select-1]));
-      select++;
+      OSD::Notify("m32 edited " + std::to_string(memories[sel_mem]));
+    OSD::Notify("m32 next " + std::to_string(memories[sel_mem+1]));
+    OSD::Notify("m32 backs " + std::to_string(memories[sel_mem-1]));
+      sel_mem++;
       
       break;
       case 2:
-      if(select < hits && select < 0){
-      pmm16(true,memories_16[select],var2edit_16);
+      if(sel_mem < hits && sel_mem < 0){
+      pmm16(true,memories_16[sel_mem],var2edit_16);
       }else{
-        select = 0;
+        sel_mem = 0;
       }
-      OSD::Notify("m16 edited " + std::to_string(memories_16[select]));
-    OSD::Notify("m16 next " + std::to_string(memories_16[select+1]));
-    OSD::Notify("m16 backs " + std::to_string(memories_16[select-1]));
-      select++;
+      OSD::Notify("m16 edited " + std::to_string(memories_16[sel_mem]));
+    OSD::Notify("m16 next " + std::to_string(memories_16[sel_mem+1]));
+    OSD::Notify("m16 backs " + std::to_string(memories_16[sel_mem-1]));
+      sel_mem++;
       break;
       case 3:
-      if(select < hits && select < 0){
-      pmm8(true,memories_8[select],var2edit_8);
+      if(sel_mem < hits && sel_mem < 0){
+      pmm8(true,memories_8[sel_mem],var2edit_8);
       }else{
-        select = 0;
+        sel_mem = 0;
       }
-      OSD::Notify("m8 edited " + std::to_string(memories_8[select]));
-    OSD::Notify("m8 next " + std::to_string(memories_8[select+1]));
-    OSD::Notify("m8 backs " + std::to_string(memories_8[select-1]));
-      select++;
+      OSD::Notify("m8 edited " + std::to_string(memories_8[sel_mem]));
+    OSD::Notify("m8 next " + std::to_string(memories_8[sel_mem+1]));
+    OSD::Notify("m8 backs " + std::to_string(memories_8[sel_mem-1]));
+      sel_mem++;
       
       break;
     default:
@@ -186,37 +186,37 @@ void editor1(MenuEntry *entry)
   if(IsKeysPressed(L + X)){
     switch(mode){
       case 1://32bit Var
-      if(select < hits && select < 0){
-      pmm32(true,memories[select],var2edit);
+      if(sel_mem < hits && sel_mem < 0){
+      pmm32(true,memories[sel_mem],var2edit);
       }else{
-        select = 0;
+        sel_mem = 0;
       }
-      OSD::Notify("m32 edited " + std::to_string(memories[select]));
-    OSD::Notify("m32 next " + std::to_string(memories[select+1]));
-    OSD::Notify("m32 backs " + std::to_string(memories[select-1]));
-      select+=-1;
+      OSD::Notify("m32 edited " + std::to_string(memories[sel_mem]));
+    OSD::Notify("m32 next " + std::to_string(memories[sel_mem+1]));
+    OSD::Notify("m32 backs " + std::to_string(memories[sel_mem-1]));
+      sel_mem+=-1;
       break;
       case 2:
-      if(select < hits && select < 0){
-      pmm16(true,memories_16[select],var2edit_16);
+      if(sel_mem < hits && sel_mem < 0){
+      pmm16(true,memories_16[sel_mem],var2edit_16);
       }else{
-        select = 0;
+        sel_mem = 0;
       }
-      OSD::Notify("m16 edited " + std::to_string(memories_16[select]));
-    OSD::Notify("m16 next " + std::to_string(memories_16[select+1]));
-    OSD::Notify("m16 backs " + std::to_string(memories_16[select-1]));
-      select+=-1;
+      OSD::Notify("m16 edited " + std::to_string(memories_16[sel_mem]));
+    OSD::Notify("m16 next " + std::to_string(memories_16[sel_mem+1]));
+    OSD::Notify("m16 backs " + std::to_string(memories_16[sel_mem-1]));
+      sel_mem+=-1;
       break;
       case 3:
-      if(select < hits && select < 0){
-      pmm8(true,memories_8[select],var2edit_8);
+      if(sel_mem < hits && sel_mem < 0){
+      pmm8(true,memories_8[sel_mem],var2edit_8);
       }else{
-        select = 0;
+        sel_mem = 0;
       }
-      OSD::Notify("m8 edited " + std::to_string(memories_8[select]));
-    OSD::Notify("m8 next " + std::to_string(memories_8[select+1]));
-    OSD::Notify("m8 backs " + std::to_string(memories_8[select-1]));
-      select+=-1;
+      OSD::Notify("m8 edited " + std::to_string(memories_8[sel_mem]));
+    OSD::Notify("m8 next " + std::to_string(memories_8[sel_mem+1]));
+    OSD::Notify("m8 backs " + std::to_string(memories_8[sel_mem-1]));
+      sel_mem+=-1;
       
       break;
     default:
