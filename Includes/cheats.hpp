@@ -9,6 +9,7 @@ namespace CTRPluginFramework
 	void editor1(MenuEntry *entry);
 	void start_bruet(MenuEntry *entry);
 	void setup_bruet(MenuEntry *entry);
+	void mode_selt(MenuEntry *entry);
 	void setup_bruet_custom(MenuEntry *entry);
 }
 #endif
