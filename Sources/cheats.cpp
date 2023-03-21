@@ -138,6 +138,7 @@ void start_bruet(MenuEntry *entry)//Pointer Refresher
         hits++;
       }
       progress+=0x4;
+      
       break;
       case 2:
       if(pmm16(false,progress)==bruetvar_16){
@@ -145,7 +146,7 @@ void start_bruet(MenuEntry *entry)//Pointer Refresher
         hits++;
       }
       progress+=0x2;
-      
+      OSD::Notify("Search " + std::to_string(progress));
       
       break;
       case 3:
