@@ -1,15 +1,32 @@
 #include "cheats.hpp"
 #include "CTRPluginFramework.hpp"
 #include <string>
-u32 offset=0;
-u32 PlayerP=0;//
-u32 MonsterP=0;//
-u32 MonsterP2=0;//
-u32 ItemP=0;//
-int fakreg = 0;
-int fakreg2 = 0;
+#include <cstdio>
+u32 address1=0;
+u32 address2=0;
+u32 bruetvar=0;
+u32 var2edit=0;
+u16 bruetvar_16=0;
+u16 var2edit_16=0;
+u8 bruetvar_8=0;
+u8 var2edit_8=0;
+int mode=0;
+u32 memories[] = {};
+u32 progress=0;
+int hits = 0;
+u16 memories_16[] = {};
+u8 memories_8[] = {};
+int select = 0;
 
-bool pointer_finder_is_enable = false;
+u32 vari0 = 0;
+u32 vari1 = 0;
+u32 vari2 = 0;
+u32 vari3 = 0;
+
+u16 SV_16b = 0;
+u16 V2V_16b = 0;
+u8 SV_8b = 0;
+u8 V2V_8b = 0;
 namespace CTRPluginFramework
 {
   //プロセス管理の関数(コード短縮)
@@ -80,47 +97,165 @@ void osd_mana(int osdtype,const std::string mes, const Color fg = Color::White, 
 
 
 
-void n1(MenuEntry *entry)//Pointer Refresher
+void start_bruet(MenuEntry *entry)//Pointer Refresher
 {
-PlayerP = pmm32(false,0x8195350);
-MonsterP = pmm32(false,0x8195380);
-MonsterP2 = pmm32(false,0x8195384);
-ItemP = pmm32(false,0x8195380);
+  if(!address2=<address1){
+    hits=0;
+    progress = address1;
+    while(progress!=address2){
+    switch(mode){
+      case 1://32bit Var
+      
+      if(pmm32(false,progress)==bruetvar){
+        memories[hits] = progress;
+        hits++;
+      }
+      progress+=0x4;
+      break;
+      case 2:
+      if(pmm16(false,progress)==bruetvar_16){
+        memories_16[hits] = progress;
+        hits++;
+      }
+      progress+=0x2;
+      
+      
+      break;
+      case 3:
+      if(pmm8(false,progress)==bruetvar_8){
+        memories_8[hits] = progress;
+        hits++;
+      }
+      progress+=0x1;
+      
+      
+      break;
+    default:
+    break;
+    }
+    }
+  }
 }
-void n2(MenuEntry *entry)//Function Tester1
+
+
+
+void editor1(MenuEntry *entry)
 {
-  if(fakreg == 0){
-    fakreg = pmm16(false,MonsterP2 + 0x1318);
-  }
-  if(fakreg != pmm16(false,MonsterP2 + 0x1318)){
-    osd_mana(1,std::to_string(pmm16(false,fakreg - MonsterP2 + 0x1318)));
-    fakreg = pmm16(false,MonsterP2 + 0x1318);
-  }
-  if(fakreg2 == 0){
-    fakreg2 = pmm16(false,MonsterP + 0x1318);
+  if(IsKeysPressed(R + X)){
+    switch(mode){
+      case 1://32bit Var
+      if(select < hits && select < 0){
+      pmm32(true,memories[select],var2edit);
+      }else{
+        select = 0;
+      }
+      OSD::Notify("m32 edited " + std::to_string(memories[select]));
+    OSD::Notify("m32 next " + std::to_string(memories[select+1]));
+    OSD::Notify("m32 backs " + std::to_string(memories[select-1]));
+      select++;
+      
+      break;
+      case 2:
+      if(select < hits && select < 0){
+      pmm16(true,memories_16[select],var2edit_16);
+      }else{
+        select = 0;
+      }
+      OSD::Notify("m16 edited " + std::to_string(memories_16[select]));
+    OSD::Notify("m16 next " + std::to_string(memories_16[select+1]));
+    OSD::Notify("m16 backs " + std::to_string(memories_16[select-1]));
+      select++;
+      break;
+      case 3:
+      if(select < hits && select < 0){
+      pmm8(true,memories_8[select],var2edit_8);
+      }else{
+        select = 0;
+      }
+      OSD::Notify("m8 edited " + std::to_string(memories_8[select]));
+    OSD::Notify("m8 next " + std::to_string(memories_8[select+1]));
+    OSD::Notify("m8 backs " + std::to_string(memories_8[select-1]));
+      select++;
+      
+      break;
+    default:
+    break;
+    }
     
   }
-  if(fakreg2 != pmm16(false,MonsterP + 0x1318)){
-    osd_mana(1,std::to_string(pmm16(false,fakreg2 - MonsterP + 0x1318)));
-    fakreg2 = pmm16(false,MonsterP + 0x1318);
+  if(IsKeysPressed(L + X)){
+    switch(mode){
+      case 1://32bit Var
+      if(select < hits && select < 0){
+      pmm32(true,memories[select],var2edit);
+      }else{
+        select = 0;
+      }
+      OSD::Notify("m32 edited " + std::to_string(memories[select]));
+    OSD::Notify("m32 next " + std::to_string(memories[select+1]));
+    OSD::Notify("m32 backs " + std::to_string(memories[select-1]));
+      select+=-1;
+      break;
+      case 2:
+      if(select < hits && select < 0){
+      pmm16(true,memories_16[select],var2edit_16);
+      }else{
+        select = 0;
+      }
+      OSD::Notify("m16 edited " + std::to_string(memories_16[select]));
+    OSD::Notify("m16 next " + std::to_string(memories_16[select+1]));
+    OSD::Notify("m16 backs " + std::to_string(memories_16[select-1]));
+      select+=-1;
+      break;
+      case 3:
+      if(select < hits && select < 0){
+      pmm8(true,memories_8[select],var2edit_8);
+      }else{
+        select = 0;
+      }
+      OSD::Notify("m8 edited " + std::to_string(memories_8[select]));
+    OSD::Notify("m8 next " + std::to_string(memories_8[select+1]));
+    OSD::Notify("m8 backs " + std::to_string(memories_8[select-1]));
+      select+=-1;
+      
+      break;
+    default:
+    break;
+    }
+  }
+  
+}
+void setup_bruet(MenuEntry *entry)
+{
+  if(GetInput(address1,"Start address", bool use_hex = true)){
+    return;
+  }
+  if(GetInput(address2,"end address", bool use_hex = true)){
+    return;
+  }
+  if(GetInput(bruetvar,"Search Var", bool use_hex = true)){
+    return;
+  }
+  if(GetInput(var2edit,"Var2var", bool use_hex = true)){
+    return;
   }
 }
-
-void n3(MenuEntry *entry)//Pointer Refresher
+void setup_bruet_custom(MenuEntry *entry)
 {
-PlayerP = pmm32(false,0x8195350);
-MonsterP = pmm32(false,0x8195380);
-MonsterP2 = pmm32(false,0x8195384);
-ItemP = pmm32(false,0x8195380);
-if(Controller::IsKeysDown(R)){
-OSD::Notify(std::to_string(pmm32(false,0x8195350)));
-osd_mana(1,"by osdmana" + std::to_string(pmm32(false,0x8195350)));
-OSD::Notify("boss2" + std::to_string(fakreg));
-OSD::Notify("boss1" + std::to_string(fakreg2));
-}//独自関数
+  if(GetInput(bruetvar_16,"SV_16b", bool use_hex = true)){
+    return;
+  }
+  if(GetInput(var2edit_16,"V2V_16b", bool use_hex = true)){
+    return;
+  }
+  if(GetInput(bruetvar_8,"SV_8b", bool use_hex = true)){
+    return;
+  }
+  if(GetInput(var2edit_8,"V2V_8b", bool use_hex = true)){
+    return;
+  }
+  
 }
-}
-
 /*メモｍ
 Color(u8 red, u8 green, u8 blue, u8 alpha = 255);
 

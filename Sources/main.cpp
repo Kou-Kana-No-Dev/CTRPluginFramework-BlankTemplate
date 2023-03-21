@@ -49,9 +49,9 @@ namespace CTRPluginFramework
 	void InitMenu()
 	{
 		MenuFolder *folderA = new MenuFolder("");
-		*menu += new MenuEntry("Core",n1,"");
-		*menu += new MenuEntry("DamCul",n1,"");
-		*menu += new MenuEntry("check",n3,"");
+		*menu += new MenuEntry("start_bruet",nullptr,start_bruet,"");
+		*menu += new MenuEntry("setup_bruet",nullptr,setup_bruet,"");
+		*menu += new MenuEntry("editor",editor1,"");
 	}
 
 		int main(void)
