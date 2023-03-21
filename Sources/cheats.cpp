@@ -99,7 +99,7 @@ void osd_mana(int osdtype,const std::string mes, const Color fg = Color::White, 
 
 void start_bruet(MenuEntry *entry)//Pointer Refresher
 {
-  if(!address2=<address1){
+  if(!address1=>address2){
     hits=0;
     progress = address1;
     while(progress!=address2){
@@ -141,7 +141,7 @@ void start_bruet(MenuEntry *entry)//Pointer Refresher
 
 void editor1(MenuEntry *entry)
 {
-  if(IsKeysPressed(R + X)){
+  if(Controller::IsKeysDown(X) && Controller::IsKeysPressed(R)){
     switch(mode){
       case 1://32bit Var
       if(sel_mem < hits && sel_mem < 0){
@@ -183,7 +183,7 @@ void editor1(MenuEntry *entry)
     }
     
   }
-  if(IsKeysPressed(L + X)){
+  if(Controller::IsKeysDown(X) && Controller::IsKeysPressed(L)){
     switch(mode){
       case 1://32bit Var
       if(sel_mem < hits && sel_mem < 0){
@@ -241,7 +241,7 @@ void setup_bruet_custom(MenuEntry *entry)
   bruetvar_8 = getvar8("bruetvar_8");
   var2edit_8 = getvar8("var2edit_8");
 }
-u32 getvar32(string str) {
+u32 getvar32(std::string str) {
   u32 getvaritem;
   Keyboard key(str);
   key.IsHexadecimal(true);
@@ -250,7 +250,7 @@ u32 getvar32(string str) {
   }
   return getvaritem;
 }
-u16 getvar16(string str) {
+u16 getvar16(std::string str) {
   u16 getvaritem;
   Keyboard key(str);
   key.IsHexadecimal(true);
@@ -259,7 +259,7 @@ u16 getvar16(string str) {
   }
   return getvaritem;
 }
-u8 getvar8(string str) {
+u8 getvar8(std::string str) {
   u8 getvaritem;
   Keyboard key(str);
   key.IsHexadecimal(true);
