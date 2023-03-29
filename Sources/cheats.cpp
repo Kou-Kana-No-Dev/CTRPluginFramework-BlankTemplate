@@ -7,12 +7,15 @@ u32 svar=0;
 u32 rvar=0;
 u32 startadd=0;
 u32 endadd=0;
-u32 b_addresses[]={};
+File file;
 u32 scanningvar = 0;
 int selectingvar=0;
 int sizebaddr = 0;
 int scanning = 0;
 int scancalc =0;
+u32 readedaddr = 0;
+u32 readedaddr2 = 0;
+u32 readedaddr3 = 0;
 u32 maaa =0;
 u32 getvar32(std::string str) {
   u32 getvaritem;
@@ -52,16 +55,20 @@ void setupvar(MenuEntry *entry)
   endadd = getvar32("end address");
   scancalc = ((startadd-endadd)/4)+1;
   getvar32(std::to_string(scancalc));
-  selectingvar = 0;
+  File file;
   maaa =0;
   scanning = 0;
   scanningvar = startadd;
   for(int i = 0,i !=scancalc,i++){
   Process::Read32(scanningvar,maaa);
   if(maaa == svar){
-    b_addresses[scanning] = maaa;
-    scanning++;
+    u32 data = maaa;
+    File::Open(file,"file.bin");
+    file.Seek(4);
+    file.Write((void*)&maaa, sizeof(u32));
+    file.Flush();
   }
+  file.Close();
   scanningvar += 0x4;
   }
   sizebaddr = sizeof b_addresses / sizeof b_addresses[0];
@@ -70,33 +77,53 @@ void startbrute(MenuEntry *entry)
 {
   if(Controller::IsKeysDown(X) && Controller::IsKeysPressed(R)){
     selectingvar++;
-    if(selectingvar == sizebaddr+1){
-      selectingvar =0;
+File::Open(file,"file.bin");
+    selectingvar += -1;
+    file.Seek(selectingvar*4);
+    
+    file.Read((void*)&readedaddr, sizeof(u32));
+    if(file.Tell()!=file.Getsize){
+    file.Seek(4);
+    file.Read((void*)&readedaddr2, sizeof(u32));
     }
-    Process::Write32(b_addresses[selectingvar],rvar);
-    OSD::Notify("Selecting Addr" + std::to_string(b_addresses[selectingvar]));
+    if(file.Tell()!=0){
+    file.Seek(-8);
+    file.Read((void*)&readedaddr3, sizeof(u32));
+    }
+    file.Close();
+    
+    Process::Write32(readedaddr,rvar);
+    OSD::Notify("Selecting Addr" + std::to_string(readedaddr));
     if(selectingvar != sizebaddr){
-    OSD::Notify("Next Addr" + std::to_string(b_addresses[selectingvar+1]));
+    OSD::Notify("Next Addr" + std::to_string(readedaddr2]));
     }
     if(selectingvar != 0){
-    OSD::Notify("Back Addr" + std::to_string(b_addresses[selectingvar-1]));
+    OSD::Notify("Back Addr" + std::to_string(readedaddr3));
     }
   }
   if(Controller::IsKeysDown(X) && Controller::IsKeysPressed(L)){
+    File::Open(file,"file.bin");
     selectingvar += -1;
-    if(selectingvar == sizebaddr+1){
-      selectingvar =0;
+    file.Seek(selectingvar*4);
+    
+    file.Read((void*)&readedaddr, sizeof(u32));
+    if(file.Tell()!=file.Getsize){
+    file.Seek(4);
+    file.Read((void*)&readedaddr2, sizeof(u32));
     }
-    if(0 > selectingvar){
-      selectingvar = sizebaddr;
+    if(file.Tell()!=0){
+    file.Seek(-8);
+    file.Read((void*)&readedaddr3, sizeof(u32));
     }
-    Process::Write32(b_addresses[selectingvar],rvar);
-    OSD::Notify("Selecting Addr" + std::to_string(b_addresses[selectingvar]));
+    file.Close();
+    
+    Process::Write32(readedaddr,rvar);
+    OSD::Notify("Selecting Addr" + std::to_string(readedaddr));
     if(selectingvar != sizebaddr){
-    OSD::Notify("Next Addr" + std::to_string(b_addresses[selectingvar+1]));
+    OSD::Notify("Next Addr" + std::to_string(readedaddr2]));
     }
     if(selectingvar != 0){
-    OSD::Notify("Back Addr" + std::to_string(b_addresses[selectingvar-1]));
+    OSD::Notify("Back Addr" + std::to_string(readedaddr3));
     }
 }
 }
