@@ -59,7 +59,7 @@ void setupvar(MenuEntry *entry)
   maaa =0;
   scanning = 0;
   scanningvar = startadd;
-  while(scanning>=scancalc){
+  while(scanning<=scancalc){
   Process::Read32(scanningvar,maaa);
   if(maaa == svar){
     File::Open(file,"file.bin");
