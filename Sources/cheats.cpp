@@ -62,10 +62,9 @@ void setupvar(MenuEntry *entry)
   while(scanning>=scancalc){
   Process::Read32(scanningvar,maaa);
   if(maaa == svar){
-    u32 data = maaa;
     File::Open(file,"file.bin");
     file.Seek(4);
-    file.Write((void*)&maaa, sizeof(u32));
+    file.Write((void*)&scanningvar, sizeof(u32));
     file.Flush();
   }
   
