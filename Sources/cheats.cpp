@@ -11,6 +11,8 @@ u32 b_addresses[]={};
 u32 scanningvar = 0;
 int selectingvar=0;
 int sizebaddr = 0;
+int scanning = 0;
+u32 maaa =0;
 u32 getvar32(std::string str) {
   u32 getvaritem;
   Keyboard key(str);
@@ -49,8 +51,8 @@ void setupvar(MenuEntry *entry)
   endadd = getvar32("end address");
   
   selectingvar = 0;
-  u32 maaa =0;
-  int scanning = 0;
+  maaa =0;
+  scanning = 0;
   scanningvar = startadd;
   while(endadd >=selectingvar){
   Process::Read32(scanningvar,maaa);
@@ -60,7 +62,7 @@ void setupvar(MenuEntry *entry)
   }
   scanningvar += 0x4;
   }
-  int sizebaddr = sizeof b_addresses / sizeof b_addresses[0];
+  sizebaddr = sizeof b_addresses / sizeof b_addresses[0];
 }
 void startbrute(MenuEntry *entry)
 {
