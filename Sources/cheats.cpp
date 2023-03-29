@@ -50,13 +50,13 @@ void setupvar(MenuEntry *entry)
   rvar = getvar32("32bit various,replace");
   startadd = getvar32("start address");
   endadd = getvar32("end address");
-  scancalc = ((startadd-endadd)/4);
+  scancalc = ((startadd-endadd)/4)+1;
   getvar32(std::to_string(scancalc));
   selectingvar = 0;
   maaa =0;
   scanning = 0;
   scanningvar = startadd;
-  for(int i = 0,endadd >=scancalc,i++){
+  for(int i = 0,i !=scancalc,i++){
   Process::Read32(scanningvar,maaa);
   if(maaa == svar){
     b_addresses[scanning] = maaa;
