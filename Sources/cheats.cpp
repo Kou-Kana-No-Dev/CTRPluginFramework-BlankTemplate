@@ -39,13 +39,13 @@ u8 getvar8(std::string str) {
   return getvaritem;
 }
 void searcher() {
-  u32 21m0 =0;
+  u32 maaa =0;
   int scanning = 0;
   scanningvar = startadd;
   while(!(scanningvar => endadd)){
-  Process::Read32(scanningvar,21m0);
+  Process::Read32(scanningvar,maaa);
   if(21m0 == svar){
-    b_addresses[scanning] = 21m0;
+    b_addresses[scanning] = maaa;
     scanning++;
   }
   scanningvar += 0x4;
@@ -58,7 +58,7 @@ void setupvar(MenuEntry *entry)
   rvar = getvar32("32bit various,replace");
   startadd = getvar32("start address");
   endadd = getvar32("end address");
-  b_addresses[]={};
+  
   selectingvar = 0;
   searcher();
 }
