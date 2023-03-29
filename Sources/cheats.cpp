@@ -68,10 +68,11 @@ void setupvar(MenuEntry *entry)
     file.Write((void*)&maaa, sizeof(u32));
     file.Flush();
   }
-  file.Close();
+  
   scanningvar += 0x4;
   scanning++;
   }
+  file.Close();
 }
 void startbrute(MenuEntry *entry)
 {
