@@ -39,18 +39,7 @@ u8 getvar8(std::string str) {
   return getvaritem;
 }
 void searcher() {
-  u32 maaa =0;
-  int scanning = 0;
-  scanningvar = startadd;
-  while(!(endadd <=selectingvar)){
-  Process::Read32(scanningvar,maaa);
-  if(maaa == svar){
-    b_addresses[scanning] = maaa;
-    scanning++;
-  }
-  scanningvar += 0x4;
-  }
-  int sizebaddr = sizeof b_addresses / sizeof b_addresses[0];
+  
 }
 void setupvar(MenuEntry *entry)
 {
@@ -60,7 +49,18 @@ void setupvar(MenuEntry *entry)
   endadd = getvar32("end address");
   
   selectingvar = 0;
-  searcher();
+  u32 maaa =0;
+  int scanning = 0;
+  scanningvar = startadd;
+  while(endadd >=selectingvar){
+  Process::Read32(scanningvar,maaa);
+  if(maaa == svar){
+    b_addresses[scanning] = maaa;
+    scanning++;
+  }
+  scanningvar += 0x4;
+  }
+  int sizebaddr = sizeof b_addresses / sizeof b_addresses[0];
 }
 void startbrute(MenuEntry *entry)
 {
