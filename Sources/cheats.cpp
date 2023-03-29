@@ -59,7 +59,7 @@ void setupvar(MenuEntry *entry)
   maaa =0;
   scanning = 0;
   scanningvar = startadd;
-  for(int i = 0,i!=scancalc,i++;){
+  while(scanning!=scancalc){
   Process::Read32(scanningvar,maaa);
   if(maaa == svar){
     u32 data = maaa;
@@ -70,6 +70,7 @@ void setupvar(MenuEntry *entry)
   }
   file.Close();
   scanningvar += 0x4;
+  scanning++;
   }
 }
 void startbrute(MenuEntry *entry)
@@ -106,7 +107,7 @@ File::Open(file,"file.bin");
     file.Seek(selectingvar*4);
     
     file.Read((void*)&readedaddr, sizeof(u32));
-    if(file.Tell()!=file.GetSize){
+    if(file.Tell()!=file.GetSize()){
     file.Seek(4);
     file.Read((void*)&readedaddr2, sizeof(u32));
     }
@@ -118,7 +119,7 @@ File::Open(file,"file.bin");
     
     Process::Write32(readedaddr,rvar);
     OSD::Notify("Selecting Addr" + std::to_string(readedaddr));
-    if(file.Tell()!=file.GetSize){
+    if(file.Tell()!=file.GetSize()){
     OSD::Notify("Next Addr" + std::to_string(readedaddr2));
     }
     if(file.Tell()!=0){
