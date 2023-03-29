@@ -49,11 +49,8 @@ namespace CTRPluginFramework
 	void InitMenu()
 	{
 		MenuFolder *folderA = new MenuFolder("");
-		*menu += new MenuEntry("start_bruet",nullptr,start_bruet,"");
-		*menu += new MenuEntry("mode_selt",nullptr,mode_selt,"");
-		*menu += new MenuEntry("setup_bruet",nullptr,setup_bruet,"");
-		*menu += new MenuEntry("editor",editor1,"");
-		*menu += new MenuEntry("setup_bruet_custom",nullptr,setup_bruet_custom,"");
+		*menu += new MenuEntry("start_bruet",startbrute,"");
+		*menu += new MenuEntry("mode_selt",nullptr,setupvar,"");
 	}
 
 		int main(void)
