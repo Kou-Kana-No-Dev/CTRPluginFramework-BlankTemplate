@@ -42,7 +42,7 @@ void searcher() {
   u32 maaa =0;
   int scanning = 0;
   scanningvar = startadd;
-  while(!(endadd =< selectingvar)){
+  while(!(endadd <=selectingvar)){
   Process::Read32(scanningvar,maaa);
   if(maaa == svar){
     b_addresses[scanning] = maaa;
