@@ -12,6 +12,7 @@ u32 scanningvar = 0;
 int selectingvar=0;
 int sizebaddr = 0;
 int scanning = 0;
+int scancalc =0;
 u32 maaa =0;
 u32 getvar32(std::string str) {
   u32 getvaritem;
@@ -49,12 +50,13 @@ void setupvar(MenuEntry *entry)
   rvar = getvar32("32bit various,replace");
   startadd = getvar32("start address");
   endadd = getvar32("end address");
-  
+  scancalc = ((startadd-endadd)/4);
+  getvar32(std::to_string(scancalc));
   selectingvar = 0;
   maaa =0;
   scanning = 0;
   scanningvar = startadd;
-  while(endadd >=selectingvar){
+  for(int i = 0,endadd >=scancalc,i++){
   Process::Read32(scanningvar,maaa);
   if(maaa == svar){
     b_addresses[scanning] = maaa;
